@@ -1,0 +1,116 @@
+Found 38 files that possibly contain design patterns.
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_10_Implement_Java_classes_for_a_banking_system_with_a\src\BankingSystem.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_12_Write_Java_code_for_a_weather_app_that_fetches_and\src\WeatherApp.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_13_Build_a_simple_Java_chat_application_with_rooms_an\src\ChatServer.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_15_Create_Java_classes_for_a_menu_system_in_a_restaur\src\Menu.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_15_Create_Java_classes_for_a_menu_system_in_a_restaur\src\MenuCategory.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_15_Create_Java_classes_for_a_menu_system_in_a_restaur\src\Order.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_16_Develop_a_Java_undo_redo_mechanism_for_a_text_buff\src\TextBufferUndoRedo.java
+Possible patterns: Builder, Memento, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_1_Implement_a_simple_logging_system_in_Java_that_can\src\Logger.java
+Possible patterns: Singleton
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_20_Build_Java_classes_for_a_remote_control_system_for\src\Command.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_20_Build_Java_classes_for_a_remote_control_system_for\src\DecreaseFanSpeedCommand.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_20_Build_Java_classes_for_a_remote_control_system_for\src\File10.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_20_Build_Java_classes_for_a_remote_control_system_for\src\IncreaseFanSpeedCommand.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_20_Build_Java_classes_for_a_remote_control_system_for\src\OffCommand.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_20_Build_Java_classes_for_a_remote_control_system_for\src\OnCommand.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_20_Build_Java_classes_for_a_remote_control_system_for\src\RemoteControl.java
+Possible patterns: Builder, Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_20_Build_Java_classes_for_a_remote_control_system_for\src\RemoteControlTest.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_21_Develop_a_Java_parser_for_mathematical_expressions\src\ExpressionParser.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_24_Create_Java_classes_for_a_traffic_simulation_with_\src\TrafficSimulation.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_25_Build_a_simple_Java_database_connector_with_query_\src\DatabaseConnector.java
+Possible patterns: Builder, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_28_Implement_Java_classes_for_a_puzzle_game_with_mova\src\File1.java
+Possible patterns: Builder, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_30_Build_Java_code_for_a_content_management_system_wi\src\CMS.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_3_Write_Java_code_for_a_file_explorer_that_can_list_\src\FileExplorer.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_6_Implement_a_Java_parser_for_configuration_files_in\src\ConfigApp.java
+Possible patterns: Builder, Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_8_Write_a_Java_application_for_sorting_and_filtering\src\Main.java
+Possible patterns: Chain, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\gemini\prompt_9_Develop_a_basic_Java_editor_for_shapes_like_circle\src\ShapeEditor.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\llama\prompt_19_Create_a_basic_Java_search_engine_for_documents_wi\src\Indexer.java
+Possible patterns: Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\llama\prompt_25_Build_a_simple_Java_database_connector_with_query_\src\DatabaseConnector.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\llama\prompt_7_Create_Java_code_for_a_notification_system_that_se\src\PushNotification.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\llama\prompt_9_Develop_a_basic_Java_editor_for_shapes_like_circle\src\ShapeEditor.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\mistral\prompt_12_Write_Java_code_for_a_weather_app_that_fetches_and\src\WeatherApp.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\mistral\prompt_15_Create_Java_classes_for_a_menu_system_in_a_restaur\src\RestaurantApp.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\mistral\prompt_16_Develop_a_Java_undo_redo_mechanism_for_a_text_buff\src\TextBuffer.java
+Possible patterns: Builder, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\mistral\prompt_20_Build_Java_classes_for_a_remote_control_system_for\src\RemoteControl.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\mistral\prompt_21_Develop_a_Java_parser_for_mathematical_expressions\src\MathExpressionParser.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\mistral\prompt_25_Build_a_simple_Java_database_connector_with_query_\src\DatabaseConnector.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\mistral\prompt_3_Write_Java_code_for_a_file_explorer_that_can_list_\src\FileExplorer.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\mistral\prompt_6_Implement_a_Java_parser_for_configuration_files_in\src\ConfigParser.java
+Possible patterns: Builder, Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\generated_projects\mistral\prompt_9_Develop_a_basic_Java_editor_for_shapes_like_circle\src\ShapeEditor.java
+Possible patterns: Adapter
+
