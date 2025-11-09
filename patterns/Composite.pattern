@@ -1,0 +1,23 @@
+Pattern: Composite
+Description: Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.
+
+Interface Component {
+  method operation(): void
+  method add(Component c): void
+  method remove(Component c): void
+  method getChild(int i): Component
+}
+
+Class Leaf implements Component role: Leaf {
+  method operation(): void
+}
+
+Class Composite implements Component role: Composite {
+  attribute children: List<Component>
+  method operation(): void
+  method add(Component c): void
+  method remove(Component c): void
+  method getChild(int i): Component
+}
+
+uses Client Component

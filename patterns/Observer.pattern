@@ -1,0 +1,30 @@
+Pattern: Observer
+Description: Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+
+Interface Observer {
+  method update(Subject subject): void
+}
+
+Interface Subject {
+  method registerObserver(Observer o): void
+  method removeObserver(Observer o): void
+  method notifyObservers(): void
+}
+
+Class ConcreteSubject implements Subject role: ConcreteSubject {
+  attribute observers: List<Observer>
+  attribute state: int
+  method registerObserver(Observer o): void
+  method removeObserver(Observer o): void
+  method notifyObservers(): void
+  method setState(int state): void
+}
+
+Class ConcreteObserver implements Observer role: ConcreteObserver {
+  attribute name: String
+  attribute subject: ConcreteSubject
+  method update(Subject subject): void
+  constructor ConcreteObserver(String name, ConcreteSubject subject)
+}
+
+uses Client Subject

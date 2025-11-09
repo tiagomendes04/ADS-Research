@@ -1,0 +1,18 @@
+Pattern: Prototype
+Description: Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
+
+Interface Prototype {
+  method clone(): Prototype
+}
+
+Class ConcretePrototype implements Prototype role: ConcretePrototype {
+  attribute field: String
+  method clone(): ConcretePrototype
+  constructor ConcretePrototype(String field)
+}
+
+Class Client role: Client {
+  method operation(Prototype p): void
+}
+
+uses Client Prototype

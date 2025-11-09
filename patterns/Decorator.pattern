@@ -1,0 +1,26 @@
+Pattern: Decorator
+Description: Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
+
+Interface Component {
+  method operation(): void
+}
+
+Class ConcreteComponent implements Component role: ConcreteComponent {
+  method operation(): void
+}
+
+Class Decorator implements Component role: Decorator {
+  attribute component: Component
+  method operation(): void uses Component.operation()
+  constructor Decorator(Component component)
+}
+
+Class ConcreteDecoratorA extends Decorator role: ConcreteDecorator {
+  method operation(): void super.operation()
+}
+
+Class ConcreteDecoratorB extends Decorator role: ConcreteDecorator {
+  method operation(): void super.operation()
+}
+
+uses Client Component

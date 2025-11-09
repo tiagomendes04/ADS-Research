@@ -1,0 +1,18 @@
+Pattern: Adapter
+Description: Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
+
+Interface Target {
+  method request(): void
+}
+
+Class Adaptee role: Adaptee {
+  method specificRequest(): void
+}
+
+Class Adapter implements Target role: Adapter {
+  attribute adaptee: Adaptee private
+  method request(): void uses Adaptee.specificRequest()
+  constructor Adapter(Adaptee adaptee)
+}
+
+uses Client Target

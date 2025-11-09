@@ -1,0 +1,29 @@
+Pattern: Mediator
+Description: Define an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly.
+
+Interface Mediator {
+  method notify(Colleague sender, String event): void
+}
+
+Class ConcreteMediator implements Mediator role: ConcreteMediator {
+  attribute colleague1: Colleague
+  attribute colleague2: Colleague
+  method notify(Colleague sender, String event): void
+  constructor ConcreteMediator(Colleague c1, Colleague c2)
+}
+
+Class Colleague role: Colleague {
+  attribute mediator: Mediator
+  method changed(String event): void uses Mediator.notify()
+  method doSomething(): void
+}
+
+Class ConcreteColleague1 extends Colleague role: ConcreteColleague {
+  method doSomething(): void
+}
+
+Class ConcreteColleague2 extends Colleague role: ConcreteColleague {
+  method doSomething(): void
+}
+
+uses Client Mediator

@@ -1,0 +1,18 @@
+Pattern: Proxy
+Description: Provide a surrogate or placeholder for another object to control access to it.
+
+Interface Subject {
+  method request(): void
+}
+
+Class RealSubject implements Subject role: RealSubject {
+  method request(): void
+}
+
+Class Proxy implements Subject role: Proxy {
+  attribute realSubject: RealSubject lazy
+  method request(): void uses RealSubject.request()
+  constructor Proxy()
+}
+
+uses Client Subject

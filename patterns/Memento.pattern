@@ -1,0 +1,24 @@
+Pattern: Memento
+Description: Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later.
+
+Class Originator role: Originator {
+  attribute state: String
+  method setState(String state): void
+  method createMemento(): Memento
+  method setMemento(Memento m): void
+  method printState(): void
+}
+
+Class Memento role: Memento {
+  attribute state: String private
+  constructor Memento(String state)
+  method getState(): String
+}
+
+Class Caretaker role: Caretaker {
+  attribute memento: Memento
+  method setMemento(Memento m): void
+  method getMemento(): Memento
+}
+
+uses Client Originator

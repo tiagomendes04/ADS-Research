@@ -1,0 +1,23 @@
+Pattern: State
+Description: Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
+
+Interface State {
+  method handle(Context context): void
+}
+
+Class ConcreteStateA implements State role: ConcreteState {
+  method handle(Context context): void
+}
+
+Class ConcreteStateB implements State role: ConcreteState {
+  method handle(Context context): void
+}
+
+Class Context role: Context {
+  attribute state: State
+  method setState(State state): void
+  method request(): void uses State.handle()
+  constructor Context(State state)
+}
+
+uses Client Context

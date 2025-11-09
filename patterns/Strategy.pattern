@@ -1,0 +1,23 @@
+Pattern: Strategy
+Description: Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
+
+Interface Strategy {
+  method algorithmInterface(): void
+}
+
+Class ConcreteStrategyA implements Strategy role: ConcreteStrategy {
+  method algorithmInterface(): void
+}
+
+Class ConcreteStrategyB implements Strategy role: ConcreteStrategy {
+  method algorithmInterface(): void
+}
+
+Class Context role: Context {
+  attribute strategy: Strategy
+  method setStrategy(Strategy strategy): void
+  method contextInterface(): void uses Strategy.algorithmInterface()
+  constructor Context(Strategy strategy)
+}
+
+uses Client Context

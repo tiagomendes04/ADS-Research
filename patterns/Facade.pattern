@@ -1,0 +1,19 @@
+Pattern: Facade
+Description: Provide a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.
+
+Class SubsystemClass1 role: SubsystemClass {
+  method method1(): void
+}
+
+Class SubsystemClass2 role: SubsystemClass {
+  method method2(): void
+}
+
+Class Facade role: Facade {
+  attribute s1: SubsystemClass1
+  attribute s2: SubsystemClass2
+  method methodA(): void uses SubsystemClass1.method1()
+  method methodB(): void uses SubsystemClass2.method2()
+}
+
+uses Client Facade

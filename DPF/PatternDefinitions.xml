@@ -1,0 +1,136 @@
+<?xml version="1.0" standalone="yes"?>
+<PatternDefinitions xmlns="">
+
+  <PatternDefinition>
+    <Name>Adapter</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Bridge</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Builder</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Chain</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Command</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Composite</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Decorator</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Facade</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Factory</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Flyweight</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Interpreter</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Iterator</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Mediator</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Memento</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Observer</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Prototype</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Proxy</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Singleton</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>State</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Strategy</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Template</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+  <PatternDefinition>
+    <Name>Visitor</Name>
+    <Tags>
+    </Tags>
+  </PatternDefinition>
+
+</PatternDefinitions>

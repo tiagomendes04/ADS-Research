@@ -1,0 +1,21 @@
+Pattern: FactoryMethod
+Description: Define an interface for creating an object, but let subclasses decide which class to instantiate.
+
+Interface Product {
+    method use(): void
+}
+
+Class ConcreteProduct implements Product role: ConcreteProduct {
+    method use(): void
+}
+
+Class Creator role: Creator abstract {
+    method factoryMethod(): Product abstract
+    method anOperation(): void uses Product.use()
+}
+
+Class ConcreteCreator extends Creator role: ConcreteCreator {
+    method factoryMethod(): ConcreteProduct
+}
+
+uses Client Creator
