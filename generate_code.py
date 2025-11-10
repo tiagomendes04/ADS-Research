@@ -1,144 +1,166 @@
 """
-generate_code_all_models.py
-Runs all selected Hugging Face models locally to generate Java code for prompts.
-Each model output is stored in generated_code/<model_name>/prompt_<n>.java
-pip install torch transformers accelerate bitsandbytes safetensors
+FINAL API SCRIPT: Bulletproof streaming + fallback
+- No IndexError
+- No NoneType.strip()
+- Clean logs
+- Full .java files
 """
-
-from transformers import AutoTokenizer, AutoModelForCausalLM
-import torch
+from openai import OpenAI
 from pathlib import Path
 import json
-import textwrap
+from prompts import prompts as PROMPTS
+import time
 
 # ------------------------------------------------------------
-# 🔧 CONFIGURATION
+# CONFIG
 # ------------------------------------------------------------
-# You will paste your 100 PROMPTS in this array later.
-PROMPTS = [
-    # "Implement a simple logging system in Java that can write to console or file...",
-    # "Create a Java program for a basic e-commerce cart that adds items...",
-    # ...
-]
-
-# Folder for saving generated files
 OUTPUT_ROOT = Path("generated_code")
 OUTPUT_ROOT.mkdir(exist_ok=True)
+HF_TOKEN = ""
 
-# Models to use (Hugging Face IDs)
 MODELS = {
-    "openai_gpt2_large": "openai-community/gpt2-large",
-    "openai_gpt_oss_20B": "openai-community/gpt-oss-20b",
-    "llama_3.1_8B_Instruct": "meta-llama/Llama-3.1-8B-Instruct",
-    "llama_3.2_1B_Instruct": "meta-llama/Llama-3.2-1B-Instruct",
-    "mistral_7B_Instruct_v0.2": "mistralai/Mistral-7B-Instruct-v0.2",
-    "dolphin_Yi_1.5_34B": "cognitivecomputations/dolphin-2.9.1-yi-1.5-34b",
-    "qwen_2.5_7B_Instruct": "Qwen/Qwen2.5-7B-Instruct",
-    "qwen_3_8B": "Qwen/Qwen3-8B",
-    "qwen_3_32B": "Qwen/Qwen3-32B",
+    #"llama_3_2_1B_Instruct": "meta-llama/Llama-3.2-1B-Instruct",
+    "llama_3_1_8B_Instruct": "meta-llama/Llama-3.1-8B-Instruct",
+    #"mistral_7B_Instruct_v0_2": "mistralai/Mistral-7B-Instruct-v0.2",
+    #"qwen_3_8B": "Qwen/Qwen3-8B",
 }
 
+PROMPT_INDEX_START = 1  # ← Your test
+
+client = OpenAI(base_url="https://router.huggingface.co/v1", api_key=HF_TOKEN)
+
 # ------------------------------------------------------------
-# ⚙️ Helper Functions
+# SAFE STREAMING (No IndexError)
 # ------------------------------------------------------------
-def load_model(model_id: str):
-    """Loads a model and tokenizer (quantized if possible)."""
-    print(f"\n🚀 Loading model: {model_id}")
+MAX_TOKENS = 3072
+
+def safe_stream(model_id: str, messages: list) -> str:
     try:
-        model = AutoModelForCausalLM.from_pretrained(
-            model_id,
-            device_map="auto",
-            torch_dtype=torch.float16,
-            load_in_8bit=True,
-            cache_dir=str(Path.home() / ".cache" / "huggingface"),
+        full = ""
+        stream = client.chat.completions.create(
+            model=model_id,
+            messages=messages,
+            max_tokens=MAX_TOKENS,
+            temperature=0.7,
+            top_p=0.95,
+            stream=True,
         )
+        for chunk in stream:
+            delta = chunk.choices[0].delta if chunk.choices else None
+            if delta and delta.content:
+                full += delta.content
+        return full.strip() if full else None
     except Exception as e:
-        print(f"⚠️ 8-bit load failed for {model_id}, retrying in 4-bit or full precision: {e}")
-        try:
-            model = AutoModelForCausalLM.from_pretrained(
-                model_id,
-                device_map="auto",
-                torch_dtype=torch.float16,
-                load_in_4bit=True,
-                cache_dir=str(Path.home() / ".cache" / "huggingface"),
-            )
-        except Exception as e2:
-            print(f"⚠️ 4-bit load also failed for {model_id}, loading in FP16: {e2}")
-            model = AutoModelForCausalLM.from_pretrained(
-                model_id,
-                device_map="auto",
-                torch_dtype=torch.float16,
-                cache_dir=str(Path.home() / ".cache" / "huggingface"),
-            )
-
-    tokenizer = AutoTokenizer.from_pretrained(
-        model_id, cache_dir=str(Path.home() / ".cache" / "huggingface")
-    )
-
-    # Ensure we have a pad token
-    if tokenizer.pad_token is None:
-        tokenizer.pad_token = tokenizer.eos_token
-
-    return model, tokenizer
-
-
-def generate_response(model, tokenizer, prompt: str, max_new_tokens=400):
-    """Generate response text for a given prompt."""
-    inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
-    outputs = model.generate(
-        **inputs,
-        max_new_tokens=max_new_tokens,
-        do_sample=True,
-        temperature=0.7,
-        top_p=0.95,
-        pad_token_id=tokenizer.eos_token_id,
-    )
-    return tokenizer.decode(outputs[0], skip_special_tokens=True)
-
+        print(f" [stream failed: {type(e).__name__}]", end="")
+        return None
 
 # ------------------------------------------------------------
-# 🚀 Main Execution
+# NON-STREAMING FALLBACK
+# ------------------------------------------------------------
+def non_stream(model_id: str, messages: list) -> str:
+    try:
+        response = client.chat.completions.create(
+            model=model_id,
+            messages=messages,
+            max_tokens=MAX_TOKENS,
+            temperature=0.7,
+            top_p=0.95,
+            stream=False,
+        )
+        return response.choices[0].message.content.strip()
+    except Exception as e:
+        print(f"\n    Fallback Error: {e}")
+        return f"API Error: {e}"
+
+# ------------------------------------------------------------
+# GENERATE (Streaming → Fallback → Safe)
+# ------------------------------------------------------------
+def generate_response(model_id: str, prompt: str) -> str:
+    print(f"  → Asking {model_id}...", end="", flush=True)
+    messages = [{"role": "user", "content": prompt}]
+
+    # Try streaming
+    result = safe_stream(model_id, messages)
+    if result is not None:
+        print(" Done (stream).")
+        return result
+
+    # Fallback
+    result = non_stream(model_id, messages)
+    print(" Done (fallback).")
+    return result
+
+# ------------------------------------------------------------
+# TEXT-GENERATION (gpt2, etc.)
+# ------------------------------------------------------------
+def generate_text(model_id: str, prompt: str) -> str:
+    print(f"  → Asking {model_id} (text)...", end="", flush=True)
+    try:
+        response = client.completions.create(
+            model=model_id,
+            prompt=prompt,
+            max_tokens=MAX_TOKENS,
+            temperature=0.7,
+            top_p=0.95,
+        )
+        print(" Done.")
+        return response.choices[0].text.strip()
+    except Exception as e:
+        print(f"\n    Error: {e}")
+        return f"API Error: {e}"
+
+# ------------------------------------------------------------
+# MAIN
 # ------------------------------------------------------------
 def main():
     if not PROMPTS:
-        print("⚠️ No prompts defined yet. Please paste your prompt list inside PROMPTS[] in this script.")
+        print("No prompts.py")
         return
 
+    total = len(PROMPTS)
     summary = {}
 
-    for model_name, model_id in MODELS.items():
-        model_dir = OUTPUT_ROOT / model_name
-        model_dir.mkdir(exist_ok=True, parents=True)
+    print(f"Running {len(MODELS)} models on {total} prompts...\n")
 
-        model, tokenizer = load_model(model_id)
-        print(f"✅ Loaded {model_name}")
+    for name, model_id in MODELS.items():
+        print("="*70)
+        print(f" MODEL: {name.upper()} → {model_id}")
+        print("="*70)
 
-        model_summary = []
+        # Auto-detect
+        try:
+            client.chat.completions.create(model=model_id, messages=[{"role": "user", "content": "Hi"}], max_tokens=1, stream=False)
+            is_chat = True
+        except:
+            is_chat = False
+
+        print(f"  Task: {'chat' if is_chat else 'text-generation'}")
+
+        dir_ = OUTPUT_ROOT / name
+        dir_.mkdir(parents=True, exist_ok=True)
+        files = []
+
         for i, prompt in enumerate(PROMPTS, start=1):
-            print(f"🧠 [{model_name}] Generating for prompt {i}/{len(PROMPTS)} ...")
+            if i < PROMPT_INDEX_START:
+                continue
 
-            try:
-                response = generate_response(model, tokenizer, prompt)
-            except Exception as e:
-                response = f"⚠️ Generation failed: {e}"
+            print(f"  Prompt {i}/{total}...", end="")
+            code = generate_response(model_id, prompt) if is_chat else generate_text(model_id, prompt)
 
-            # Save output
-            filename = model_dir / f"prompt_{i}.java"
-            with open(filename, "w", encoding="utf-8") as f:
-                f.write(f"// Prompt: {prompt}\n\n{response}")
+            path = dir_ / f"prompt_{i}.java"
+            path.write_text(code, encoding="utf-8")
+            files.append(path.name)
 
-            model_summary.append(filename.name)
+            time.sleep(2.0)
 
-        summary[model_name] = model_summary
+        summary[name] = files
+        print(f"Completed: {name}\n")
 
-    # Save a summary JSON
-    summary_file = OUTPUT_ROOT / "generation_summary.json"
-    with open(summary_file, "w", encoding="utf-8") as f:
-        json.dump(summary, f, indent=2)
+    sfile = OUTPUT_ROOT / "summary.json"
+    sfile.write_text(json.dumps(summary, indent=2), encoding="utf-8")
 
-    print("\n✅ Generation completed for all models.")
-    print(f"Results saved in: {OUTPUT_ROOT.resolve()}")
-
+    print("\nALL DONE!")
+    print(f"Results: {OUTPUT_ROOT.resolve()}")
 
 if __name__ == "__main__":
     main()
