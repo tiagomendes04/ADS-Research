@@ -1,0 +1,2516 @@
+{
+  "total_files": 270,
+  "detected_files": 251,
+  "correct_detections": 251,
+  "incorrect_detections": 0,
+  "missed_files": 19,
+  "per_pattern_stats": {
+    "Factory": {
+      "total": 72,
+      "detected": 70,
+      "correct": 70,
+      "false_positives": 0,
+      "missed": 2,
+      "detection_rate": 0.9722222222222222,
+      "accuracy": 0.9722222222222222,
+      "precision": 1.0,
+      "recall": 0.9722222222222222,
+      "f1_score": 0.9859154929577464
+    },
+    "Adapter": {
+      "total": 10,
+      "detected": 9,
+      "correct": 9,
+      "false_positives": 0,
+      "missed": 1,
+      "detection_rate": 0.9,
+      "accuracy": 0.9,
+      "precision": 1.0,
+      "recall": 0.9,
+      "f1_score": 0.9473684210526316
+    },
+    "Bridge": {
+      "total": 20,
+      "detected": 19,
+      "correct": 19,
+      "false_positives": 0,
+      "missed": 1,
+      "detection_rate": 0.95,
+      "accuracy": 0.95,
+      "precision": 1.0,
+      "recall": 0.95,
+      "f1_score": 0.9743589743589743
+    },
+    "Builder": {
+      "total": 8,
+      "detected": 7,
+      "correct": 7,
+      "false_positives": 0,
+      "missed": 1,
+      "detection_rate": 0.875,
+      "accuracy": 0.875,
+      "precision": 1.0,
+      "recall": 0.875,
+      "f1_score": 0.9333333333333333
+    },
+    "Chain": {
+      "total": 9,
+      "detected": 8,
+      "correct": 8,
+      "false_positives": 0,
+      "missed": 1,
+      "detection_rate": 0.8888888888888888,
+      "accuracy": 0.8888888888888888,
+      "precision": 1.0,
+      "recall": 0.8888888888888888,
+      "f1_score": 0.9411764705882353
+    },
+    "Command": {
+      "total": 16,
+      "detected": 15,
+      "correct": 15,
+      "false_positives": 0,
+      "missed": 1,
+      "detection_rate": 0.9375,
+      "accuracy": 0.9375,
+      "precision": 1.0,
+      "recall": 0.9375,
+      "f1_score": 0.967741935483871
+    },
+    "Composite": {
+      "total": 19,
+      "detected": 18,
+      "correct": 18,
+      "false_positives": 0,
+      "missed": 1,
+      "detection_rate": 0.9473684210526315,
+      "accuracy": 0.9473684210526315,
+      "precision": 1.0,
+      "recall": 0.9473684210526315,
+      "f1_score": 0.972972972972973
+    },
+    "Decorator": {
+      "total": 18,
+      "detected": 17,
+      "correct": 17,
+      "false_positives": 0,
+      "missed": 1,
+      "detection_rate": 0.9444444444444444,
+      "accuracy": 0.9444444444444444,
+      "precision": 1.0,
+      "recall": 0.9444444444444444,
+      "f1_score": 0.9714285714285714
+    },
+    "Facade": {
+      "total": 1,
+      "detected": 0,
+      "correct": 0,
+      "false_positives": 0,
+      "missed": 1,
+      "detection_rate": 0.0,
+      "accuracy": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0
+    },
+    "Flyweight": {
+      "total": 11,
+      "detected": 10,
+      "correct": 10,
+      "false_positives": 0,
+      "missed": 1,
+      "detection_rate": 0.9090909090909091,
+      "accuracy": 0.9090909090909091,
+      "precision": 1.0,
+      "recall": 0.9090909090909091,
+      "f1_score": 0.9523809523809523
+    },
+    "Iterator": {
+      "total": 7,
+      "detected": 6,
+      "correct": 6,
+      "false_positives": 0,
+      "missed": 1,
+      "detection_rate": 0.8571428571428571,
+      "accuracy": 0.8571428571428571,
+      "precision": 1.0,
+      "recall": 0.8571428571428571,
+      "f1_score": 0.923076923076923
+    },
+    "Observer": {
+      "total": 13,
+      "detected": 12,
+      "correct": 12,
+      "false_positives": 0,
+      "missed": 1,
+      "detection_rate": 0.9230769230769231,
+      "accuracy": 0.9230769230769231,
+      "precision": 1.0,
+      "recall": 0.9230769230769231,
+      "f1_score": 0.9600000000000001
+    },
+    "Prototype": {
+      "total": 16,
+      "detected": 15,
+      "correct": 15,
+      "false_positives": 0,
+      "missed": 1,
+      "detection_rate": 0.9375,
+      "accuracy": 0.9375,
+      "precision": 1.0,
+      "recall": 0.9375,
+      "f1_score": 0.967741935483871
+    },
+    "Proxy": {
+      "total": 9,
+      "detected": 8,
+      "correct": 8,
+      "false_positives": 0,
+      "missed": 1,
+      "detection_rate": 0.8888888888888888,
+      "accuracy": 0.8888888888888888,
+      "precision": 1.0,
+      "recall": 0.8888888888888888,
+      "f1_score": 0.9411764705882353
+    },
+    "Singleton": {
+      "total": 7,
+      "detected": 6,
+      "correct": 6,
+      "false_positives": 0,
+      "missed": 1,
+      "detection_rate": 0.8571428571428571,
+      "accuracy": 0.8571428571428571,
+      "precision": 1.0,
+      "recall": 0.8571428571428571,
+      "f1_score": 0.923076923076923
+    },
+    "State": {
+      "total": 11,
+      "detected": 10,
+      "correct": 10,
+      "false_positives": 0,
+      "missed": 1,
+      "detection_rate": 0.9090909090909091,
+      "accuracy": 0.9090909090909091,
+      "precision": 1.0,
+      "recall": 0.9090909090909091,
+      "f1_score": 0.9523809523809523
+    },
+    "Strategy": {
+      "total": 8,
+      "detected": 7,
+      "correct": 7,
+      "false_positives": 0,
+      "missed": 1,
+      "detection_rate": 0.875,
+      "accuracy": 0.875,
+      "precision": 1.0,
+      "recall": 0.875,
+      "f1_score": 0.9333333333333333
+    },
+    "Template": {
+      "total": 15,
+      "detected": 14,
+      "correct": 14,
+      "false_positives": 0,
+      "missed": 1,
+      "detection_rate": 0.9333333333333333,
+      "accuracy": 0.9333333333333333,
+      "precision": 1.0,
+      "recall": 0.9333333333333333,
+      "f1_score": 0.9655172413793104
+    }
+  },
+  "detailed_results": [
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\abstract-factory\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Factory",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\abstract-factory\\src\\main\\java\\com\\ramesh\\gof\\abstractfactory\\app.java",
+      "expected": "Factory",
+      "detected": [
+        "Command",
+        "Factory"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Command"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\abstract-factory\\src\\main\\java\\com\\ramesh\\gof\\abstractfactory\\army.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\abstract-factory\\src\\main\\java\\com\\ramesh\\gof\\abstractfactory\\castle.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\abstract-factory\\src\\main\\java\\com\\ramesh\\gof\\abstractfactory\\elfarmy.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\abstract-factory\\src\\main\\java\\com\\ramesh\\gof\\abstractfactory\\elfcastle.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\abstract-factory\\src\\main\\java\\com\\ramesh\\gof\\abstractfactory\\elfking.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\abstract-factory\\src\\main\\java\\com\\ramesh\\gof\\abstractfactory\\elfkingdomfactory.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\abstract-factory\\src\\main\\java\\com\\ramesh\\gof\\abstractfactory\\king.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\abstract-factory\\src\\main\\java\\com\\ramesh\\gof\\abstractfactory\\kingdomfactory.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\abstract-factory\\src\\main\\java\\com\\ramesh\\gof\\abstractfactory\\orcarmy.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\abstract-factory\\src\\main\\java\\com\\ramesh\\gof\\abstractfactory\\orccastle.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\abstract-factory\\src\\main\\java\\com\\ramesh\\gof\\abstractfactory\\orcking.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\abstract-factory\\src\\main\\java\\com\\ramesh\\gof\\abstractfactory\\orckingdomfactory.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\adapter\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Adapter",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\adapter\\src\\main\\java\\com\\ramesh\\gof\\adapter\\adapterpatterndemo.java",
+      "expected": "Adapter",
+      "detected": [
+        "Adapter"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\adapter\\src\\main\\java\\com\\ramesh\\gof\\adapter\\bankcustomer.java",
+      "expected": "Adapter",
+      "detected": [
+        "Adapter"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\adapter\\src\\main\\java\\com\\ramesh\\gof\\adapter\\bankdetails.java",
+      "expected": "Adapter",
+      "detected": [
+        "Adapter"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\adapter\\src\\main\\java\\com\\ramesh\\gof\\adapter\\creditcard.java",
+      "expected": "Adapter",
+      "detected": [
+        "Adapter"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\adapter\\src\\main\\java\\com\\ramesh\\gof\\adapter\\secondexample\\app.java",
+      "expected": "Adapter",
+      "detected": [
+        "Command",
+        "Adapter"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Command"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\adapter\\src\\main\\java\\com\\ramesh\\gof\\adapter\\secondexample\\battlefishingboat.java",
+      "expected": "Adapter",
+      "detected": [
+        "Adapter"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\adapter\\src\\main\\java\\com\\ramesh\\gof\\adapter\\secondexample\\battleship.java",
+      "expected": "Adapter",
+      "detected": [
+        "Adapter"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\adapter\\src\\main\\java\\com\\ramesh\\gof\\adapter\\secondexample\\captain.java",
+      "expected": "Adapter",
+      "detected": [
+        "Adapter"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\adapter\\src\\main\\java\\com\\ramesh\\gof\\adapter\\secondexample\\fishingboat.java",
+      "expected": "Adapter",
+      "detected": [
+        "Adapter"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Bridge",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\app.java",
+      "expected": "Bridge",
+      "detected": [
+        "Command",
+        "Bridge"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Command"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\blindingmagicweapon.java",
+      "expected": "Bridge",
+      "detected": [
+        "Bridge"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\blindingmagicweaponimpl.java",
+      "expected": "Bridge",
+      "detected": [
+        "Bridge"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\excalibur.java",
+      "expected": "Bridge",
+      "detected": [
+        "Bridge"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\flyingmagicweapon.java",
+      "expected": "Bridge",
+      "detected": [
+        "Bridge"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\flyingmagicweaponimpl.java",
+      "expected": "Bridge",
+      "detected": [
+        "Bridge"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\magicweapon.java",
+      "expected": "Bridge",
+      "detected": [
+        "Bridge"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\magicweaponimpl.java",
+      "expected": "Bridge",
+      "detected": [
+        "Bridge"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\mjollnir.java",
+      "expected": "Bridge",
+      "detected": [
+        "Bridge"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\souleatingmagicweapon.java",
+      "expected": "Bridge",
+      "detected": [
+        "Bridge"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\souleatingmagicweaponimpl.java",
+      "expected": "Bridge",
+      "detected": [
+        "Bridge"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\stormbringer.java",
+      "expected": "Bridge",
+      "detected": [
+        "Bridge"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\secondexample\\app.java",
+      "expected": "Bridge",
+      "detected": [
+        "Command",
+        "Bridge",
+        "Factory"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Command",
+        "Factory"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\secondexample\\enchantment.java",
+      "expected": "Bridge",
+      "detected": [
+        "Bridge"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\secondexample\\flyingenchantment.java",
+      "expected": "Bridge",
+      "detected": [
+        "Bridge",
+        "Factory"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Factory"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\secondexample\\hammer.java",
+      "expected": "Bridge",
+      "detected": [
+        "Bridge",
+        "Factory"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Factory"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\secondexample\\souleatingenchantment.java",
+      "expected": "Bridge",
+      "detected": [
+        "Bridge",
+        "Factory"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Factory"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\secondexample\\sword.java",
+      "expected": "Bridge",
+      "detected": [
+        "Bridge",
+        "Factory"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Factory"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\bridge\\src\\main\\java\\com\\ramesh\\gof\\bridge\\secondexample\\weapon.java",
+      "expected": "Bridge",
+      "detected": [
+        "Bridge"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\builder\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Builder",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\builder\\src\\main\\java\\com\\iluwatar\\builder\\app.java",
+      "expected": "Builder",
+      "detected": [
+        "Command",
+        "Chain",
+        "Builder"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Command",
+        "Chain"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\builder\\src\\main\\java\\com\\iluwatar\\builder\\armor.java",
+      "expected": "Builder",
+      "detected": [
+        "Chain",
+        "Builder"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Chain"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\builder\\src\\main\\java\\com\\iluwatar\\builder\\haircolor.java",
+      "expected": "Builder",
+      "detected": [
+        "Builder"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\builder\\src\\main\\java\\com\\iluwatar\\builder\\hairtype.java",
+      "expected": "Builder",
+      "detected": [
+        "Builder"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\builder\\src\\main\\java\\com\\iluwatar\\builder\\hero.java",
+      "expected": "Builder",
+      "detected": [
+        "Builder"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\builder\\src\\main\\java\\com\\iluwatar\\builder\\profession.java",
+      "expected": "Builder",
+      "detected": [
+        "Builder"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\builder\\src\\main\\java\\com\\iluwatar\\builder\\weapon.java",
+      "expected": "Builder",
+      "detected": [
+        "Builder"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\chain-of-responsibility\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Chain",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\chain-of-responsibility\\src\\main\\java\\com\\ramesh\\gof\\chain\\app.java",
+      "expected": "Chain",
+      "detected": [
+        "Command",
+        "Chain"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Command"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\chain-of-responsibility\\src\\main\\java\\com\\ramesh\\gof\\chain\\orccommander.java",
+      "expected": "Chain",
+      "detected": [
+        "Command",
+        "Chain"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Command"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\chain-of-responsibility\\src\\main\\java\\com\\ramesh\\gof\\chain\\orcking.java",
+      "expected": "Chain",
+      "detected": [
+        "Command",
+        "Chain"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Command"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\chain-of-responsibility\\src\\main\\java\\com\\ramesh\\gof\\chain\\orcofficer.java",
+      "expected": "Chain",
+      "detected": [
+        "Chain"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\chain-of-responsibility\\src\\main\\java\\com\\ramesh\\gof\\chain\\orcsoldier.java",
+      "expected": "Chain",
+      "detected": [
+        "Chain"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\chain-of-responsibility\\src\\main\\java\\com\\ramesh\\gof\\chain\\request.java",
+      "expected": "Chain",
+      "detected": [
+        "Command",
+        "Chain",
+        "State"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Command",
+        "State"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\chain-of-responsibility\\src\\main\\java\\com\\ramesh\\gof\\chain\\requesthandler.java",
+      "expected": "Chain",
+      "detected": [
+        "Chain"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\chain-of-responsibility\\src\\main\\java\\com\\ramesh\\gof\\chain\\requesttype.java",
+      "expected": "Chain",
+      "detected": [
+        "Chain"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\command\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Command",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\command\\src\\main\\java\\com\\ramesh\\gof\\command\\firstexample\\actionlistenercommand.java",
+      "expected": "Command",
+      "detected": [
+        "Command"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\command\\src\\main\\java\\com\\ramesh\\gof\\command\\firstexample\\actionopen.java",
+      "expected": "Command",
+      "detected": [
+        "Command"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\command\\src\\main\\java\\com\\ramesh\\gof\\command\\firstexample\\actionsave.java",
+      "expected": "Command",
+      "detected": [
+        "Command"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\command\\src\\main\\java\\com\\ramesh\\gof\\command\\firstexample\\commandpatternclient.java",
+      "expected": "Command",
+      "detected": [
+        "Command"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\command\\src\\main\\java\\com\\ramesh\\gof\\command\\firstexample\\document.java",
+      "expected": "Command",
+      "detected": [
+        "Command"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\command\\src\\main\\java\\com\\ramesh\\gof\\command\\firstexample\\menuoptions.java",
+      "expected": "Command",
+      "detected": [
+        "Command"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\command\\src\\main\\java\\com\\ramesh\\gof\\command\\secondexample\\app.java",
+      "expected": "Command",
+      "detected": [
+        "Command"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\command\\src\\main\\java\\com\\ramesh\\gof\\command\\secondexample\\command.java",
+      "expected": "Command",
+      "detected": [
+        "Command"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\command\\src\\main\\java\\com\\ramesh\\gof\\command\\secondexample\\goblin.java",
+      "expected": "Command",
+      "detected": [
+        "Command"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\command\\src\\main\\java\\com\\ramesh\\gof\\command\\secondexample\\invisibilityspell.java",
+      "expected": "Command",
+      "detected": [
+        "Command"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\command\\src\\main\\java\\com\\ramesh\\gof\\command\\secondexample\\shrinkspell.java",
+      "expected": "Command",
+      "detected": [
+        "Command"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\command\\src\\main\\java\\com\\ramesh\\gof\\command\\secondexample\\size.java",
+      "expected": "Command",
+      "detected": [
+        "Command"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\command\\src\\main\\java\\com\\ramesh\\gof\\command\\secondexample\\target.java",
+      "expected": "Command",
+      "detected": [
+        "Command"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\command\\src\\main\\java\\com\\ramesh\\gof\\command\\secondexample\\visibility.java",
+      "expected": "Command",
+      "detected": [
+        "Command"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\command\\src\\main\\java\\com\\ramesh\\gof\\command\\secondexample\\wizard.java",
+      "expected": "Command",
+      "detected": [
+        "Command"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Composite",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\app.java",
+      "expected": "Composite",
+      "detected": [
+        "Command",
+        "Composite"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Command"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\letter.java",
+      "expected": "Composite",
+      "detected": [
+        "Composite"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\lettercomposite.java",
+      "expected": "Composite",
+      "detected": [
+        "Composite"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\messenger.java",
+      "expected": "Composite",
+      "detected": [
+        "Composite"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\sentence.java",
+      "expected": "Composite",
+      "detected": [
+        "Composite"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\word.java",
+      "expected": "Composite",
+      "detected": [
+        "Composite"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\headfirst\\menu\\menu.java",
+      "expected": "Composite",
+      "detected": [
+        "Iterator",
+        "Composite"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Iterator"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\headfirst\\menu\\menucomponent.java",
+      "expected": "Composite",
+      "detected": [
+        "Composite"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\headfirst\\menu\\menuitem.java",
+      "expected": "Composite",
+      "detected": [
+        "Iterator",
+        "Composite"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Iterator"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\headfirst\\menu\\menutestdrive.java",
+      "expected": "Composite",
+      "detected": [
+        "Composite"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\headfirst\\menu\\waitress.java",
+      "expected": "Composite",
+      "detected": [
+        "Iterator",
+        "Composite"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Iterator"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\headfirst\\menuiterator\\compositeiterator.java",
+      "expected": "Composite",
+      "detected": [
+        "Iterator",
+        "Composite"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Iterator"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\headfirst\\menuiterator\\menu.java",
+      "expected": "Composite",
+      "detected": [
+        "Iterator",
+        "Composite"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Iterator"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\headfirst\\menuiterator\\menucomponent.java",
+      "expected": "Composite",
+      "detected": [
+        "Iterator",
+        "Composite"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Iterator"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\headfirst\\menuiterator\\menuitem.java",
+      "expected": "Composite",
+      "detected": [
+        "Iterator",
+        "Composite"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Iterator"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\headfirst\\menuiterator\\menutestdrive.java",
+      "expected": "Composite",
+      "detected": [
+        "Iterator",
+        "Composite"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Iterator"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\headfirst\\menuiterator\\nulliterator.java",
+      "expected": "Composite",
+      "detected": [
+        "Iterator",
+        "Composite"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Iterator"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\composite\\src\\main\\java\\com\\ramesh\\gof\\composite\\headfirst\\menuiterator\\waitress.java",
+      "expected": "Composite",
+      "detected": [
+        "Iterator",
+        "Composite"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Iterator"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Decorator",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\src\\main\\java\\com\\ramesh\\gof\\decorator\\app.java",
+      "expected": "Decorator",
+      "detected": [
+        "Decorator",
+        "Command"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Command"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\src\\main\\java\\com\\ramesh\\gof\\decorator\\hostile.java",
+      "expected": "Decorator",
+      "detected": [
+        "Decorator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\src\\main\\java\\com\\ramesh\\gof\\decorator\\smarthostile.java",
+      "expected": "Decorator",
+      "detected": [
+        "Decorator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\src\\main\\java\\com\\ramesh\\gof\\decorator\\troll.java",
+      "expected": "Decorator",
+      "detected": [
+        "Decorator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\src\\main\\java\\com\\ramesh\\gof\\decorator\\headfirst\\beverage.java",
+      "expected": "Decorator",
+      "detected": [
+        "Decorator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\src\\main\\java\\com\\ramesh\\gof\\decorator\\headfirst\\condimentdecorator.java",
+      "expected": "Decorator",
+      "detected": [
+        "Decorator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\src\\main\\java\\com\\ramesh\\gof\\decorator\\headfirst\\darkroast.java",
+      "expected": "Decorator",
+      "detected": [
+        "Decorator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\src\\main\\java\\com\\ramesh\\gof\\decorator\\headfirst\\decaf.java",
+      "expected": "Decorator",
+      "detected": [
+        "Decorator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\src\\main\\java\\com\\ramesh\\gof\\decorator\\headfirst\\espresso.java",
+      "expected": "Decorator",
+      "detected": [
+        "Decorator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\src\\main\\java\\com\\ramesh\\gof\\decorator\\headfirst\\houseblend.java",
+      "expected": "Decorator",
+      "detected": [
+        "Decorator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\src\\main\\java\\com\\ramesh\\gof\\decorator\\headfirst\\milk.java",
+      "expected": "Decorator",
+      "detected": [
+        "Decorator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\src\\main\\java\\com\\ramesh\\gof\\decorator\\headfirst\\mocha.java",
+      "expected": "Decorator",
+      "detected": [
+        "Decorator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\src\\main\\java\\com\\ramesh\\gof\\decorator\\headfirst\\soy.java",
+      "expected": "Decorator",
+      "detected": [
+        "Decorator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\src\\main\\java\\com\\ramesh\\gof\\decorator\\headfirst\\starbuzzcoffee.java",
+      "expected": "Decorator",
+      "detected": [
+        "Decorator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\src\\main\\java\\com\\ramesh\\gof\\decorator\\headfirst\\whip.java",
+      "expected": "Decorator",
+      "detected": [
+        "Decorator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\src\\main\\java\\com\\ramesh\\gof\\decorator\\headfirst\\io\\inputtest.java",
+      "expected": "Decorator",
+      "detected": [
+        "Decorator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\decorator\\src\\main\\java\\com\\ramesh\\gof\\decorator\\headfirst\\io\\lowercaseinputstream.java",
+      "expected": "Decorator",
+      "detected": [
+        "Decorator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\facade\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Facade",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Factory",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\blackolives.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\cheese.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\cheesepizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\chicagopizzaingredientfactory.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\chicagopizzastore.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\clampizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\clams.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\dough.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\eggplant.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\freshclams.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\frozenclams.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\garlic.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\marinarasauce.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\mozzarellacheese.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\mushroom.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\nypizzaingredientfactory.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\nypizzastore.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\onion.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\parmesancheese.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\pepperoni.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\pepperonipizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\pizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\pizzaingredientfactory.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\pizzastore.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\pizzatestdrive.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\plumtomatosauce.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\redpepper.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\reggianocheese.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\sauce.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\slicedpepperoni.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\spinach.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\thickcrustdough.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\thincrustdough.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\veggiepizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzaa\\veggies.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzafm\\chicagopizzastore.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzafm\\chicagostylecheesepizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzafm\\chicagostyleclampizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzafm\\chicagostylepepperonipizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzafm\\chicagostyleveggiepizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzafm\\dependentpizzastore.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzafm\\nypizzastore.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzafm\\nystylecheesepizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzafm\\nystyleclampizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzafm\\nystylepepperonipizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzafm\\nystyleveggiepizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzafm\\pizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzafm\\pizzastore.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzafm\\pizzatestdrive.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzas\\cheesepizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzas\\clampizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzas\\pepperonipizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzas\\pizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzas\\pizzastore.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzas\\pizzatestdrive.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzas\\simplepizzafactory.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\factory-pattern\\src\\main\\java\\com\\ramesh\\gof\\factory\\pizzas\\veggiepizza.java",
+      "expected": "Factory",
+      "detected": [
+        "Factory"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\flyweight\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Flyweight",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\flyweight\\src\\main\\java\\com\\ramesh\\gof\\flyweight\\alchemistshop.java",
+      "expected": "Flyweight",
+      "detected": [
+        "Flyweight",
+        "Factory"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Factory"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\flyweight\\src\\main\\java\\com\\ramesh\\gof\\flyweight\\app.java",
+      "expected": "Flyweight",
+      "detected": [
+        "Command",
+        "Flyweight",
+        "Factory"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Command",
+        "Factory"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\flyweight\\src\\main\\java\\com\\ramesh\\gof\\flyweight\\healingpotion.java",
+      "expected": "Flyweight",
+      "detected": [
+        "Flyweight"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\flyweight\\src\\main\\java\\com\\ramesh\\gof\\flyweight\\holywaterpotion.java",
+      "expected": "Flyweight",
+      "detected": [
+        "Flyweight"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\flyweight\\src\\main\\java\\com\\ramesh\\gof\\flyweight\\invisibilitypotion.java",
+      "expected": "Flyweight",
+      "detected": [
+        "Flyweight"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\flyweight\\src\\main\\java\\com\\ramesh\\gof\\flyweight\\poisonpotion.java",
+      "expected": "Flyweight",
+      "detected": [
+        "Flyweight"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\flyweight\\src\\main\\java\\com\\ramesh\\gof\\flyweight\\potion.java",
+      "expected": "Flyweight",
+      "detected": [
+        "Flyweight"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\flyweight\\src\\main\\java\\com\\ramesh\\gof\\flyweight\\potionfactory.java",
+      "expected": "Flyweight",
+      "detected": [
+        "Flyweight",
+        "Factory"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Factory"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\flyweight\\src\\main\\java\\com\\ramesh\\gof\\flyweight\\potiontype.java",
+      "expected": "Flyweight",
+      "detected": [
+        "Flyweight"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\flyweight\\src\\main\\java\\com\\ramesh\\gof\\flyweight\\strengthpotion.java",
+      "expected": "Flyweight",
+      "detected": [
+        "Flyweight"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\iterator\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Iterator",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\iterator\\src\\main\\java\\com\\ramesh\\gof\\iterator\\app.java",
+      "expected": "Iterator",
+      "detected": [
+        "Command",
+        "Iterator"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Command"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\iterator\\src\\main\\java\\com\\ramesh\\gof\\iterator\\item.java",
+      "expected": "Iterator",
+      "detected": [
+        "Iterator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\iterator\\src\\main\\java\\com\\ramesh\\gof\\iterator\\itemiterator.java",
+      "expected": "Iterator",
+      "detected": [
+        "Iterator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\iterator\\src\\main\\java\\com\\ramesh\\gof\\iterator\\itemtype.java",
+      "expected": "Iterator",
+      "detected": [
+        "Iterator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\iterator\\src\\main\\java\\com\\ramesh\\gof\\iterator\\treasurechest.java",
+      "expected": "Iterator",
+      "detected": [
+        "Iterator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\iterator\\src\\main\\java\\com\\ramesh\\gof\\iterator\\treasurechestitemiterator.java",
+      "expected": "Iterator",
+      "detected": [
+        "Iterator"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\observer\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Observer",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\observer\\src\\main\\java\\com\\ramesh\\gof\\observer\\app.java",
+      "expected": "Observer",
+      "detected": [
+        "Command",
+        "Observer",
+        "State"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Command",
+        "State"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\observer\\src\\main\\java\\com\\ramesh\\gof\\observer\\hobbits.java",
+      "expected": "Observer",
+      "detected": [
+        "Observer"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\observer\\src\\main\\java\\com\\ramesh\\gof\\observer\\orcs.java",
+      "expected": "Observer",
+      "detected": [
+        "Observer"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\observer\\src\\main\\java\\com\\ramesh\\gof\\observer\\weather.java",
+      "expected": "Observer",
+      "detected": [
+        "Observer"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\observer\\src\\main\\java\\com\\ramesh\\gof\\observer\\weatherobserver.java",
+      "expected": "Observer",
+      "detected": [
+        "Observer"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\observer\\src\\main\\java\\com\\ramesh\\gof\\observer\\weathertype.java",
+      "expected": "Observer",
+      "detected": [
+        "Observer"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\observer\\src\\main\\java\\com\\ramesh\\gof\\observer\\generic\\ghobbits.java",
+      "expected": "Observer",
+      "detected": [
+        "Observer"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\observer\\src\\main\\java\\com\\ramesh\\gof\\observer\\generic\\gorcs.java",
+      "expected": "Observer",
+      "detected": [
+        "Observer"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\observer\\src\\main\\java\\com\\ramesh\\gof\\observer\\generic\\gweather.java",
+      "expected": "Observer",
+      "detected": [
+        "Observer"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\observer\\src\\main\\java\\com\\ramesh\\gof\\observer\\generic\\observable.java",
+      "expected": "Observer",
+      "detected": [
+        "Observer"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\observer\\src\\main\\java\\com\\ramesh\\gof\\observer\\generic\\observer.java",
+      "expected": "Observer",
+      "detected": [
+        "Observer"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\observer\\src\\main\\java\\com\\ramesh\\gof\\observer\\generic\\race.java",
+      "expected": "Observer",
+      "detected": [
+        "Observer"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\prototype\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Prototype",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\prototype\\src\\main\\java\\com\\ramesh\\gof\\prototype\\app.java",
+      "expected": "Prototype",
+      "detected": [
+        "Command",
+        "Factory",
+        "Prototype"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Command",
+        "Factory"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\prototype\\src\\main\\java\\com\\ramesh\\gof\\prototype\\beast.java",
+      "expected": "Prototype",
+      "detected": [
+        "Prototype"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\prototype\\src\\main\\java\\com\\ramesh\\gof\\prototype\\elfbeast.java",
+      "expected": "Prototype",
+      "detected": [
+        "Prototype"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\prototype\\src\\main\\java\\com\\ramesh\\gof\\prototype\\elfmage.java",
+      "expected": "Prototype",
+      "detected": [
+        "Prototype"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\prototype\\src\\main\\java\\com\\ramesh\\gof\\prototype\\elfwarlord.java",
+      "expected": "Prototype",
+      "detected": [
+        "Prototype"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\prototype\\src\\main\\java\\com\\ramesh\\gof\\prototype\\herofactory.java",
+      "expected": "Prototype",
+      "detected": [
+        "Factory",
+        "Prototype"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Factory"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\prototype\\src\\main\\java\\com\\ramesh\\gof\\prototype\\herofactoryimpl.java",
+      "expected": "Prototype",
+      "detected": [
+        "Factory",
+        "Prototype"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Factory"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\prototype\\src\\main\\java\\com\\ramesh\\gof\\prototype\\mage.java",
+      "expected": "Prototype",
+      "detected": [
+        "Prototype"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\prototype\\src\\main\\java\\com\\ramesh\\gof\\prototype\\orcbeast.java",
+      "expected": "Prototype",
+      "detected": [
+        "Prototype"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\prototype\\src\\main\\java\\com\\ramesh\\gof\\prototype\\orcmage.java",
+      "expected": "Prototype",
+      "detected": [
+        "Prototype"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\prototype\\src\\main\\java\\com\\ramesh\\gof\\prototype\\orcwarlord.java",
+      "expected": "Prototype",
+      "detected": [
+        "Prototype"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\prototype\\src\\main\\java\\com\\ramesh\\gof\\prototype\\prototype.java",
+      "expected": "Prototype",
+      "detected": [
+        "Prototype"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\prototype\\src\\main\\java\\com\\ramesh\\gof\\prototype\\warlord.java",
+      "expected": "Prototype",
+      "detected": [
+        "Prototype"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\prototype\\src\\main\\java\\com\\ramesh\\gof\\prototype\\example1\\sheep.java",
+      "expected": "Prototype",
+      "detected": [
+        "Prototype"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\prototype\\src\\main\\java\\com\\ramesh\\gof\\prototype\\example1\\testprototype.java",
+      "expected": "Prototype",
+      "detected": [
+        "Prototype"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\proxy\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Proxy",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\proxy\\src\\main\\java\\com\\ramesh\\gof\\proxy\\batch.java",
+      "expected": "Proxy",
+      "detected": [
+        "Proxy"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\proxy\\src\\main\\java\\com\\ramesh\\gof\\proxy\\coursebatch.java",
+      "expected": "Proxy",
+      "detected": [
+        "Proxy"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\proxy\\src\\main\\java\\com\\ramesh\\gof\\proxy\\proxybatch.java",
+      "expected": "Proxy",
+      "detected": [
+        "Proxy"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\proxy\\src\\main\\java\\com\\ramesh\\gof\\proxy\\testproxypattern.java",
+      "expected": "Proxy",
+      "detected": [
+        "Proxy"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\proxy\\src\\main\\java\\com\\ramesh\\gof\\proxy\\secondexample\\app.java",
+      "expected": "Proxy",
+      "detected": [
+        "Proxy"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\proxy\\src\\main\\java\\com\\ramesh\\gof\\proxy\\secondexample\\wizard.java",
+      "expected": "Proxy",
+      "detected": [
+        "Proxy"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\proxy\\src\\main\\java\\com\\ramesh\\gof\\proxy\\secondexample\\wizardtower.java",
+      "expected": "Proxy",
+      "detected": [
+        "Proxy"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\proxy\\src\\main\\java\\com\\ramesh\\gof\\proxy\\secondexample\\wizardtowerproxy.java",
+      "expected": "Proxy",
+      "detected": [
+        "Proxy"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\singleton\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Singleton",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\singleton\\src\\main\\java\\com\\ramesh\\gof\\singleton\\app.java",
+      "expected": "Singleton",
+      "detected": [
+        "Command",
+        "Singleton"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "Command"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\singleton\\src\\main\\java\\com\\ramesh\\gof\\singleton\\enumivorytower.java",
+      "expected": "Singleton",
+      "detected": [
+        "Singleton"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\singleton\\src\\main\\java\\com\\ramesh\\gof\\singleton\\initializingondemandholderidiom.java",
+      "expected": "Singleton",
+      "detected": [
+        "Singleton"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\singleton\\src\\main\\java\\com\\ramesh\\gof\\singleton\\ivorytower.java",
+      "expected": "Singleton",
+      "detected": [
+        "Singleton"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\singleton\\src\\main\\java\\com\\ramesh\\gof\\singleton\\threadsafedoublechecklocking.java",
+      "expected": "Singleton",
+      "detected": [
+        "State",
+        "Singleton"
+      ],
+      "status": "CORRECT_WITH_EXTRAS",
+      "extra_patterns": [
+        "State"
+      ]
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\singleton\\src\\main\\java\\com\\ramesh\\gof\\singleton\\threadsafelazyloadedivorytower.java",
+      "expected": "Singleton",
+      "detected": [
+        "Singleton"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\state\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "State",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\state\\src\\main\\java\\com\\ramesh\\gof\\state\\firstexample\\context.java",
+      "expected": "State",
+      "detected": [
+        "State"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\state\\src\\main\\java\\com\\ramesh\\gof\\state\\firstexample\\startstate.java",
+      "expected": "State",
+      "detected": [
+        "State"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\state\\src\\main\\java\\com\\ramesh\\gof\\state\\firstexample\\state.java",
+      "expected": "State",
+      "detected": [
+        "State"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\state\\src\\main\\java\\com\\ramesh\\gof\\state\\firstexample\\statepatterndemo.java",
+      "expected": "State",
+      "detected": [
+        "State"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\state\\src\\main\\java\\com\\ramesh\\gof\\state\\firstexample\\stopstate.java",
+      "expected": "State",
+      "detected": [
+        "State"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\state\\src\\main\\java\\com\\ramesh\\gof\\state\\secondexample\\state.java",
+      "expected": "State",
+      "detected": [
+        "State"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\state\\src\\main\\java\\com\\ramesh\\gof\\state\\secondexample\\tvcontext.java",
+      "expected": "State",
+      "detected": [
+        "State"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\state\\src\\main\\java\\com\\ramesh\\gof\\state\\secondexample\\tvremote.java",
+      "expected": "State",
+      "detected": [
+        "State"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\state\\src\\main\\java\\com\\ramesh\\gof\\state\\secondexample\\tvstartstate.java",
+      "expected": "State",
+      "detected": [
+        "State"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\state\\src\\main\\java\\com\\ramesh\\gof\\state\\secondexample\\tvstopstate.java",
+      "expected": "State",
+      "detected": [
+        "State"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\strategy\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Strategy",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\strategy\\src\\main\\java\\com\\ramesh\\gof\\stratergy\\context.java",
+      "expected": "Strategy",
+      "detected": [
+        "Strategy"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\strategy\\src\\main\\java\\com\\ramesh\\gof\\stratergy\\operationadd.java",
+      "expected": "Strategy",
+      "detected": [
+        "Strategy"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\strategy\\src\\main\\java\\com\\ramesh\\gof\\stratergy\\operationdevision.java",
+      "expected": "Strategy",
+      "detected": [
+        "Strategy"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\strategy\\src\\main\\java\\com\\ramesh\\gof\\stratergy\\operationmultiply.java",
+      "expected": "Strategy",
+      "detected": [
+        "Strategy"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\strategy\\src\\main\\java\\com\\ramesh\\gof\\stratergy\\operationsubstract.java",
+      "expected": "Strategy",
+      "detected": [
+        "Strategy"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\strategy\\src\\main\\java\\com\\ramesh\\gof\\stratergy\\strategy.java",
+      "expected": "Strategy",
+      "detected": [
+        "Strategy"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\strategy\\src\\main\\java\\com\\ramesh\\gof\\stratergy\\strategypatterndemo.java",
+      "expected": "Strategy",
+      "detected": [
+        "Strategy"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\template-method\\target\\classes\\meta-inf\\maven\\com.ramesh.java",
+      "expected": "Template",
+      "detected": [],
+      "status": "MISSED"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\template-method\\src\\main\\java\\com\\ramesh\\gof\\templatemethod\\applet\\myapplet.java",
+      "expected": "Template",
+      "detected": [
+        "Template"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\template-method\\src\\main\\java\\com\\ramesh\\gof\\templatemethod\\barista\\beveragetestdrive.java",
+      "expected": "Template",
+      "detected": [
+        "Template"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\template-method\\src\\main\\java\\com\\ramesh\\gof\\templatemethod\\barista\\caffeinebeverage.java",
+      "expected": "Template",
+      "detected": [
+        "Template"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\template-method\\src\\main\\java\\com\\ramesh\\gof\\templatemethod\\barista\\caffeinebeveragewithhook.java",
+      "expected": "Template",
+      "detected": [
+        "Template"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\template-method\\src\\main\\java\\com\\ramesh\\gof\\templatemethod\\barista\\coffee.java",
+      "expected": "Template",
+      "detected": [
+        "Template"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\template-method\\src\\main\\java\\com\\ramesh\\gof\\templatemethod\\barista\\coffeewithhook.java",
+      "expected": "Template",
+      "detected": [
+        "Template"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\template-method\\src\\main\\java\\com\\ramesh\\gof\\templatemethod\\barista\\tea.java",
+      "expected": "Template",
+      "detected": [
+        "Template"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\template-method\\src\\main\\java\\com\\ramesh\\gof\\templatemethod\\barista\\teawithhook.java",
+      "expected": "Template",
+      "detected": [
+        "Template"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\template-method\\src\\main\\java\\com\\ramesh\\gof\\templatemethod\\frame\\myframe.java",
+      "expected": "Template",
+      "detected": [
+        "Template"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\template-method\\src\\main\\java\\com\\ramesh\\gof\\templatemethod\\simplebarista\\barista.java",
+      "expected": "Template",
+      "detected": [
+        "Template"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\template-method\\src\\main\\java\\com\\ramesh\\gof\\templatemethod\\simplebarista\\coffee.java",
+      "expected": "Template",
+      "detected": [
+        "Template"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\template-method\\src\\main\\java\\com\\ramesh\\gof\\templatemethod\\simplebarista\\tea.java",
+      "expected": "Template",
+      "detected": [
+        "Template"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\template-method\\src\\main\\java\\com\\ramesh\\gof\\templatemethod\\sort\\duck.java",
+      "expected": "Template",
+      "detected": [
+        "Template"
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "file": "c:\\users\\tiago\\desktop\\dev\\mei\\ads-research\\gof-java-design-patterns\\template-method\\src\\main\\java\\com\\ramesh\\gof\\templatemethod\\sort\\ducksorttestdrive.java",
+      "expected": "Template",
+      "detected": [
+        "Template"
+      ],
+      "status": "CORRECT"
+    }
+  ],
+  "detection_rate": 0.9296296296296296,
+  "accuracy": 0.9296296296296296,
+  "overall_precision": 1.0,
+  "overall_recall": 0.9296296296296296,
+  "overall_f1_score": 0.963531669865643,
+  "macro_avg_precision": 0.9444444444444444,
+  "macro_avg_recall": 0.8614272585763814,
+  "macro_avg_f1": 0.9007211613264909,
+  "micro_avg_precision": 1.0,
+  "micro_avg_recall": 0.9296296296296296,
+  "micro_avg_f1": 0.963531669865643
+}
