@@ -13,6 +13,7 @@ import json
 
 # Pattern name mappings to handle variations
 PATTERN_MAPPINGS = {
+    # gof-java-design-patterns repository (flat structure)
     'abstract-factory': 'Factory',  # DPF detects as "Factory"
     'adapter': 'Adapter',
     'bridge': 'Bridge',
@@ -31,7 +32,17 @@ PATTERN_MAPPINGS = {
     'singleton': 'Singleton',
     'state': 'State',
     'strategy': 'Strategy',
-    'template-method': 'Template'  # DPF might use "Template"
+    'template-method': 'Template',  # DPF might use "Template"
+    
+    # gof-design-patterns repository (categorized structure)
+    'abstractfactory': 'Factory',
+    'chainofresponsibility': 'Chain',
+    'factory': 'Factory',
+    'templatemethod': 'Template',
+    'interpreter': 'Interpreter',
+    'mediator': 'Mediator',
+    'memento': 'Memento',
+    'visitor': 'Visitor'
 }
 
 
@@ -56,8 +67,8 @@ def parse_results_file(results_file_path):
             if not line or line.startswith('Found'):
                 continue
             
-            # Check if this is a file path line (contains .java)
-            if line.endswith('.java'):
+            # Check if this is a file path line (contains .java and is actually a file)
+            if line.endswith('.java') and Path(line).is_file():
                 current_file = normalize_path(line)
                 detections[current_file] = set()
             
@@ -73,35 +84,168 @@ def parse_results_file(results_file_path):
 
 def scan_ground_truth_repo(repo_path):
     """
-    Scan the gof-java-design-patterns repository to find all Java files
-    and their expected pattern based on folder structure.
+    Scan a repository to find all Java files and their expected pattern 
+    based on folder structure.
+    
+    Supports multiple structures:
+    1. Flat: pattern folders directly under repo root (gof-java-design-patterns)
+    2. Categorized: behavioral/creational/structural folders with pattern subfolders (gof-design-patterns)
+    3. Nested: src/io/.../designpatterns/[behavioral|creational|structural]/pattern (gof-design-patterns with deep nesting)
+    
     Returns a dictionary: {normalized_file_path: expected_pattern}
     """
     ground_truth = {}
     repo_path = Path(repo_path)
     
-    # Iterate through pattern folders
-    for pattern_folder in repo_path.iterdir():
-        if not pattern_folder.is_dir():
+    # First, try to find a deep nested structure (src/io/.../designpatterns)
+    # This is for repos like gof-design-patterns with src/io/girirajvyas/gof/designpatterns structure
+    src_path = repo_path / 'src'
+    if src_path.exists():
+        # Look for 'designpatterns' folder in the structure
+        for designpatterns_folder in src_path.rglob('designpatterns'):
+            if designpatterns_folder.is_dir():
+                # Found designpatterns folder, scan from here
+                category_folders = ['behavioral', 'creational', 'structural']
+                for category in category_folders:
+                    category_path = designpatterns_folder / category
+                    if not category_path.is_dir():
+                        continue
+                    
+                    for pattern_folder in category_path.iterdir():
+                        if not pattern_folder.is_dir():
+                            continue
+                        
+                        folder_name = pattern_folder.name
+                        
+                        # Get the expected pattern name from the mapping
+                        if folder_name not in PATTERN_MAPPINGS:
+                            print(f"    Warning: Unknown pattern folder '{folder_name}' in {category}")
+                            continue
+                        
+                        expected_pattern = PATTERN_MAPPINGS[folder_name]
+                        
+                        # Find all .java files in this pattern folder
+                        for java_file in pattern_folder.rglob('*.java'):
+                            # Check if it's actually a file and not a directory
+                            if java_file.is_file():
+                                normalized_path = normalize_path(str(java_file))
+                                ground_truth[normalized_path] = expected_pattern
+                
+                # If we found and processed a designpatterns folder, return
+                if ground_truth:
+                    return ground_truth
+    
+    # Check if this is a categorized structure at root level (has behavioral/creational/structural folders)
+    category_folders = ['behavioral', 'creational', 'structural']
+    has_categories = any((repo_path / cat).is_dir() for cat in category_folders)
+    
+    if has_categories:
+        # Scan categorized structure
+        for category in category_folders:
+            category_path = repo_path / category
+            if not category_path.is_dir():
+                continue
+            
+            for pattern_folder in category_path.iterdir():
+                if not pattern_folder.is_dir():
+                    continue
+                
+                folder_name = pattern_folder.name
+                
+                # Get the expected pattern name from the mapping
+                if folder_name not in PATTERN_MAPPINGS:
+                    print(f"    Warning: Unknown pattern folder '{folder_name}' in {category}")
+                    continue
+                
+                expected_pattern = PATTERN_MAPPINGS[folder_name]
+                
+                # Find all .java files in this pattern folder
+                for java_file in pattern_folder.rglob('*.java'):
+                    # Check if it's actually a file and not a directory
+                    if java_file.is_file():
+                        normalized_path = normalize_path(str(java_file))
+                        ground_truth[normalized_path] = expected_pattern
+    else:
+        # Scan flat structure (pattern folders directly under repo root)
+        for pattern_folder in repo_path.iterdir():
+            if not pattern_folder.is_dir():
+                continue
+            
+            folder_name = pattern_folder.name
+            
+            # Skip non-pattern folders (but we'll handle 'src' separately below)
+            if folder_name in ['.git', 'target', '__pycache__', '.settings', 
+                               'resources', 'derby', 'images', 'twitter4j', '_config.yml',
+                               '.classpath', '.project', '.gitignore', 'LICENSE', 'README.md']:
+                continue
+            
+            # Skip 'src' folder here, we'll handle it separately
+            if folder_name == 'src':
+                continue
+            
+            # Get the expected pattern name from the mapping
+            if folder_name not in PATTERN_MAPPINGS:
+                print(f"    Warning: Unknown pattern folder '{folder_name}'")
+                continue
+            
+            expected_pattern = PATTERN_MAPPINGS[folder_name]
+            
+            # Find all .java files in this pattern folder
+            for java_file in pattern_folder.rglob('*.java'):
+                # Check if it's actually a file and not a directory
+                if java_file.is_file():
+                    normalized_path = normalize_path(str(java_file))
+                    ground_truth[normalized_path] = expected_pattern
+        
+        # Also check for root-level 'src' folder with package structure
+        # e.g., src/main/java/com/.../pattern_name/...
+        src_path = repo_path / 'src'
+        if src_path.exists() and src_path.is_dir():
+            # Look for pattern names in the path structure
+            for java_file in src_path.rglob('*.java'):
+                if not java_file.is_file():
+                    continue
+                
+                # Check if any pattern name appears in the path
+                file_path_lower = str(java_file).lower()
+                for pattern_key, pattern_name in PATTERN_MAPPINGS.items():
+                    # Look for pattern name in path (handle both hyphenated and non-hyphenated)
+                    pattern_variations = [pattern_key, pattern_key.replace('-', '')]
+                    for variation in pattern_variations:
+                        if f'\\{variation}\\' in file_path_lower or f'/{variation}/' in file_path_lower:
+                            normalized_path = normalize_path(str(java_file))
+                            ground_truth[normalized_path] = pattern_name
+                            break
+    
+    return ground_truth
+
+
+def scan_all_repositories(base_path):
+    """
+    Scan all repositories in the base path directory.
+    Returns a dictionary: {normalized_file_path: expected_pattern}
+    """
+    ground_truth = {}
+    base_path = Path(base_path)
+    
+    if not base_path.exists():
+        print(f"Warning: Base path '{base_path}' does not exist")
+        return ground_truth
+    
+    # Iterate through each repository folder
+    for repo_folder in base_path.iterdir():
+        if not repo_folder.is_dir():
             continue
         
-        folder_name = pattern_folder.name
+        repo_name = repo_folder.name
+        print(f"  Scanning repository: {repo_name}")
         
-        # Skip non-pattern folders
-        if folder_name in ['.git', 'src', 'target', '__pycache__']:
-            continue
+        # Scan this repository
+        repo_ground_truth = scan_ground_truth_repo(repo_folder)
+        print(f"    Found {len(repo_ground_truth)} Java files")
         
-        # Get the expected pattern name from the mapping
-        if folder_name not in PATTERN_MAPPINGS:
-            print(f"Warning: Unknown pattern folder '{folder_name}'")
-            continue
-        
-        expected_pattern = PATTERN_MAPPINGS[folder_name]
-        
-        # Find all .java files in this pattern folder
-        for java_file in pattern_folder.rglob('*.java'):
-            normalized_path = normalize_path(str(java_file))
-            ground_truth[normalized_path] = expected_pattern
+        # Merge with overall ground truth
+        ground_truth.update(repo_ground_truth)
     
     return ground_truth
 
@@ -344,16 +488,16 @@ def main():
     # File paths
     script_dir = Path(__file__).parent
     results_file = script_dir / "DesignPatternFinder Results.txt"
-    repo_path = script_dir / "gof-java-design-patterns"
+    repos_base_path = script_dir / "design-pattern-examples-repositories"
     output_file = script_dir / "dpf_accuracy_analysis.json"
     
     print("Parsing DesignPatternFinder results...")
     detections = parse_results_file(results_file)
     print(f"Found {len(detections)} files with detections")
     
-    print("\nScanning ground truth repository...")
-    ground_truth = scan_ground_truth_repo(repo_path)
-    print(f"Found {len(ground_truth)} Java files in pattern folders")
+    print("\nScanning ground truth repositories...")
+    ground_truth = scan_all_repositories(repos_base_path)
+    print(f"\nTotal: Found {len(ground_truth)} Java files in pattern folders across all repositories")
     
     print("\nCalculating accuracy metrics...")
     results = calculate_metrics(ground_truth, detections)

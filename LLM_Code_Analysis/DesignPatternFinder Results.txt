@@ -1,0 +1,317 @@
+Found 105 files that possibly contain design patterns.
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gemma_2_2b_it\prompt_12.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gemma_2_2b_it\prompt_20.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gemma_2_2b_it\prompt_25.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gemma_2_2b_it\prompt_53.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gemma_2_2b_it\prompt_54.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gemma_2_2b_it\prompt_56.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gemma_2_2b_it\prompt_6.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gemma_2_2b_it\prompt_7.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gemma_2_2b_it\prompt_77.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gemma_2_2b_it\prompt_88.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gemma_2_2b_it\prompt_94.java
+Possible patterns: Factory, Template
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_1.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_12.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_13.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_16.java
+Possible patterns: Builder, Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_21.java
+Possible patterns: Builder, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_22.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_24.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_25.java
+Possible patterns: Builder, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_27.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_28.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_29.java
+Possible patterns: Iterator, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_3.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_30.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_31.java
+Possible patterns: Adapter, Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_33.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_4.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_43.java
+Possible patterns: Builder, Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_49.java
+Possible patterns: Template
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_5.java
+Possible patterns: Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_52.java
+Possible patterns: Builder, Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_54.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_58.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_59.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_62.java
+Possible patterns: Builder, Command, Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_66.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_7.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_70.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_74.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_75.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_77.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_78.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_82.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_85.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_86.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_88.java
+Possible patterns: Command, Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_9.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_93.java
+Possible patterns: Template
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_95.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\gpt_oss_120b\prompt_98.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_1_8B_Instruct\prompt_12.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_1_8B_Instruct\prompt_13.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_1_8B_Instruct\prompt_15.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_1_8B_Instruct\prompt_25.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_1_8B_Instruct\prompt_52.java
+Possible patterns: Command, Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_1_8B_Instruct\prompt_54.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_1_8B_Instruct\prompt_6.java
+Possible patterns: Builder, Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_1_8B_Instruct\prompt_62.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_1_8B_Instruct\prompt_77.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_1_8B_Instruct\prompt_86.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_1_8B_Instruct\prompt_88.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_1_8B_Instruct\prompt_9.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_2_1B_Instruct\prompt_25.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_2_1B_Instruct\prompt_28.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_2_1B_Instruct\prompt_5.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_2_1B_Instruct\prompt_54.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_2_1B_Instruct\prompt_55.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_2_1B_Instruct\prompt_6.java
+Possible patterns: Builder, Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_2_1B_Instruct\prompt_75.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_2_1B_Instruct\prompt_77.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_2_1B_Instruct\prompt_88.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\llama_3_2_1B_Instruct\prompt_9.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_10.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_12.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_15.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_25.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_28.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_5.java
+Possible patterns: Strategy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_53.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_54.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_58.java
+Possible patterns: Singleton
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_6.java
+Possible patterns: Builder, Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_60.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_66.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_73.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_75.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_77.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_78.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_81.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_88.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_7b_instruct\prompt_9.java
+Possible patterns: Adapter, Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_coder_32b\prompt_12.java
+Possible patterns: Builder, Template
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_coder_32b\prompt_16.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_coder_32b\prompt_20.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_coder_32b\prompt_21.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_coder_32b\prompt_25.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_coder_32b\prompt_27.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_coder_32b\prompt_52.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_coder_32b\prompt_54.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_coder_32b\prompt_6.java
+Possible patterns: Builder, Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_coder_32b\prompt_63.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_coder_32b\prompt_66.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_coder_32b\prompt_77.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_coder_32b\prompt_88.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\generated_code\qwen2_5_coder_32b\prompt_9.java
+Possible patterns: Adapter
+

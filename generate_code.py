@@ -20,9 +20,10 @@ HF_TOKEN = ""
 
 MODELS = {
     #"llama_3_2_1B_Instruct": "meta-llama/Llama-3.2-1B-Instruct",
-    "llama_3_1_8B_Instruct": "meta-llama/Llama-3.1-8B-Instruct",
+    #"llama_3_1_8B_Instruct": "meta-llama/Llama-3.1-8B-Instruct",
     #"mistral_7B_Instruct_v0_2": "mistralai/Mistral-7B-Instruct-v0.2",
     #"qwen_3_8B": "Qwen/Qwen3-8B",
+    "qwen2_5_coder_32b": "Qwen/Qwen2-5-Coder-32B",
 }
 
 PROMPT_INDEX_START = 1  # ← Your test

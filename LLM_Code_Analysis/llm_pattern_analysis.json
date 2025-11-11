@@ -1,0 +1,306 @@
+{
+  "aggregate_metrics": {
+    "total_files_all_models": 600,
+    "total_files_with_patterns": 105,
+    "pattern_frequency": {
+      "Builder": 43,
+      "Command": 23,
+      "State": 24,
+      "Factory": 11,
+      "Adapter": 12,
+      "Template": 4,
+      "Iterator": 4,
+      "Strategy": 1,
+      "Singleton": 1
+    },
+    "category_frequency": {
+      "Creational": 55,
+      "Behavioral": 56,
+      "Structural": 12
+    },
+    "unique_patterns_across_all": [
+      "Adapter",
+      "Builder",
+      "Command",
+      "Factory",
+      "Iterator",
+      "Singleton",
+      "State",
+      "Strategy",
+      "Template"
+    ],
+    "model_pattern_diversity": {},
+    "pattern_by_model": {
+      "Builder": {
+        "gemma_2_2b_it": 2,
+        "gpt_oss_120b": 18,
+        "llama_3_1_8B_Instruct": 4,
+        "llama_3_2_1B_Instruct": 3,
+        "qwen2_5_7b_instruct": 9,
+        "qwen2_5_coder_32b": 7
+      },
+      "Command": {
+        "gemma_2_2b_it": 3,
+        "gpt_oss_120b": 9,
+        "llama_3_1_8B_Instruct": 4,
+        "llama_3_2_1B_Instruct": 2,
+        "qwen2_5_7b_instruct": 2,
+        "qwen2_5_coder_32b": 3
+      },
+      "State": {
+        "gemma_2_2b_it": 3,
+        "gpt_oss_120b": 10,
+        "llama_3_1_8B_Instruct": 2,
+        "llama_3_2_1B_Instruct": 2,
+        "qwen2_5_7b_instruct": 5,
+        "qwen2_5_coder_32b": 2
+      },
+      "Factory": {
+        "gemma_2_2b_it": 2,
+        "gpt_oss_120b": 3,
+        "llama_3_1_8B_Instruct": 2,
+        "llama_3_2_1B_Instruct": 2,
+        "qwen2_5_7b_instruct": 1,
+        "qwen2_5_coder_32b": 1
+      },
+      "Adapter": {
+        "gemma_2_2b_it": 1,
+        "gpt_oss_120b": 3,
+        "llama_3_1_8B_Instruct": 2,
+        "llama_3_2_1B_Instruct": 2,
+        "qwen2_5_7b_instruct": 2,
+        "qwen2_5_coder_32b": 2
+      },
+      "Template": {
+        "gemma_2_2b_it": 1,
+        "gpt_oss_120b": 2,
+        "qwen2_5_coder_32b": 1
+      },
+      "Iterator": {
+        "gpt_oss_120b": 4
+      },
+      "Strategy": {
+        "qwen2_5_7b_instruct": 1
+      },
+      "Singleton": {
+        "qwen2_5_7b_instruct": 1
+      }
+    },
+    "percentage_with_patterns": 17.5
+  },
+  "per_model_metrics": {
+    "gemma_2_2b_it": {
+      "total_files": 100,
+      "files_with_patterns": 11,
+      "files_without_patterns": 89,
+      "pattern_frequency": {
+        "Builder": 2,
+        "Command": 3,
+        "State": 3,
+        "Factory": 2,
+        "Adapter": 1,
+        "Template": 1
+      },
+      "category_frequency": {
+        "Creational": 4,
+        "Behavioral": 7,
+        "Structural": 1
+      },
+      "files_with_multiple_patterns": 1,
+      "total_pattern_occurrences": 12,
+      "unique_patterns_detected": [
+        "Adapter",
+        "Builder",
+        "Command",
+        "Factory",
+        "State",
+        "Template"
+      ],
+      "pattern_combinations": {
+        "Factory, Template": 1
+      },
+      "percentage_with_patterns": 11.0,
+      "percentage_without_patterns": 89.0,
+      "avg_patterns_per_file_with_patterns": 1.0909090909090908
+    },
+    "gpt_oss_120b": {
+      "total_files": 100,
+      "files_with_patterns": 39,
+      "files_without_patterns": 61,
+      "pattern_frequency": {
+        "Factory": 3,
+        "Builder": 18,
+        "Command": 9,
+        "State": 10,
+        "Iterator": 4,
+        "Adapter": 3,
+        "Template": 2
+      },
+      "category_frequency": {
+        "Creational": 21,
+        "Behavioral": 25,
+        "Structural": 3
+      },
+      "files_with_multiple_patterns": 9,
+      "total_pattern_occurrences": 49,
+      "unique_patterns_detected": [
+        "Adapter",
+        "Builder",
+        "Command",
+        "Factory",
+        "Iterator",
+        "State",
+        "Template"
+      ],
+      "pattern_combinations": {
+        "Builder, Command": 2,
+        "Builder, State": 2,
+        "Iterator, State": 1,
+        "Adapter, Builder": 1,
+        "Builder, Factory": 1,
+        "Builder, Command, Iterator": 1,
+        "Command, Iterator": 1
+      },
+      "percentage_with_patterns": 39.0,
+      "percentage_without_patterns": 61.0,
+      "avg_patterns_per_file_with_patterns": 1.2564102564102564
+    },
+    "llama_3_1_8B_Instruct": {
+      "total_files": 100,
+      "files_with_patterns": 12,
+      "files_without_patterns": 88,
+      "pattern_frequency": {
+        "Builder": 4,
+        "Command": 4,
+        "State": 2,
+        "Factory": 2,
+        "Adapter": 2
+      },
+      "category_frequency": {
+        "Creational": 6,
+        "Behavioral": 6,
+        "Structural": 2
+      },
+      "files_with_multiple_patterns": 2,
+      "total_pattern_occurrences": 14,
+      "unique_patterns_detected": [
+        "Adapter",
+        "Builder",
+        "Command",
+        "Factory",
+        "State"
+      ],
+      "pattern_combinations": {
+        "Command, Factory": 1,
+        "Builder, Factory": 1
+      },
+      "percentage_with_patterns": 12.0,
+      "percentage_without_patterns": 88.0,
+      "avg_patterns_per_file_with_patterns": 1.1666666666666667
+    },
+    "llama_3_2_1B_Instruct": {
+      "total_files": 100,
+      "files_with_patterns": 10,
+      "files_without_patterns": 90,
+      "pattern_frequency": {
+        "State": 2,
+        "Factory": 2,
+        "Command": 2,
+        "Builder": 3,
+        "Adapter": 2
+      },
+      "category_frequency": {
+        "Behavioral": 4,
+        "Creational": 5,
+        "Structural": 2
+      },
+      "files_with_multiple_patterns": 1,
+      "total_pattern_occurrences": 11,
+      "unique_patterns_detected": [
+        "Adapter",
+        "Builder",
+        "Command",
+        "Factory",
+        "State"
+      ],
+      "pattern_combinations": {
+        "Builder, Factory": 1
+      },
+      "percentage_with_patterns": 10.0,
+      "percentage_without_patterns": 90.0,
+      "avg_patterns_per_file_with_patterns": 1.1
+    },
+    "qwen2_5_7b_instruct": {
+      "total_files": 100,
+      "files_with_patterns": 19,
+      "files_without_patterns": 81,
+      "pattern_frequency": {
+        "Builder": 9,
+        "State": 5,
+        "Strategy": 1,
+        "Singleton": 1,
+        "Factory": 1,
+        "Adapter": 2,
+        "Command": 2
+      },
+      "category_frequency": {
+        "Creational": 11,
+        "Behavioral": 8,
+        "Structural": 2
+      },
+      "files_with_multiple_patterns": 2,
+      "total_pattern_occurrences": 21,
+      "unique_patterns_detected": [
+        "Adapter",
+        "Builder",
+        "Command",
+        "Factory",
+        "Singleton",
+        "State",
+        "Strategy"
+      ],
+      "pattern_combinations": {
+        "Builder, Factory": 1,
+        "Adapter, Command": 1
+      },
+      "percentage_with_patterns": 19.0,
+      "percentage_without_patterns": 81.0,
+      "avg_patterns_per_file_with_patterns": 1.105263157894737
+    },
+    "qwen2_5_coder_32b": {
+      "total_files": 100,
+      "files_with_patterns": 14,
+      "files_without_patterns": 86,
+      "pattern_frequency": {
+        "Template": 1,
+        "Builder": 7,
+        "Command": 3,
+        "State": 2,
+        "Factory": 1,
+        "Adapter": 2
+      },
+      "category_frequency": {
+        "Behavioral": 6,
+        "Creational": 8,
+        "Structural": 2
+      },
+      "files_with_multiple_patterns": 2,
+      "total_pattern_occurrences": 16,
+      "unique_patterns_detected": [
+        "Adapter",
+        "Builder",
+        "Command",
+        "Factory",
+        "State",
+        "Template"
+      ],
+      "pattern_combinations": {
+        "Builder, Template": 1,
+        "Builder, Factory": 1
+      },
+      "percentage_with_patterns": 14.000000000000002,
+      "percentage_without_patterns": 86.0,
+      "avg_patterns_per_file_with_patterns": 1.1428571428571428
+    }
+  }
+}

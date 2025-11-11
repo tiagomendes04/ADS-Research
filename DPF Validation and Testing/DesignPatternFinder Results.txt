@@ -1,785 +1,1391 @@
-Found 261 files that possibly contain design patterns.
+Found 463 files that possibly contain design patterns.
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\App.java
-Possible patterns: Command, Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\Army.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\Castle.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\ElfArmy.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\ElfCastle.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\ElfKing.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\ElfKingdomFactory.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\King.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\KingdomFactory.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\OrcArmy.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\OrcCastle.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\OrcKing.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\OrcKingdomFactory.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\AdapterPatternDemo.java
-Possible patterns: Adapter
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\BankCustomer.java
-Possible patterns: Adapter
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\BankDetails.java
-Possible patterns: Adapter
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\CreditCard.java
-Possible patterns: Adapter
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\secondexample\App.java
-Possible patterns: Adapter, Command
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\secondexample\BattleFishingBoat.java
-Possible patterns: Adapter
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\secondexample\BattleShip.java
-Possible patterns: Adapter
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\secondexample\Captain.java
-Possible patterns: Adapter
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\secondexample\FishingBoat.java
-Possible patterns: Adapter
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\App.java
-Possible patterns: Bridge, Command
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\BlindingMagicWeapon.java
-Possible patterns: Bridge
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\BlindingMagicWeaponImpl.java
-Possible patterns: Bridge
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\Excalibur.java
-Possible patterns: Bridge
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\FlyingMagicWeapon.java
-Possible patterns: Bridge
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\FlyingMagicWeaponImpl.java
-Possible patterns: Bridge
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\MagicWeapon.java
-Possible patterns: Bridge
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\MagicWeaponImpl.java
-Possible patterns: Bridge
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\Mjollnir.java
-Possible patterns: Bridge
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\SoulEatingMagicWeapon.java
-Possible patterns: Bridge
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\SoulEatingMagicWeaponImpl.java
-Possible patterns: Bridge
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\Stormbringer.java
-Possible patterns: Bridge
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\secondexample\App.java
-Possible patterns: Bridge, Command, Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\secondexample\Enchantment.java
-Possible patterns: Bridge
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\secondexample\FlyingEnchantment.java
-Possible patterns: Bridge, Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\secondexample\Hammer.java
-Possible patterns: Bridge, Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\secondexample\SoulEatingEnchantment.java
-Possible patterns: Bridge, Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\secondexample\Sword.java
-Possible patterns: Bridge, Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\secondexample\Weapon.java
-Possible patterns: Bridge
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\builder\src\main\java\com\iluwatar\builder\App.java
-Possible patterns: Builder, Chain, Command
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\builder\src\main\java\com\iluwatar\builder\Armor.java
-Possible patterns: Builder, Chain
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\builder\src\main\java\com\iluwatar\builder\HairColor.java
-Possible patterns: Builder
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\builder\src\main\java\com\iluwatar\builder\HairType.java
-Possible patterns: Builder
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\builder\src\main\java\com\iluwatar\builder\Hero.java
-Possible patterns: Builder
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\builder\src\main\java\com\iluwatar\builder\Profession.java
-Possible patterns: Builder
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\builder\src\main\java\com\iluwatar\builder\Weapon.java
-Possible patterns: Builder
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\chain-of-responsibility\src\main\java\com\ramesh\gof\chain\App.java
-Possible patterns: Chain, Command
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\chain-of-responsibility\src\main\java\com\ramesh\gof\chain\OrcCommander.java
-Possible patterns: Chain, Command
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\chain-of-responsibility\src\main\java\com\ramesh\gof\chain\OrcKing.java
-Possible patterns: Chain, Command
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\chain-of-responsibility\src\main\java\com\ramesh\gof\chain\OrcOfficer.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\chainofresponsibility\CEO.java
 Possible patterns: Chain
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\chain-of-responsibility\src\main\java\com\ramesh\gof\chain\OrcSoldier.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\chainofresponsibility\ChainOfResponsibilityDemo.java
 Possible patterns: Chain
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\chain-of-responsibility\src\main\java\com\ramesh\gof\chain\Request.java
-Possible patterns: Chain, Command, State
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\chain-of-responsibility\src\main\java\com\ramesh\gof\chain\RequestHandler.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\chainofresponsibility\ChainOfResponsibilityEverydayDemo.java
 Possible patterns: Chain
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\chain-of-responsibility\src\main\java\com\ramesh\gof\chain\RequestType.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\chainofresponsibility\Director.java
 Possible patterns: Chain
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\firstexample\ActionListenerCommand.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\chainofresponsibility\Handler.java
+Possible patterns: Chain
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\chainofresponsibility\Request.java
+Possible patterns: Chain
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\chainofresponsibility\RequestType.java
+Possible patterns: Chain
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\chainofresponsibility\VP.java
+Possible patterns: Chain
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\command\AllLightsCommand.java
 Possible patterns: Command
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\firstexample\ActionOpen.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\command\Command.java
 Possible patterns: Command
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\firstexample\ActionSave.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\command\CommandDemo.java
+Possible patterns: Command, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\command\CommandEverydayDemo.java
 Possible patterns: Command
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\firstexample\CommandPatternClient.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\command\Light.java
 Possible patterns: Command
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\firstexample\Document.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\command\OnCommand.java
 Possible patterns: Command
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\firstexample\MenuOptions.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\command\Switch.java
 Possible patterns: Command
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\App.java
-Possible patterns: Command
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\command\ToggleCommand.java
+Possible patterns: Command, State
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\Command.java
-Possible patterns: Command
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\interpreter\AndExpression.java
+Possible patterns: Interpreter
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\Goblin.java
-Possible patterns: Command
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\interpreter\Expression.java
+Possible patterns: Interpreter
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\InvisibilitySpell.java
-Possible patterns: Command
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\interpreter\InterpreterEverydayDemo.java
+Possible patterns: Interpreter
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\ShrinkSpell.java
-Possible patterns: Command
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\interpreter\InterpretorDemo.java
+Possible patterns: Interpreter
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\Size.java
-Possible patterns: Command
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\interpreter\OrExpression.java
+Possible patterns: Interpreter
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\Target.java
-Possible patterns: Command
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\interpreter\TerminalExpression.java
+Possible patterns: Interpreter
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\Visibility.java
-Possible patterns: Command
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\Wizard.java
-Possible patterns: Command
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\App.java
-Possible patterns: Command, Composite
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\Letter.java
-Possible patterns: Composite
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\LetterComposite.java
-Possible patterns: Composite
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\Messenger.java
-Possible patterns: Composite
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\Sentence.java
-Possible patterns: Composite
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\Word.java
-Possible patterns: Composite
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menu\Menu.java
-Possible patterns: Composite, Iterator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menu\MenuComponent.java
-Possible patterns: Composite
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menu\MenuItem.java
-Possible patterns: Composite, Iterator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menu\MenuTestDrive.java
-Possible patterns: Composite
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menu\Waitress.java
-Possible patterns: Composite, Iterator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menuiterator\CompositeIterator.java
-Possible patterns: Composite, Iterator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menuiterator\Menu.java
-Possible patterns: Composite, Iterator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menuiterator\MenuComponent.java
-Possible patterns: Composite, Iterator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menuiterator\MenuItem.java
-Possible patterns: Composite, Iterator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menuiterator\MenuTestDrive.java
-Possible patterns: Composite, Iterator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menuiterator\NullIterator.java
-Possible patterns: Composite, Iterator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menuiterator\Waitress.java
-Possible patterns: Composite, Iterator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\App.java
-Possible patterns: Command, Decorator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\Hostile.java
-Possible patterns: Decorator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\SmartHostile.java
-Possible patterns: Decorator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\Troll.java
-Possible patterns: Decorator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\Beverage.java
-Possible patterns: Decorator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\CondimentDecorator.java
-Possible patterns: Decorator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\DarkRoast.java
-Possible patterns: Decorator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\Decaf.java
-Possible patterns: Decorator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\Espresso.java
-Possible patterns: Decorator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\HouseBlend.java
-Possible patterns: Decorator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\Milk.java
-Possible patterns: Decorator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\Mocha.java
-Possible patterns: Decorator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\Soy.java
-Possible patterns: Decorator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\StarbuzzCoffee.java
-Possible patterns: Decorator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\Whip.java
-Possible patterns: Decorator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\io\InputTest.java
-Possible patterns: Decorator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\io\LowerCaseInputStream.java
-Possible patterns: Decorator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\BlackOlives.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Cheese.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\CheesePizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\ChicagoPizzaIngredientFactory.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\ChicagoPizzaStore.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\ClamPizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Clams.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Dough.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Eggplant.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\FreshClams.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\FrozenClams.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Garlic.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\MarinaraSauce.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\MozzarellaCheese.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Mushroom.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\NYPizzaIngredientFactory.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\NYPizzaStore.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Onion.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\ParmesanCheese.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Pepperoni.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\PepperoniPizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Pizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\PizzaIngredientFactory.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\PizzaStore.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\PizzaTestDrive.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\PlumTomatoSauce.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\RedPepper.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\ReggianoCheese.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Sauce.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\SlicedPepperoni.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Spinach.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\ThickCrustDough.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\ThinCrustDough.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\VeggiePizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Veggies.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\ChicagoPizzaStore.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\ChicagoStyleCheesePizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\ChicagoStyleClamPizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\ChicagoStylePepperoniPizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\ChicagoStyleVeggiePizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\DependentPizzaStore.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\NYPizzaStore.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\NYStyleCheesePizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\NYStyleClamPizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\NYStylePepperoniPizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\NYStyleVeggiePizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\Pizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\PizzaStore.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\PizzaTestDrive.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzas\CheesePizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzas\ClamPizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzas\PepperoniPizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzas\Pizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzas\PizzaStore.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzas\PizzaTestDrive.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzas\SimplePizzaFactory.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzas\VeggiePizza.java
-Possible patterns: Factory
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\AlchemistShop.java
-Possible patterns: Factory, Flyweight
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\App.java
-Possible patterns: Command, Factory, Flyweight
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\HealingPotion.java
-Possible patterns: Flyweight
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\HolyWaterPotion.java
-Possible patterns: Flyweight
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\InvisibilityPotion.java
-Possible patterns: Flyweight
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\PoisonPotion.java
-Possible patterns: Flyweight
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\Potion.java
-Possible patterns: Flyweight
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\PotionFactory.java
-Possible patterns: Factory, Flyweight
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\PotionType.java
-Possible patterns: Flyweight
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\StrengthPotion.java
-Possible patterns: Flyweight
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\iterator\src\main\java\com\ramesh\gof\iterator\App.java
-Possible patterns: Command, Iterator
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\iterator\src\main\java\com\ramesh\gof\iterator\Item.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\iterator\BikeRepository.java
 Possible patterns: Iterator
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\iterator\src\main\java\com\ramesh\gof\iterator\ItemIterator.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\iterator\IteratorDemo.java
 Possible patterns: Iterator
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\iterator\src\main\java\com\ramesh\gof\iterator\ItemType.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\iterator\IteratorEverydayDemo.java
 Possible patterns: Iterator
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\iterator\src\main\java\com\ramesh\gof\iterator\TreasureChest.java
-Possible patterns: Iterator
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\mediator\Command.java
+Possible patterns: Command, Mediator
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\iterator\src\main\java\com\ramesh\gof\iterator\TreasureChestItemIterator.java
-Possible patterns: Iterator
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\mediator\Light.java
+Possible patterns: Mediator
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\App.java
-Possible patterns: Command, Observer, State
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\mediator\Mediator.java
+Possible patterns: Mediator
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\Hobbits.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\mediator\MediatorDemo.java
+Possible patterns: Command, Mediator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\mediator\MediatorEverydayExample.java
+Possible patterns: Mediator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\mediator\TurnOffAllLightsCommand.java
+Possible patterns: Command, Mediator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\mediator\TurnOnAllLightsCommand.java
+Possible patterns: Command, Mediator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\memento\Caretaker.java
+Possible patterns: Memento
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\memento\Employee.java
+Possible patterns: Memento
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\memento\EmployeeMemento.java
+Possible patterns: Memento, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\memento\EmployeeSerializable.java
+Possible patterns: Memento
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\memento\MementoDemo.java
+Possible patterns: Memento
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\memento\MementoEverydayExample.java
+Possible patterns: Memento
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\observer\MessageStream.java
+Possible patterns: Observer, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\observer\Observer.java
 Possible patterns: Observer
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\Orcs.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\observer\ObserverDemo.java
 Possible patterns: Observer
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\Weather.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\observer\ObserverEverydayExample.java
 Possible patterns: Observer
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\WeatherObserver.java
-Possible patterns: Observer
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\observer\PhoneClient.java
+Possible patterns: Observer, State
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\WeatherType.java
-Possible patterns: Observer
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\observer\Subject.java
+Possible patterns: Observer, State
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\generic\GHobbits.java
-Possible patterns: Observer
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\observer\TabletClient.java
+Possible patterns: Observer, State
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\generic\GOrcs.java
-Possible patterns: Observer
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\state\fan\Fan.java
+Possible patterns: Chain, State
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\generic\GWeather.java
-Possible patterns: Observer
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\generic\Observable.java
-Possible patterns: Observer
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\generic\Observer.java
-Possible patterns: Observer
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\generic\Race.java
-Possible patterns: Observer
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\App.java
-Possible patterns: Command, Factory, Prototype
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\Beast.java
-Possible patterns: Prototype
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\ElfBeast.java
-Possible patterns: Prototype
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\ElfMage.java
-Possible patterns: Prototype
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\ElfWarlord.java
-Possible patterns: Prototype
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\HeroFactory.java
-Possible patterns: Factory, Prototype
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\HeroFactoryImpl.java
-Possible patterns: Factory, Prototype
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\Mage.java
-Possible patterns: Prototype
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\OrcBeast.java
-Possible patterns: Prototype
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\OrcMage.java
-Possible patterns: Prototype
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\OrcWarlord.java
-Possible patterns: Prototype
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\Prototype.java
-Possible patterns: Prototype
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\Warlord.java
-Possible patterns: Prototype
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\example1\Sheep.java
-Possible patterns: Prototype
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\example1\TestPrototype.java
-Possible patterns: Prototype
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\proxy\src\main\java\com\ramesh\gof\proxy\Batch.java
-Possible patterns: Proxy
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\proxy\src\main\java\com\ramesh\gof\proxy\CourseBatch.java
-Possible patterns: Proxy
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\proxy\src\main\java\com\ramesh\gof\proxy\ProxyBatch.java
-Possible patterns: Proxy
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\proxy\src\main\java\com\ramesh\gof\proxy\TestProxyPattern.java
-Possible patterns: Proxy
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\proxy\src\main\java\com\ramesh\gof\proxy\secondexample\App.java
-Possible patterns: Proxy
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\proxy\src\main\java\com\ramesh\gof\proxy\secondexample\Wizard.java
-Possible patterns: Proxy
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\proxy\src\main\java\com\ramesh\gof\proxy\secondexample\WizardTower.java
-Possible patterns: Proxy
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\proxy\src\main\java\com\ramesh\gof\proxy\secondexample\WizardTowerProxy.java
-Possible patterns: Proxy
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\singleton\src\main\java\com\ramesh\gof\singleton\App.java
-Possible patterns: Command, Singleton
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\singleton\src\main\java\com\ramesh\gof\singleton\EnumIvoryTower.java
-Possible patterns: Singleton
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\singleton\src\main\java\com\ramesh\gof\singleton\InitializingOnDemandHolderIdiom.java
-Possible patterns: Singleton
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\singleton\src\main\java\com\ramesh\gof\singleton\IvoryTower.java
-Possible patterns: Singleton
-
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\singleton\src\main\java\com\ramesh\gof\singleton\ThreadSafeDoubleCheckLocking.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\state\fan\FanLowState.java
 Possible patterns: Singleton, State
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\singleton\src\main\java\com\ramesh\gof\singleton\ThreadSafeLazyLoadedIvoryTower.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\state\fan\FanMedState.java
+Possible patterns: Singleton, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\state\fan\FanOffState.java
+Possible patterns: Singleton, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\state\fan\FanWithIfElseLogic.java
+Possible patterns: Chain, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\state\fan\FanWithIfElseLogicDemo.java
+Possible patterns: Chain, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\state\fan\State.java
+Possible patterns: State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\state\fan\StateDemo.java
+Possible patterns: Chain, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\strategy\AmexStrategy.java
+Possible patterns: Strategy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\strategy\CreditCard.java
+Possible patterns: Strategy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\strategy\Person.java
+Possible patterns: Strategy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\strategy\StrategyDemo.java
+Possible patterns: Strategy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\strategy\StrategyEveryDayExample.java
+Possible patterns: Strategy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\strategy\StrategyWithJava8Demo.java
+Possible patterns: Strategy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\strategy\ValidationStrategy.java
+Possible patterns: Strategy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\strategy\VisaStrategy.java
+Possible patterns: Strategy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\templatemethod\OrderTemplate.java
+Possible patterns: Template
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\templatemethod\Person.java
+Possible patterns: Template
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\templatemethod\StoreOrder.java
+Possible patterns: Template
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\templatemethod\TemplateDemo.java
+Possible patterns: Template
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\templatemethod\TemplateMethodEveryDayExample.java
+Possible patterns: Template
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\templatemethod\WebOrder.java
+Possible patterns: Template
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\visitor\atv\after\AtvPart.java
+Possible patterns: Visitor
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\visitor\atv\after\Fender.java
+Possible patterns: Visitor
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\visitor\atv\after\Oil.java
+Possible patterns: Visitor
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\visitor\atv\after\PartsOrder.java
+Possible patterns: Visitor
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\visitor\atv\after\VisitorDemo.java
+Possible patterns: Visitor
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\visitor\atv\after\Wheel.java
+Possible patterns: Visitor
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\visitor\atv\before\AtvPart.java
+Possible patterns: Visitor
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\visitor\atv\before\AtvPartsDisplayVisitor.java
+Possible patterns: Visitor
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\visitor\atv\before\AtvPartsShippingVisitor.java
+Possible patterns: Visitor
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\visitor\atv\before\AtvPartVisitor.java
+Possible patterns: Visitor
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\visitor\atv\before\Fender.java
+Possible patterns: Visitor
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\visitor\atv\before\Oil.java
+Possible patterns: Visitor
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\visitor\atv\before\PartsOrder.java
+Possible patterns: Visitor
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\visitor\atv\before\VisitorDemo.java
+Possible patterns: Visitor
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\behavioral\visitor\atv\before\Wheel.java
+Possible patterns: Visitor
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\abstractfactory\AbstractFactoryDemo.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\abstractfactory\AbstractFactoryEverydayDemo.java
+Possible patterns: Builder, Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\abstractfactory\AmexFactory.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\abstractfactory\AmexGoldCreditCard.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\abstractfactory\AmexGoldValidator.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\abstractfactory\AmexPlatinumCreditCard.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\abstractfactory\AmexPlatinumValidator.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\abstractfactory\CardType.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\abstractfactory\CreditCard.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\abstractfactory\CreditCardFactory.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\abstractfactory\Validator.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\abstractfactory\VisaFactory.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\abstractfactory\VisaGoldCreditCard.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\abstractfactory\VisaGoldValidator.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\abstractfactory\VisaPlatinumCreditCard.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\abstractfactory\VisaPlatinumValidator.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\builder\BuilderJavaApiExample.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\builder\LunchOrder.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\builder\LunchOrderBean.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\builder\LunchOrderBeanDemo.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\builder\LunchOrderDemo.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\builder\LunchOrderTelescopic.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\builder\LunchOrderTelescopicDemo.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\factory\AboutPage.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\factory\Blog.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\factory\CartPage.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\factory\CommentPage.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\factory\ContactPage.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\factory\FactoryDemo.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\factory\FactoryEverydayExample.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\factory\ItemPage.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\factory\Page.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\factory\PostPage.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\factory\SearchPage.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\factory\Shop.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\factory\Website.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\factory\WebsiteFactory.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\factory\WebsiteType.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\prototype\Book.java
+Possible patterns: Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\prototype\Item.java
+Possible patterns: Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\prototype\Movie.java
+Possible patterns: Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\prototype\PrototypeDemo.java
+Possible patterns: Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\prototype\Registry.java
+Possible patterns: Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\singleton\DbSingleton.java
 Possible patterns: Singleton
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\Amplifier.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\singleton\DbSingletonEnum.java
+Possible patterns: Singleton
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\singleton\Singleton.java
+Possible patterns: Singleton
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\singleton\SingletonDemo.java
+Possible patterns: Singleton
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\singleton\SingletonEager.java
+Possible patterns: Singleton
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\singleton\SingletonEagerReflectionSafe.java
+Possible patterns: Singleton
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\singleton\SingletonEverydayDemo.java
+Possible patterns: Singleton
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\singleton\SingletonLazy.java
+Possible patterns: Singleton
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\singleton\SingletonLazyWithDoubleCheckLocking.java
+Possible patterns: Singleton
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\creational\singleton\SingletonLazyWithSynchronizedMethod.java
+Possible patterns: Singleton
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\adapter\AdapterEverydayExample.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\adapter\Employee.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\adapter\EmployeeAdapterLdap.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\adapter\EmployeeClient.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\adapter\EmployeeCsv.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\adapter\EmployeeDB.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\adapter\EmployeeLdap.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\BridgeEverydayDemo.java
+Possible patterns: Bridge, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\printerwithbridge\BridgeDemo.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\printerwithbridge\Detail.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\printerwithbridge\Formatter.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\printerwithbridge\HtmlFormatter.java
+Possible patterns: Bridge, Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\printerwithbridge\Movie.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\printerwithbridge\MoviePrinter.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\printerwithbridge\Printer.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\printerwithbridge\PrintFormatter.java
+Possible patterns: Bridge, Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\shapewithbridge\BlueColour.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\shapewithbridge\Circle.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\shapewithbridge\Colour.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\shapewithbridge\RedColour.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\shapewithbridge\Shape.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\shapewithbridge\ShapeWIthBridgeDemo.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\shapewithbridge\Square.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\shapewithoutbridge\Circle.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\shapewithoutbridge\GreenCircle.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\shapewithoutbridge\RedCircle.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\shapewithoutbridge\RedSquare.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\shapewithoutbridge\Shape.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\shapewithoutbridge\ShapeWithoutBrideDemo.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\bridge\shapewithoutbridge\Square.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\composite\CompositeEverydayDemo.java
+Possible patterns: Composite
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\composite\CompositeMenuDemo.java
+Possible patterns: Composite
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\composite\Menu.java
+Possible patterns: Builder, Composite
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\composite\MenuComponent.java
+Possible patterns: Builder, Composite
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\composite\MenuItem.java
+Possible patterns: Composite
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\decorator\DecoratorEverydayDemo.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\decorator\DecoratorSandwichDemo.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\decorator\DressingDecorator.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\decorator\MeatDecorator.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\decorator\Sandwich.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\decorator\SandwichDecorator.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\decorator\SimpleSandwich.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\facade\Address.java
 Possible patterns: Facade
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\CdPlayer.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\facade\FacadeEverydayDemo.java
+Possible patterns: Decorator, Facade
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\facade\JdbcBeforeFacadeDemo.java
+Possible patterns: Facade, Singleton, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\facade\JdbcFacade.java
+Possible patterns: Facade, Singleton, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\facade\JdbcFacadeDemo.java
 Possible patterns: Facade
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\DvdPlayer.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\flyweight\Catalog.java
+Possible patterns: Factory, Flyweight
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\flyweight\FlyweightDemo.java
+Possible patterns: Flyweight
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\flyweight\FlyweightEverydayDemo.java
+Possible patterns: Flyweight
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\flyweight\InventorySystem.java
+Possible patterns: Flyweight
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\flyweight\Item.java
+Possible patterns: Flyweight
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\flyweight\Order.java
+Possible patterns: Flyweight
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\proxy\SecurityProxy.java
+Possible patterns: Proxy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\proxy\TwitterDemo.java
+Possible patterns: Proxy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\proxy\TwitterService.java
+Possible patterns: Proxy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\proxy\TwitterServiceImpl.java
+Possible patterns: Builder, Factory, Proxy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-design-patterns\src\io\girirajvyas\gof\designpatterns\structural\proxy\TwitterServiceStub.java
+Possible patterns: Proxy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\App.java
+Possible patterns: Command, Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\Army.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\Castle.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\ElfArmy.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\ElfCastle.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\ElfKing.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\ElfKingdomFactory.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\King.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\KingdomFactory.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\OrcArmy.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\OrcCastle.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\OrcKing.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\abstract-factory\src\main\java\com\ramesh\gof\abstractfactory\OrcKingdomFactory.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\AdapterPatternDemo.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\BankCustomer.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\BankDetails.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\CreditCard.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\secondexample\App.java
+Possible patterns: Adapter, Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\secondexample\BattleFishingBoat.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\secondexample\BattleShip.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\secondexample\Captain.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\adapter\src\main\java\com\ramesh\gof\adapter\secondexample\FishingBoat.java
+Possible patterns: Adapter
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\App.java
+Possible patterns: Bridge, Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\BlindingMagicWeapon.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\BlindingMagicWeaponImpl.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\Excalibur.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\FlyingMagicWeapon.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\FlyingMagicWeaponImpl.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\MagicWeapon.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\MagicWeaponImpl.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\Mjollnir.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\SoulEatingMagicWeapon.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\SoulEatingMagicWeaponImpl.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\Stormbringer.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\secondexample\App.java
+Possible patterns: Bridge, Command, Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\secondexample\Enchantment.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\secondexample\FlyingEnchantment.java
+Possible patterns: Bridge, Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\secondexample\Hammer.java
+Possible patterns: Bridge, Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\secondexample\SoulEatingEnchantment.java
+Possible patterns: Bridge, Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\secondexample\Sword.java
+Possible patterns: Bridge, Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\bridge\src\main\java\com\ramesh\gof\bridge\secondexample\Weapon.java
+Possible patterns: Bridge
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\builder\src\main\java\com\iluwatar\builder\App.java
+Possible patterns: Builder, Chain, Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\builder\src\main\java\com\iluwatar\builder\Armor.java
+Possible patterns: Builder, Chain
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\builder\src\main\java\com\iluwatar\builder\HairColor.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\builder\src\main\java\com\iluwatar\builder\HairType.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\builder\src\main\java\com\iluwatar\builder\Hero.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\builder\src\main\java\com\iluwatar\builder\Profession.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\builder\src\main\java\com\iluwatar\builder\Weapon.java
+Possible patterns: Builder
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\chain-of-responsibility\src\main\java\com\ramesh\gof\chain\App.java
+Possible patterns: Chain, Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\chain-of-responsibility\src\main\java\com\ramesh\gof\chain\OrcCommander.java
+Possible patterns: Chain, Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\chain-of-responsibility\src\main\java\com\ramesh\gof\chain\OrcKing.java
+Possible patterns: Chain, Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\chain-of-responsibility\src\main\java\com\ramesh\gof\chain\OrcOfficer.java
+Possible patterns: Chain
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\chain-of-responsibility\src\main\java\com\ramesh\gof\chain\OrcSoldier.java
+Possible patterns: Chain
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\chain-of-responsibility\src\main\java\com\ramesh\gof\chain\Request.java
+Possible patterns: Chain, Command, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\chain-of-responsibility\src\main\java\com\ramesh\gof\chain\RequestHandler.java
+Possible patterns: Chain
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\chain-of-responsibility\src\main\java\com\ramesh\gof\chain\RequestType.java
+Possible patterns: Chain
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\firstexample\ActionListenerCommand.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\firstexample\ActionOpen.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\firstexample\ActionSave.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\firstexample\CommandPatternClient.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\firstexample\Document.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\firstexample\MenuOptions.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\App.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\Command.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\Goblin.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\InvisibilitySpell.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\ShrinkSpell.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\Size.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\Target.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\Visibility.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\command\src\main\java\com\ramesh\gof\command\secondexample\Wizard.java
+Possible patterns: Command
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\App.java
+Possible patterns: Command, Composite
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\Letter.java
+Possible patterns: Composite
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\LetterComposite.java
+Possible patterns: Composite
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\Messenger.java
+Possible patterns: Composite
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\Sentence.java
+Possible patterns: Composite
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\Word.java
+Possible patterns: Composite
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menu\Menu.java
+Possible patterns: Composite, Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menu\MenuComponent.java
+Possible patterns: Composite
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menu\MenuItem.java
+Possible patterns: Composite, Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menu\MenuTestDrive.java
+Possible patterns: Composite
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menu\Waitress.java
+Possible patterns: Composite, Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menuiterator\CompositeIterator.java
+Possible patterns: Composite, Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menuiterator\Menu.java
+Possible patterns: Composite, Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menuiterator\MenuComponent.java
+Possible patterns: Composite, Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menuiterator\MenuItem.java
+Possible patterns: Composite, Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menuiterator\MenuTestDrive.java
+Possible patterns: Composite, Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menuiterator\NullIterator.java
+Possible patterns: Composite, Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\composite\src\main\java\com\ramesh\gof\composite\headfirst\menuiterator\Waitress.java
+Possible patterns: Composite, Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\App.java
+Possible patterns: Command, Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\Hostile.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\SmartHostile.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\Troll.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\Beverage.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\CondimentDecorator.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\DarkRoast.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\Decaf.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\Espresso.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\HouseBlend.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\Milk.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\Mocha.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\Soy.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\StarbuzzCoffee.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\Whip.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\io\InputTest.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\decorator\src\main\java\com\ramesh\gof\decorator\headfirst\io\LowerCaseInputStream.java
+Possible patterns: Decorator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\facade\src\main\java\com\ramesh\gof\facade\Amplifier.java
 Possible patterns: Facade
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\HomeTheaterFacade.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\facade\src\main\java\com\ramesh\gof\facade\App.java
 Possible patterns: Facade
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\HomeTheaterTestDrive.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\facade\src\main\java\com\ramesh\gof\facade\DvdPlayer.java
 Possible patterns: Facade
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\PopcornPopper.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\facade\src\main\java\com\ramesh\gof\facade\HomeTheaterFacade.java
 Possible patterns: Facade
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\Projector.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\facade\src\main\java\com\ramesh\gof\facade\PopcornPopper.java
 Possible patterns: Facade
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\Screen.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\facade\src\main\java\com\ramesh\gof\facade\Projector.java
 Possible patterns: Facade
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\TheaterLights.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\facade\src\main\java\com\ramesh\gof\facade\Screen.java
 Possible patterns: Facade
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\Tuner.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\facade\src\main\java\com\ramesh\gof\facade\TheaterLights.java
 Possible patterns: Facade
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\firstexample\Context.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\facade\src\main\java\com\ramesh\gof\facade\Tuner.java
+Possible patterns: Facade
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\BlackOlives.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Cheese.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\CheesePizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\ChicagoPizzaIngredientFactory.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\ChicagoPizzaStore.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\ClamPizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Clams.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Dough.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Eggplant.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\FreshClams.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\FrozenClams.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Garlic.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\MarinaraSauce.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\MozzarellaCheese.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Mushroom.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\NYPizzaIngredientFactory.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\NYPizzaStore.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Onion.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\ParmesanCheese.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Pepperoni.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\PepperoniPizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Pizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\PizzaIngredientFactory.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\PizzaStore.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\PizzaTestDrive.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\PlumTomatoSauce.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\RedPepper.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\ReggianoCheese.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Sauce.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\SlicedPepperoni.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Spinach.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\ThickCrustDough.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\ThinCrustDough.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\VeggiePizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzaa\Veggies.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\ChicagoPizzaStore.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\ChicagoStyleCheesePizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\ChicagoStyleClamPizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\ChicagoStylePepperoniPizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\ChicagoStyleVeggiePizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\DependentPizzaStore.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\NYPizzaStore.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\NYStyleCheesePizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\NYStyleClamPizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\NYStylePepperoniPizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\NYStyleVeggiePizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\Pizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\PizzaStore.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzafm\PizzaTestDrive.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzas\CheesePizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzas\ClamPizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzas\PepperoniPizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzas\Pizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzas\PizzaStore.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzas\PizzaTestDrive.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzas\SimplePizzaFactory.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\factory-pattern\src\main\java\com\ramesh\gof\factory\pizzas\VeggiePizza.java
+Possible patterns: Factory
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\AlchemistShop.java
+Possible patterns: Factory, Flyweight
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\App.java
+Possible patterns: Command, Factory, Flyweight
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\HealingPotion.java
+Possible patterns: Flyweight
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\HolyWaterPotion.java
+Possible patterns: Flyweight
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\InvisibilityPotion.java
+Possible patterns: Flyweight
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\PoisonPotion.java
+Possible patterns: Flyweight
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\Potion.java
+Possible patterns: Flyweight
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\PotionFactory.java
+Possible patterns: Factory, Flyweight
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\PotionType.java
+Possible patterns: Flyweight
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\flyweight\src\main\java\com\ramesh\gof\flyweight\StrengthPotion.java
+Possible patterns: Flyweight
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\iterator\src\main\java\com\ramesh\gof\iterator\App.java
+Possible patterns: Command, Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\iterator\src\main\java\com\ramesh\gof\iterator\Item.java
+Possible patterns: Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\iterator\src\main\java\com\ramesh\gof\iterator\ItemIterator.java
+Possible patterns: Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\iterator\src\main\java\com\ramesh\gof\iterator\ItemType.java
+Possible patterns: Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\iterator\src\main\java\com\ramesh\gof\iterator\TreasureChest.java
+Possible patterns: Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\iterator\src\main\java\com\ramesh\gof\iterator\TreasureChestItemIterator.java
+Possible patterns: Iterator
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\App.java
+Possible patterns: Command, Observer, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\Hobbits.java
+Possible patterns: Observer
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\Orcs.java
+Possible patterns: Observer
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\Weather.java
+Possible patterns: Observer
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\WeatherObserver.java
+Possible patterns: Observer
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\WeatherType.java
+Possible patterns: Observer
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\generic\GHobbits.java
+Possible patterns: Observer
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\generic\GOrcs.java
+Possible patterns: Observer
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\generic\GWeather.java
+Possible patterns: Observer
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\generic\Observable.java
+Possible patterns: Observer
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\generic\Observer.java
+Possible patterns: Observer
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\observer\src\main\java\com\ramesh\gof\observer\generic\Race.java
+Possible patterns: Observer
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\App.java
+Possible patterns: Command, Factory, Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\Beast.java
+Possible patterns: Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\ElfBeast.java
+Possible patterns: Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\ElfMage.java
+Possible patterns: Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\ElfWarlord.java
+Possible patterns: Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\HeroFactory.java
+Possible patterns: Factory, Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\HeroFactoryImpl.java
+Possible patterns: Factory, Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\Mage.java
+Possible patterns: Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\OrcBeast.java
+Possible patterns: Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\OrcMage.java
+Possible patterns: Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\OrcWarlord.java
+Possible patterns: Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\Prototype.java
+Possible patterns: Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\Warlord.java
+Possible patterns: Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\example1\Sheep.java
+Possible patterns: Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\prototype\src\main\java\com\ramesh\gof\prototype\example1\TestPrototype.java
+Possible patterns: Prototype
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\proxy\src\main\java\com\ramesh\gof\proxy\Batch.java
+Possible patterns: Proxy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\proxy\src\main\java\com\ramesh\gof\proxy\CourseBatch.java
+Possible patterns: Proxy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\proxy\src\main\java\com\ramesh\gof\proxy\ProxyBatch.java
+Possible patterns: Proxy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\proxy\src\main\java\com\ramesh\gof\proxy\TestProxyPattern.java
+Possible patterns: Proxy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\proxy\src\main\java\com\ramesh\gof\proxy\secondexample\App.java
+Possible patterns: Proxy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\proxy\src\main\java\com\ramesh\gof\proxy\secondexample\Wizard.java
+Possible patterns: Proxy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\proxy\src\main\java\com\ramesh\gof\proxy\secondexample\WizardTower.java
+Possible patterns: Proxy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\proxy\src\main\java\com\ramesh\gof\proxy\secondexample\WizardTowerProxy.java
+Possible patterns: Proxy
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\singleton\src\main\java\com\ramesh\gof\singleton\App.java
+Possible patterns: Command, Singleton
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\singleton\src\main\java\com\ramesh\gof\singleton\EnumIvoryTower.java
+Possible patterns: Singleton
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\singleton\src\main\java\com\ramesh\gof\singleton\InitializingOnDemandHolderIdiom.java
+Possible patterns: Singleton
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\singleton\src\main\java\com\ramesh\gof\singleton\IvoryTower.java
+Possible patterns: Singleton
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\singleton\src\main\java\com\ramesh\gof\singleton\ThreadSafeDoubleCheckLocking.java
+Possible patterns: Singleton, State
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\singleton\src\main\java\com\ramesh\gof\singleton\ThreadSafeLazyLoadedIvoryTower.java
+Possible patterns: Singleton
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\Amplifier.java
+Possible patterns: Facade
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\CdPlayer.java
+Possible patterns: Facade
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\DvdPlayer.java
+Possible patterns: Facade
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\HomeTheaterFacade.java
+Possible patterns: Facade
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\HomeTheaterTestDrive.java
+Possible patterns: Facade
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\PopcornPopper.java
+Possible patterns: Facade
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\Projector.java
+Possible patterns: Facade
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\Screen.java
+Possible patterns: Facade
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\TheaterLights.java
+Possible patterns: Facade
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\src\main\java\com\ramesh\gof\facade\hometheater\Tuner.java
+Possible patterns: Facade
+
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\firstexample\Context.java
 Possible patterns: State
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\firstexample\StartState.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\firstexample\StartState.java
 Possible patterns: State
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\firstexample\State.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\firstexample\State.java
 Possible patterns: State
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\firstexample\StatePatternDemo.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\firstexample\StatePatternDemo.java
 Possible patterns: State
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\firstexample\StopState.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\firstexample\StopState.java
 Possible patterns: State
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\secondexample\State.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\secondexample\State.java
 Possible patterns: State
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\secondexample\TVContext.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\secondexample\TVContext.java
 Possible patterns: State
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\secondexample\TVRemote.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\secondexample\TVRemote.java
 Possible patterns: State
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\secondexample\TVStartState.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\secondexample\TVStartState.java
 Possible patterns: State
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\secondexample\TVStopState.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\state\src\main\java\com\ramesh\gof\state\secondexample\TVStopState.java
 Possible patterns: State
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\strategy\src\main\java\com\ramesh\gof\stratergy\Context.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\strategy\src\main\java\com\ramesh\gof\stratergy\Context.java
 Possible patterns: Strategy
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\strategy\src\main\java\com\ramesh\gof\stratergy\OperationAdd.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\strategy\src\main\java\com\ramesh\gof\stratergy\OperationAdd.java
 Possible patterns: Strategy
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\strategy\src\main\java\com\ramesh\gof\stratergy\OperationDevision.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\strategy\src\main\java\com\ramesh\gof\stratergy\OperationDevision.java
 Possible patterns: Strategy
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\strategy\src\main\java\com\ramesh\gof\stratergy\OperationMultiply.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\strategy\src\main\java\com\ramesh\gof\stratergy\OperationMultiply.java
 Possible patterns: Strategy
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\strategy\src\main\java\com\ramesh\gof\stratergy\OperationSubstract.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\strategy\src\main\java\com\ramesh\gof\stratergy\OperationSubstract.java
 Possible patterns: Strategy
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\strategy\src\main\java\com\ramesh\gof\stratergy\Strategy.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\strategy\src\main\java\com\ramesh\gof\stratergy\Strategy.java
 Possible patterns: Strategy
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\strategy\src\main\java\com\ramesh\gof\stratergy\StrategyPatternDemo.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\strategy\src\main\java\com\ramesh\gof\stratergy\StrategyPatternDemo.java
 Possible patterns: Strategy
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\applet\MyApplet.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\applet\MyApplet.java
 Possible patterns: Template
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\barista\BeverageTestDrive.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\barista\BeverageTestDrive.java
 Possible patterns: Template
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\barista\CaffeineBeverage.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\barista\CaffeineBeverage.java
 Possible patterns: Template
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\barista\CaffeineBeverageWithHook.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\barista\CaffeineBeverageWithHook.java
 Possible patterns: Template
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\barista\Coffee.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\barista\Coffee.java
 Possible patterns: Template
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\barista\CoffeeWithHook.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\barista\CoffeeWithHook.java
 Possible patterns: Template
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\barista\Tea.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\barista\Tea.java
 Possible patterns: Template
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\barista\TeaWithHook.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\barista\TeaWithHook.java
 Possible patterns: Template
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\frame\MyFrame.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\frame\MyFrame.java
 Possible patterns: Template
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\simplebarista\Barista.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\simplebarista\Barista.java
 Possible patterns: Template
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\simplebarista\Coffee.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\simplebarista\Coffee.java
 Possible patterns: Template
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\simplebarista\Tea.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\simplebarista\Tea.java
 Possible patterns: Template
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\sort\Duck.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\sort\Duck.java
 Possible patterns: Template
 
-C:\Users\tiago\Desktop\dev\MEI\ADS-Research\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\sort\DuckSortTestDrive.java
+C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\design-pattern-examples-repositories\gof-java-design-patterns\template-method\src\main\java\com\ramesh\gof\templatemethod\sort\DuckSortTestDrive.java
 Possible patterns: Template
 
