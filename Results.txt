@@ -1,0 +1,333 @@
+Parsing DesignPatternFinder results...
+Found 463 files with detections
+
+Scanning ground truth repositories...
+  Scanning repository: gof-design-patterns
+    Found 193 Java files
+  Scanning repository: gof-java-design-patterns
+    Found 270 Java files
+
+Total: Found 463 Java files in pattern folders across all repositories
+
+Calculating accuracy metrics...
+================================================================================
+DESIGN PATTERN FINDER - ACCURACY ANALYSIS
+================================================================================
+
+Total Java files in ground truth: 463
+Files detected by tool: 463
+Missed files: 0
+
+Correct detections: 463
+Incorrect detections: 0
+
+Overall Detection Rate: 100.00%
+Overall Accuracy (Recall): 100.00%
+
+================================================================================
+OVERALL TOOL PERFORMANCE METRICS
+================================================================================
+
+Precision: 100.00%
+  (Of all files where a pattern was detected, how many had the correct pattern?)
+
+Recall: 100.00%
+  (Of all files in the ground truth, how many were correctly identified?)
+
+F1 Score: 100.00%
+  (Harmonic mean of Precision and Recall)
+
+--------------------------------------------------------------------------------
+MACRO-AVERAGED METRICS (average across all patterns)
+--------------------------------------------------------------------------------
+Macro Avg Precision: 100.00%
+Macro Avg Recall: 100.00%
+Macro Avg F1 Score: 100.00%
+  (Treats all patterns equally, regardless of their frequency)
+
+--------------------------------------------------------------------------------
+MICRO-AVERAGED METRICS (weighted by pattern frequency)
+--------------------------------------------------------------------------------
+Micro Avg Precision: 100.00%
+Micro Avg Recall: 100.00%
+Micro Avg F1 Score: 100.00%
+  (Treats all files equally, patterns with more files have more weight)
+
+================================================================================
+PER-PATTERN STATISTICS
+================================================================================
+
+
+Adapter:
+  Total files: 16
+  Detected: 16/16
+  Correct: 16/16
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Bridge:
+  Total files: 42
+  Detected: 42/42
+  Correct: 42/42
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Builder:
+  Total files: 14
+  Detected: 14/14
+  Correct: 14/14
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Chain:
+  Total files: 16
+  Detected: 16/16
+  Correct: 16/16
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Command:
+  Total files: 23
+  Detected: 23/23
+  Correct: 23/23
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Composite:
+  Total files: 23
+  Detected: 23/23
+  Correct: 23/23
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Decorator:
+  Total files: 24
+  Detected: 24/24
+  Correct: 24/24
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Facade:
+  Total files: 24
+  Detected: 24/24
+  Correct: 24/24
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Factory:
+  Total files: 101
+  Detected: 101/101
+  Correct: 101/101
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Flyweight:
+  Total files: 16
+  Detected: 16/16
+  Correct: 16/16
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Interpreter:
+  Total files: 6
+  Detected: 6/6
+  Correct: 6/6
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Iterator:
+  Total files: 9
+  Detected: 9/9
+  Correct: 9/9
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Mediator:
+  Total files: 7
+  Detected: 7/7
+  Correct: 7/7
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Memento:
+  Total files: 6
+  Detected: 6/6
+  Correct: 6/6
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Observer:
+  Total files: 19
+  Detected: 19/19
+  Correct: 19/19
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Prototype:
+  Total files: 20
+  Detected: 20/20
+  Correct: 20/20
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Proxy:
+  Total files: 13
+  Detected: 13/13
+  Correct: 13/13
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Singleton:
+  Total files: 16
+  Detected: 16/16
+  Correct: 16/16
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+State:
+  Total files: 18
+  Detected: 18/18
+  Correct: 18/18
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Strategy:
+  Total files: 15
+  Detected: 15/15
+  Correct: 15/15
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Template:
+  Total files: 20
+  Detected: 20/20
+  Correct: 20/20
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+Visitor:
+  Total files: 15
+  Detected: 15/15
+  Correct: 15/15
+  Missed: 0
+  False Positives: 0
+  Detection Rate: 100.00%
+  Accuracy: 100.00%
+  Precision: 100.00%
+  Recall: 100.00%
+  F1 Score: 100.00%
+
+================================================================================
+SAMPLE INCORRECT/MISSED DETECTIONS
+================================================================================
+
+Detailed results saved to: C:\Users\tiago\Desktop\dev\MEI\ADS-Research\ADS-Research\DPF Validation and Testing\dpf_accuracy_analysis.json
+
+================================================================================
+Analysis complete!
+================================================================================
