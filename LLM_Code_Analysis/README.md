@@ -6,7 +6,7 @@ This directory contains scripts and results for analyzing design patterns in LLM
 
 ### Analysis Scripts
 
-1. **`analyze_llm_patterns.py`** - Main analysis script
+1. **`analyze_llm_patterns.py`** - Design pattern analysis
    - Parses DesignPatternFinder results for LLM-generated code
    - Calculates comprehensive metrics per model and aggregate statistics
    - Generates detailed JSON output
@@ -21,6 +21,11 @@ This directory contains scripts and results for analyzing design patterns in LLM
    - Includes tables, rankings, and detailed analysis
    - Professional format for presentations/papers
 
+4. **`analyze_code_metrics.py`** - Lines of code analysis
+   - Counts LOC for each generated file (excludes comments/empty lines)
+   - Calculates statistical metrics: min, Q25, median, Q75, max, mean, std
+   - Generates CSV and markdown report with insights
+
 ### Output Files
 
 #### JSON Data
@@ -34,13 +39,20 @@ This directory contains scripts and results for analyzing design patterns in LLM
 - **`llm_pattern_frequency.csv`** - Pattern occurrence count by model
 - **`llm_category_distribution.csv`** - Category (Creational/Structural/Behavioral) distribution
 - **`llm_pattern_percentage_matrix.csv`** - Pattern percentages by model
+- **`code_metrics_loc.csv`** - Lines of code statistics per model
 
 #### Reports
-- **`LLM_Pattern_Analysis_Report.md`** - Comprehensive analysis report with:
+- **`LLM_Pattern_Analysis_Report.md`** - Comprehensive design pattern analysis report
   - Executive summary
   - Detailed per-model analysis
   - Comparative statistics
   - Key insights and conclusions
+
+- **`Code_Metrics_Report.md`** - Lines of code analysis report
+  - Statistical summary per model
+  - Code length comparisons
+  - Consistency analysis
+  - Distribution insights
 
 ## Directory Structure
 
