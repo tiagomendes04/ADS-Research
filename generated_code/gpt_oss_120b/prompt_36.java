@@ -1,123 +1,84 @@
 ```java
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* ---------- Enums ---------- */
-enum VehicleType {
-    CAR, TRUCK, MOTORCYCLE
-}
-
-enum VehicleStatus {
-    AVAILABLE, RENTED, MAINTENANCE
-}
-
 enum BookingStatus {
-    PENDING, CONFIRMED, CANCELLED, COMPLETED
+    PENDING,
+    CONFIRMED,
+    CANCELLED,
+    COMPLETED
 }
 
-/* ---------- Core Domain ---------- */
 abstract class Vehicle {
     private final long id;
     private final String make;
     private final String model;
     private final int year;
-    private final VehicleType type;
-    private VehicleStatus status = VehicleStatus.AVAILABLE;
+    private boolean available = true;
 
-    protected Vehicle(long id, String make, String model, int year, VehicleType type) {
+    Vehicle(long id, String make, String model, int year) {
         this.id = id;
         this.make = make;
         this.model = model;
         this.year = year;
-        this.type = type;
     }
 
-    public long getId() { return id; }
-    public String getMake() { return make; }
-    public String getModel() { return model; }
-    public int getYear() { return year; }
-    public VehicleType getType() { return type; }
-    public VehicleStatus getStatus() { return status; }
-    public void setStatus(VehicleStatus status) { this.status = status; }
-
-    @Override
-    public String toString() {
-        return String.format("%s-%d (%s %s)", type, id, make, model);
-    }
+    long getId() { return id; }
+    String getMake() { return make; }
+    String getModel() { return model; }
+    int getYear() { return year; }
+    boolean isAvailable() { return available; }
+    void setAvailable(boolean available) { this.available = available; }
 }
 
 class Car extends Vehicle {
-    private final int seatCount;
+    private final int seats;
 
-    public Car(long id, String make, String model, int year, int seatCount) {
-        super(id, make, model, year, VehicleType.CAR);
-        this.seatCount = seatCount;
+    Car(long id, String make, String model, int year, int seats) {
+        super(id, make, model, year);
+        this.seats = seats;
     }
 
-    public int getSeatCount() { return seatCount; }
+    int getSeats() { return seats; }
 }
 
 class Truck extends Vehicle {
-    private final double payloadCapacityKg;
+    private final double loadCapacity; // in tons
 
-    public Truck(long id, String make, String model, int year, double payloadCapacityKg) {
-        super(id, make, model, year, VehicleType.TRUCK);
-        this.payloadCapacityKg = payloadCapacityKg;
+    Truck(long id, String make, String model, int year, double loadCapacity) {
+        super(id, make, model, year);
+        this.loadCapacity = loadCapacity;
     }
 
-    public double getPayloadCapacityKg() { return payloadCapacityKg; }
+    double getLoadCapacity() { return loadCapacity; }
 }
 
-class Motorcycle extends Vehicle {
-    private final boolean hasSidecar;
-
-    public Motorcycle(long id, String make, String model, int year, boolean hasSidecar) {
-        super(id, make, model, year, VehicleType.MOTORCYCLE);
-        this.hasSidecar = hasSidecar;
-    }
-
-    public boolean hasSidecar() { return hasSidecar; }
-}
-
-/* ---------- Customer ---------- */
 class Customer {
     private final long id;
     private final String name;
-    private final String email;
-    private final String phone;
+    private final String driverLicenseNumber;
 
-    public Customer(long id, String name, String email, String phone) {
+    Customer(long id, String name, String driverLicenseNumber) {
         this.id = id;
         this.name = name;
-        this.email = email;
-        this.phone = phone;
+        this.driverLicenseNumber = driverLicenseNumber;
     }
 
-    public long getId() { return id; }
-    public String getName() { return name; }
-    public String getEmail() { return email; }
-    public String getPhone() { return phone; }
-
-    @Override
-    public String toString() {
-        return String.format("Customer-%d (%s)", id, name);
-    }
+    long getId() { return id; }
+    String getName() { return name; }
+    String getDriverLicenseNumber() { return driverLicenseNumber; }
 }
 
-/* ---------- Booking ---------- */
 class Booking {
     private final long id;
     private final Vehicle vehicle;
     private final Customer customer;
     private final LocalDate startDate;
-    private final LocalDate endDate; // inclusive
+    private final LocalDate endDate;
     private BookingStatus status;
 
-    public Booking(long id, Vehicle vehicle, Customer customer, LocalDate startDate, LocalDate endDate) {
-        if (endDate.isBefore(startDate))
-            throw new IllegalArgumentException("End date cannot be before start date");
+    Booking(long id, Vehicle vehicle, Customer customer, LocalDate startDate, LocalDate endDate) {
         this.id = id;
         this.vehicle = vehicle;
         this.customer = customer;
@@ -126,100 +87,117 @@ class Booking {
         this.status = BookingStatus.PENDING;
     }
 
-    public long getId() { return id; }
-    public Vehicle getVehicle() { return vehicle; }
-    public Customer getCustomer() { return customer; }
-    public LocalDate getStartDate() { return startDate; }
-    public LocalDate getEndDate() { return endDate; }
-    public BookingStatus getStatus() { return status; }
-    public void setStatus(BookingStatus status) { this.status = status; }
-
-    public long getDays() {
-        return ChronoUnit.DAYS.between(startDate, endDate) + 1;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Booking-%d [%s] %s -> %s (%s)", id, vehicle, startDate, endDate, status);
-    }
+    long getId() { return id; }
+    Vehicle getVehicle() { return vehicle; }
+    Customer getCustomer() { return customer; }
+    LocalDate getStartDate() { return startDate; }
+    LocalDate getEndDate() { return endDate; }
+    BookingStatus getStatus() { return status; }
+    void setStatus(BookingStatus status) { this.status = status; }
 }
 
-/* ---------- Availability Calendar ---------- */
-class AvailabilityCalendar {
-    // For each vehicle, keep a sorted set of bookings (by start date)
-    private final Map<Long, NavigableSet<Booking>> vehicleBookings = new HashMap<>();
-
-    public synchronized boolean isAvailable(Vehicle vehicle, LocalDate start, LocalDate end) {
-        NavigableSet<Booking> bookings = vehicleBookings.getOrDefault(vehicle.getId(), new TreeSet<>(Comparator.comparing(Booking::getStartDate)));
-        for (Booking b : bookings) {
-            if (b.getStatus() == BookingStatus.CANCELLED) continue;
-            // Overlap detection
-            if (!b.getEndDate().isBefore(start) && !b.getStartDate().isAfter(end)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public synchronized void addBooking(Booking booking) {
-        vehicleBookings.computeIfAbsent(booking.getVehicle().getId(), k -> new TreeSet<>(Comparator.comparing(Booking::getStartDate)))
-                .add(booking);
-    }
-
-    public synchronized void removeBooking(Booking booking) {
-        NavigableSet<Booking> set = vehicleBookings.get(booking.getVehicle().getId());
-        if (set != null) {
-            set.remove(booking);
-            if (set.isEmpty()) vehicleBookings.remove(booking.getVehicle().getId());
-        }
-    }
-
-    public synchronized List<Booking> getBookingsForVehicle(Vehicle vehicle) {
-        return new ArrayList<>(vehicleBookings.getOrDefault(vehicle.getId(), Collections.emptyNavigableSet()));
-    }
-}
-
-/* ---------- Rental Agency ---------- */
-class RentalAgency {
+class RentalService {
     private final Map<Long, Vehicle> vehicles = new HashMap<>();
     private final Map<Long, Customer> customers = new HashMap<>();
     private final Map<Long, Booking> bookings = new HashMap<>();
-
-    private final AvailabilityCalendar calendar = new AvailabilityCalendar();
 
     private final AtomicLong vehicleIdSeq = new AtomicLong(1);
     private final AtomicLong customerIdSeq = new AtomicLong(1);
     private final AtomicLong bookingIdSeq = new AtomicLong(1);
 
-    /* Vehicle Management */
-    public Vehicle addCar(String make, String model, int year, int seatCount) {
-        Car car = new Car(vehicleIdSeq.getAndIncrement(), make, model, year, seatCount);
-        vehicles.put(car.getId(), car);
+    // Vehicle management
+    Vehicle addCar(String make, String model, int year, int seats) {
+        long id = vehicleIdSeq.getAndIncrement();
+        Car car = new Car(id, make, model, year, seats);
+        vehicles.put(id, car);
         return car;
     }
 
-    public Vehicle addTruck(String make, String model, int year, double payloadKg) {
-        Truck truck = new Truck(vehicleIdSeq.getAndIncrement(), make, model, year, payloadKg);
-        vehicles.put(truck.getId(), truck);
+    Vehicle addTruck(String make, String model, int year, double loadCapacity) {
+        long id = vehicleIdSeq.getAndIncrement();
+        Truck truck = new Truck(id, make, model, year, loadCapacity);
+        vehicles.put(id, truck);
         return truck;
     }
 
-    public Vehicle addMotorcycle(String make, String model, int year, boolean hasSidecar) {
-        Motorcycle moto = new Motorcycle(vehicleIdSeq.getAndIncrement(), make, model, year, hasSidecar);
-        vehicles.put(moto.getId(), moto);
-        return moto;
+    boolean removeVehicle(long vehicleId) {
+        Vehicle v = vehicles.remove(vehicleId);
+        if (v == null) return false;
+        // Cancel any pending bookings for this vehicle
+        bookings.values().removeIf(b -> b.getVehicle().getId() == vehicleId && b.getStatus() == BookingStatus.PENDING);
+        return true;
     }
 
-    public Optional<Vehicle> findVehicleById(long id) {
-        return Optional.ofNullable(vehicles.get(id));
-    }
-
-    public List<Vehicle> listAvailableVehicles(LocalDate start, LocalDate end, VehicleType... types) {
-        Set<VehicleType> typeSet = new HashSet<>(Arrays.asList(types));
+    List<Vehicle> findAvailableVehicles(LocalDate from, LocalDate to) {
         List<Vehicle> result = new ArrayList<>();
         for (Vehicle v : vehicles.values()) {
-            if (!typeSet.isEmpty() && !typeSet.contains(v.getType())) continue;
-            if (v.getStatus() != VehicleStatus.AVAILABLE) continue;
-            if (calendar.isAvailable(v, start, end)) result.add(v);
+            if (v.isAvailable() && isVehicleFree(v.getId(), from, to)) {
+                result.add(v);
+            }
         }
         return result;
+    }
+
+    private boolean isVehicleFree(long vehicleId, LocalDate from, LocalDate to) {
+        for (Booking b : bookings.values()) {
+            if (b.getVehicle().getId() == vehicleId && b.getStatus() == BookingStatus.CONFIRMED) {
+                if (!(to.isBefore(b.getStartDate()) || from.isAfter(b.getEndDate()))) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    // Customer management
+    Customer addCustomer(String name, String driverLicenseNumber) {
+        long id = customerIdSeq.getAndIncrement();
+        Customer c = new Customer(id, name, driverLicenseNumber);
+        customers.put(id, c);
+        return c;
+    }
+
+    // Booking management
+    Booking createBooking(long vehicleId, long customerId, LocalDate start, LocalDate end) {
+        Vehicle vehicle = vehicles.get(vehicleId);
+        Customer customer = customers.get(customerId);
+        if (vehicle == null || customer == null) throw new IllegalArgumentException("Invalid vehicle or customer");
+        if (!isVehicleFree(vehicleId, start, end)) throw new IllegalStateException("Vehicle not available for the selected dates");
+        long id = bookingIdSeq.getAndIncrement();
+        Booking booking = new Booking(id, vehicle, customer, start, end);
+        booking.setStatus(BookingStatus.CONFIRMED);
+        bookings.put(id, booking);
+        vehicle.setAvailable(false);
+        return booking;
+    }
+
+    boolean cancelBooking(long bookingId) {
+        Booking booking = bookings.get(bookingId);
+        if (booking == null) return false;
+        if (booking.getStatus() != BookingStatus.CONFIRMED) return false;
+        booking.setStatus(BookingStatus.CANCELLED);
+        // Re‑evaluate vehicle availability
+        boolean stillBooked = bookings.values().stream()
+                .anyMatch(b -> b.getVehicle().getId() == booking.getVehicle().getId()
+                        && b.getStatus() == BookingStatus.CONFIRMED);
+        if (!stillBooked) {
+            booking.getVehicle().setAvailable(true);
+        }
+        return true;
+    }
+
+    List<Booking> getBookingsForCustomer(long customerId) {
+        List<Booking> result = new ArrayList<>();
+        for (Booking b : bookings.values()) {
+            if (b.getCustomer().getId() == customerId) {
+                result.add(b);
+            }
+        }
+        return result;
+    }
+
+    List<Booking> getAllBookings() {
+        return new ArrayList<>(bookings.values());
+    }
+}
+```

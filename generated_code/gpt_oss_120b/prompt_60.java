@@ -1,260 +1,304 @@
 ```java
 import java.time.LocalDateTime;
 import java.util.*;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 
-// ---------- Domain Entities ----------
-class Movie {
-    private final long id;
-    private final String title;
-    private final int durationMinutes; // duration in minutes
-
-    public Movie(long id, String title, int durationMinutes) {
-        this.id = id;
-        this.title = title;
-        this.durationMinutes = durationMinutes;
-    }
-
-    public long getId() { return id; }
-    public String getTitle() { return title; }
-    public int getDurationMinutes() { return durationMinutes; }
+/* ---------- Enums ---------- */
+enum SeatStatus {
+    AVAILABLE, RESERVED, SOLD
 }
 
+/* ---------- Core Entities ---------- */
 class Seat {
     private final int row;
     private final int number;
-    private boolean booked;
+    private SeatStatus status = SeatStatus.AVAILABLE;
 
     public Seat(int row, int number) {
         this.row = row;
         this.number = number;
-        this.booked = false;
     }
 
     public int getRow() { return row; }
     public int getNumber() { return number; }
-    public boolean isBooked() { return booked; }
+    public SeatStatus getStatus() { return status; }
 
-    void setBooked(boolean booked) { this.booked = booked; }
-
-    @Override
-    public String toString() {
-        return "R" + row + "S" + number;
-    }
-}
-
-class Auditorium {
-    private final long id;
-    private final String name;
-    private final int rows;
-    private final int seatsPerRow;
-    private final Map<String, Seat> seatMap = new HashMap<>();
-
-    public Auditorium(long id, String name, int rows, int seatsPerRow) {
-        this.id = id;
-        this.name = name;
-        this.rows = rows;
-        this.seatsPerRow = seatsPerRow;
-        initSeats();
+    void setStatus(SeatStatus status) {
+        this.status = status;
     }
 
-    private void initSeats() {
-        for (int r = 1; r <= rows; r++) {
-            for (int s = 1; s <= seatsPerRow; s++) {
-                Seat seat = new Seat(r, s);
-                seatMap.put(key(r, s), seat);
-            }
-        }
-    }
-
-    private String key(int row, int number) {
+    public String getKey() {
         return row + "-" + number;
     }
 
-    public Seat getSeat(int row, int number) {
-        return seatMap.get(key(row, number));
+    @Override
+    public String toString() {
+        return "Seat{" + "row=" + row + ", number=" + number + ", status=" + status + '}';
+    }
+}
+
+class Screen {
+    private final String name;
+    private final int rows;
+    private final int seatsPerRow;
+
+    public Screen(String name, int rows, int seatsPerRow) {
+        this.name = name;
+        this.rows = rows;
+        this.seatsPerRow = seatsPerRow;
     }
 
-    public Collection<Seat> getAllSeats() {
-        return seatMap.values();
-    }
-
-    public long getId() { return id; }
     public String getName() { return name; }
     public int getRows() { return rows; }
     public int getSeatsPerRow() { return seatsPerRow; }
-}
 
-class Show {
-    private final long id;
-    private final Movie movie;
-    private final Auditorium auditorium;
-    private final LocalDateTime startTime;
-    private final Map<String, Seat> seatMap; // snapshot of seats for this show
-
-    public Show(long id, Movie movie, Auditorium auditorium, LocalDateTime startTime) {
-        this.id = id;
-        this.movie = movie;
-        this.auditorium = auditorium;
-        this.startTime = startTime;
-        this.seatMap = new HashMap<>();
-        copySeatsFromAuditorium();
-    }
-
-    private void copySeatsFromAuditorium() {
-        for (Seat s : auditorium.getAllSeats()) {
-            Seat copy = new Seat(s.getRow(), s.getNumber());
-            seatMap.put(key(s), copy);
+    public Map<String, Seat> createSeatMap() {
+        Map<String, Seat> map = new LinkedHashMap<>();
+        for (int r = 1; r <= rows; r++) {
+            for (int s = 1; s <= seatsPerRow; s++) {
+                Seat seat = new Seat(r, s);
+                map.put(seat.getKey(), seat);
+            }
         }
+        return map;
     }
-
-    private String key(Seat s) {
-        return s.getRow() + "-" + s.getNumber();
-    }
-
-    public Seat getSeat(int row, int number) {
-        return seatMap.get(row + "-" + number);
-    }
-
-    public Collection<Seat> getAllSeats() {
-        return seatMap.values();
-    }
-
-    public long getId() { return id; }
-    public Movie getMovie() { return movie; }
-    public Auditorium getAuditorium() { return auditorium; }
-    public LocalDateTime getStartTime() { return startTime; }
 }
 
-class Ticket {
-    private static final AtomicLong COUNTER = new AtomicLong(1);
-    private final long id;
-    private final Show show;
-    private final Seat seat;
-    private final double price;
+class Movie {
+    private final String title;
+    private final int durationMinutes; // e.g., 120
+    private final String rating;        // e.g., PG-13
 
-    public Ticket(Show show, Seat seat, double price) {
-        this.id = COUNTER.getAndIncrement();
-        this.show = show;
-        this.seat = seat;
-        this.price = price;
+    public Movie(String title, int durationMinutes, String rating) {
+        this.title = title;
+        this.durationMinutes = durationMinutes;
+        this.rating = rating;
     }
 
-    public long getId() { return id; }
-    public Show getShow() { return show; }
-    public Seat getSeat() { return seat; }
-    public double getPrice() { return price; }
+    public String getTitle() { return title; }
+    public int getDurationMinutes() { return durationMinutes; }
+    public String getRating() { return rating; }
 
     @Override
     public String toString() {
-        return "Ticket#" + id + " [" + show.getMovie().getTitle() + " | " +
-               show.getStartTime() + " | Seat " + seat + " | $" + price + "]";
+        return "Movie{" + "title='" + title + '\'' + ", duration=" + durationMinutes + ", rating='" + rating + '\'' + '}';
     }
 }
 
-// ---------- Service Layer ----------
-class BookingException extends RuntimeException {
-    public BookingException(String message) { super(message); }
-}
+/* ---------- Show (Screening) ---------- */
+class Show {
+    private static final AtomicInteger SHOW_ID_SEQ = new AtomicInteger(1);
 
-class BookingService {
-    private final Map<Long, Show> shows = new HashMap<>();
-    private final Map<Long, Ticket> tickets = new HashMap<>();
+    private final int showId;
+    private final Movie movie;
+    private final Screen screen;
+    private final LocalDateTime startTime;
+    private final Map<String, Seat> seats; // key = "row-number"
 
-    // Register a new show
-    public void addShow(Show show) {
-        if (shows.containsKey(show.getId())) {
-            throw new IllegalArgumentException("Show with id " + show.getId() + " already exists.");
+    public Show(Movie movie, Screen screen, LocalDateTime startTime) {
+        this.showId = SHOW_ID_SEQ.getAndIncrement();
+        this.movie = movie;
+        this.screen = screen;
+        this.startTime = startTime;
+        this.seats = screen.createSeatMap();
+    }
+
+    public int getShowId() { return showId; }
+    public Movie getMovie() { return movie; }
+    public Screen getScreen() { return screen; }
+    public LocalDateTime getStartTime() { return startTime; }
+    public Collection<Seat> getAllSeats() { return seats.values(); }
+
+    public Optional<Seat> getSeat(int row, int number) {
+        return Optional.ofNullable(seats.get(row + "-" + number));
+    }
+
+    public synchronized boolean reserveSeat(int row, int number) {
+        Seat seat = seats.get(row + "-" + number);
+        if (seat != null && seat.getStatus() == SeatStatus.AVAILABLE) {
+            seat.setStatus(SeatStatus.RESERVED);
+            return true;
         }
-        shows.put(show.getId(), show);
+        return false;
     }
 
-    // Retrieve a show by id
-    public Show getShow(long showId) {
-        Show show = shows.get(showId);
-        if (show == null) throw new BookingException("Show not found.");
+    public synchronized boolean purchaseSeat(int row, int number) {
+        Seat seat = seats.get(row + "-" + number);
+        if (seat != null && (seat.getStatus() == SeatStatus.AVAILABLE || seat.getStatus() == SeatStatus.RESERVED)) {
+            seat.setStatus(SeatStatus.SOLD);
+            return true;
+        }
+        return false;
+    }
+
+    public synchronized void releaseSeat(int row, int number) {
+        Seat seat = seats.get(row + "-" + number);
+        if (seat != null && seat.getStatus() == SeatStatus.RESERVED) {
+            seat.setStatus(SeatStatus.AVAILABLE);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Show{" + "showId=" + showId + ", movie=" + movie + ", screen=" + screen.getName() + ", startTime=" + startTime + '}';
+    }
+}
+
+/* ---------- Booking & Ticket ---------- */
+class Booking {
+    private static final AtomicInteger BOOKING_ID_SEQ = new AtomicInteger(1);
+    private static final AtomicInteger TICKET_ID_SEQ = new AtomicInteger(1);
+
+    private final int bookingId;
+    private final Show show;
+    private final List<Seat> reservedSeats = new ArrayList<>();
+    private final LocalDateTime bookingTime = LocalDateTime.now();
+    private boolean confirmed = false;
+
+    public Booking(Show show) {
+        this.bookingId = BOOKING_ID_SEQ.getAndIncrement();
+        this.show = show;
+    }
+
+    public int getBookingId() { return bookingId; }
+    public Show getShow() { return show; }
+    public List<Seat> getReservedSeats() { return Collections.unmodifiableList(reservedSeats); }
+    public boolean isConfirmed() { return confirmed; }
+
+    public boolean addSeat(int row, int number) {
+        if (show.reserveSeat(row, number)) {
+            show.getSeat(row, number).ifPresent(reservedSeats::add);
+            return true;
+        }
+        return false;
+    }
+
+    public void cancel() {
+        for (Seat seat : reservedSeats) {
+            show.releaseSeat(seat.getRow(), seat.getNumber());
+        }
+        reservedSeats.clear();
+    }
+
+    public List<Ticket> confirm() {
+        if (confirmed) throw new IllegalStateException("Booking already confirmed");
+        List<Ticket> tickets = new ArrayList<>();
+        for (Seat seat : reservedSeats) {
+            show.purchaseSeat(seat.getRow(), seat.getNumber());
+            tickets.add(new Ticket(this, seat));
+        }
+        confirmed = true;
+        return tickets;
+    }
+
+    @Override
+    public String toString() {
+        return "Booking{" + "bookingId=" + bookingId + ", showId=" + show.getShowId() + ", seats=" + reservedSeats + ", confirmed=" + confirmed + '}';
+    }
+}
+
+class Ticket {
+    private final int ticketId;
+    private final Booking booking;
+    private final Seat seat;
+    private final LocalDateTime issueTime = LocalDateTime.now();
+
+    public Ticket(Booking booking, Seat seat) {
+        this.ticketId = Booking.TICKET_ID_SEQ.getAndIncrement();
+        this.booking = booking;
+        this.seat = seat;
+    }
+
+    public int getTicketId() { return ticketId; }
+    public Booking getBooking() { return booking; }
+    public Seat getSeat() { return seat; }
+    public LocalDateTime getIssueTime() { return issueTime; }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "ticketId=" + ticketId +
+                ", movie='" + booking.getShow().getMovie().getTitle() + '\'' +
+                ", screen='" + booking.getShow().getScreen().getName() + '\'' +
+                ", startTime=" + booking.getShow().getStartTime() +
+                ", seat=" + seat.getRow() + "-" + seat.getNumber() +
+                '}';
+    }
+}
+
+/* ---------- Booking System Facade ---------- */
+class BookingSystem {
+    private final Map<Integer, Movie> movies = new HashMap<>();
+    private final Map<String, Screen> screens = new HashMap<>();
+    private final Map<Integer, Show> shows = new HashMap<>();
+
+    /* ---- Movie Management ---- */
+    public Movie addMovie(String title, int durationMinutes, String rating) {
+        Movie movie = new Movie(title, durationMinutes, rating);
+        movies.put(movies.size() + 1, movie);
+        return movie;
+    }
+
+    public Collection<Movie> listMovies() {
+        return Collections.unmodifiableCollection(movies.values());
+    }
+
+    /* ---- Screen Management ---- */
+    public Screen addScreen(String name, int rows, int seatsPerRow) {
+        Screen screen = new Screen(name, rows, seatsPerRow);
+        screens.put(name, screen);
+        return screen;
+    }
+
+    public Collection<Screen> listScreens() {
+        return Collections.unmodifiableCollection(screens.values());
+    }
+
+    /* ---- Show Scheduling ---- */
+    public Show scheduleShow(int movieId, String screenName, LocalDateTime startTime) {
+        Movie movie = movies.get(movieId);
+        Screen screen = screens.get(screenName);
+        if (movie == null) throw new IllegalArgumentException("Movie not found");
+        if (screen == null) throw new IllegalArgumentException("Screen not found");
+        Show show = new Show(movie, screen, startTime);
+        shows.put(show.getShowId(), show);
         return show;
     }
 
-    // Check seat availability
-    public boolean isSeatAvailable(long showId, int row, int number) {
-        Seat seat = getShow(showId).getSeat(row, number);
-        if (seat == null) throw new BookingException("Seat does not exist.");
-        return !seat.isBooked();
+    public Collection<Show> listShows() {
+        return Collections.unmodifiableCollection(shows.values());
     }
 
-    // Book a single seat
-    public Ticket bookSeat(long showId, int row, int number, double price) {
-        Show show = getShow(showId);
-        Seat seat = show.getSeat(row, number);
-        if (seat == null) throw new BookingException("Seat does not exist.");
-        synchronized (seat) {
-            if (seat.isBooked()) throw new BookingException("Seat already booked.");
-            seat.setBooked(true);
-        }
-        Ticket ticket = new Ticket(show, seat, price);
-        tickets.put(ticket.getId(), ticket);
-        return ticket;
+    public Optional<Show> findShow(int showId) {
+        return Optional.ofNullable(shows.get(showId));
     }
 
-    // Book multiple seats atomically
-    public List<Ticket> bookSeats(long showId, List<int[]> seatCoordinates, double pricePerSeat) {
-        Show show = getShow(showId);
-        List<Seat> seatsToBook = new ArrayList<>();
-        // Validation phase
-        for (int[] coord : seatCoordinates) {
-            Seat seat = show.getSeat(coord[0], coord[1]);
-            if (seat == null) throw new BookingException("Seat " + coord[0] + "-" + coord[1] + " does not exist.");
-            if (seat.isBooked()) throw new BookingException("Seat " + seat + " already booked.");
-            seatsToBook.add(seat);
-        }
-        // Booking phase
-        List<Ticket> bookedTickets = new ArrayList<>();
-        for (Seat seat : seatsToBook) {
-            synchronized (seat) {
-                if (seat.isBooked()) {
-                    // rollback already booked seats in this transaction
-                    for (Ticket t : bookedTickets) {
-                        t.getSeat().setBooked(false);
-                        tickets.remove(t.getId());
-                    }
-                    throw new BookingException("Seat " + seat + " became unavailable during booking.");
-                }
-                seat.setBooked(true);
-                Ticket ticket = new Ticket(show, seat, pricePerSeat);
-                tickets.put(ticket.getId(), ticket);
-                bookedTickets.add(ticket);
-            }
-        }
-        return bookedTickets;
-    }
-
-    // Cancel a ticket
-    public void cancelTicket(long ticketId) {
-        Ticket ticket = tickets.remove(ticketId);
-        if (ticket == null) throw new BookingException("Ticket not found.");
-        Seat seat = ticket.getSeat();
-        synchronized (seat) {
-            seat.setBooked(false);
-        }
-    }
-
-    // Retrieve tickets for a show
-    public List<Ticket> getTicketsForShow(long showId) {
-        List<Ticket> result = new ArrayList<>();
-        for (Ticket t : tickets.values()) {
-            if (t.getShow().getId() == showId) result.add(t);
-        }
-        return result;
+    /* ---- Booking Operations ---- */
+    public Booking startBooking(int showId) {
+        Show show = shows.get(showId);
+        if (show == null) throw new IllegalArgumentException("Show not found");
+        return new Booking(show);
     }
 }
 
-// ---------- Demo ----------
-public class MovieTicketBookingDemo {
+/* ---------- Example Usage (Optional) ---------- */
+class Main {
     public static void main(String[] args) {
-        // Setup movies and auditoriums
-        Movie avengers = new Movie(1, "Avengers: Endgame", 181);
-        Auditorium aud1 = new Auditorium(1, "Main Hall", 10, 15);
+        BookingSystem system = new BookingSystem();
 
-        // Create a show
-        Show show = new Show(1001, avengers, aud1, LocalDateTime.of
+        // Add data
+        system.addMovie("Inception", 148, "PG-13");
+        system.addScreen("Screen-1", 10, 12);
+        Show show = system.scheduleShow(1, "Screen-1", LocalDateTime.now().plusDays(1));
+
+        // Start a booking
+        Booking booking = system.startBooking(show.getShowId());
+        booking.addSeat(3, 5);
+        booking.addSeat(3, 6);
+        List<Ticket> tickets = booking.confirm();
+
+        // Print tickets
+        tickets.forEach(System.out::println);
+    }
+}
+```

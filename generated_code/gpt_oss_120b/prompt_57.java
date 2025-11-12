@@ -1,7 +1,9 @@
 ```java
-// File: src/com/example/unitconv/MeasurementType.java
-package com.example.unitconv;
+package com.example.unitconverter;
 
+/* -------------------------------------------------
+ * MeasurementType.java
+ * ------------------------------------------------- */
 public enum MeasurementType {
     LENGTH,
     MASS,
@@ -9,214 +11,227 @@ public enum MeasurementType {
     VOLUME,
     TIME
 }
-```
 
-```java
-// File: src/com/example/unitconv/Unit.java
-package com.example.unitconv;
+/* -------------------------------------------------
+ * Unit.java
+ * ------------------------------------------------- */
+public interface Unit {
+    String getName();
+    String getSymbol();
+    MeasurementType getMeasurementType();
 
-import java.util.EnumSet;
-import java.util.Set;
+    /** Convert a value expressed in this unit to the base unit of its type */
+    double toBase(double value);
 
-public enum Unit {
-    // Length
-    METER(MeasurementType.LENGTH, 1.0),
-    KILOMETER(MeasurementType.LENGTH, 1000.0),
-    CENTIMETER(MeasurementType.LENGTH, 0.01),
-    MILLIMETER(MeasurementType.LENGTH, 0.001),
-    MICROMETER(MeasurementType.LENGTH, 1e-6),
-    NANOMETER(MeasurementType.LENGTH, 1e-9),
-    MILE(MeasurementType.LENGTH, 1609.344),
-    YARD(MeasurementType.LENGTH, 0.9144),
-    FOOT(MeasurementType.LENGTH, 0.3048),
-    INCH(MeasurementType.LENGTH, 0.0254),
-
-    // Mass
-    KILOGRAM(MeasurementType.MASS, 1.0),
-    GRAM(MeasurementType.MASS, 0.001),
-    MILLIGRAM(MeasurementType.MASS, 1e-6),
-    MICROGRAM(MeasurementType.MASS, 1e-9),
-    TONNE(MeasurementType.MASS, 1000.0),
-    POUND(MeasurementType.MASS, 0.45359237),
-    OUNCE(MeasurementType.MASS, 0.028349523125),
-
-    // Temperature (base unit: Kelvin)
-    KELVIN(MeasurementType.TEMPERATURE, 1.0),
-    CELSIUS(MeasurementType.TEMPERATURE, 1.0),
-    FAHRENHEIT(MeasurementType.TEMPERATURE, 1.0),
-
-    // Volume
-    LITER(MeasurementType.VOLUME, 1.0),
-    MILLILITER(MeasurementType.VOLUME, 0.001),
-    CUBIC_METER(MeasurementType.VOLUME, 1000.0),
-    GALLON_US(MeasurementType.VOLUME, 3.785411784),
-    QUART_US(MeasurementType.VOLUME, 0.946352946),
-    PINT_US(MeasurementType.VOLUME, 0.473176473),
-
-    // Time
-    SECOND(MeasurementType.TIME, 1.0),
-    MILLISECOND(MeasurementType.TIME, 0.001),
-    MICROSECOND(MeasurementType.TIME, 1e-6),
-    MINUTE(MeasurementType.TIME, 60.0),
-    HOUR(MeasurementType.TIME, 3600.0),
-    DAY(MeasurementType.TIME, 86400.0);
-
-    private final MeasurementType type;
-    private final double toBaseFactor; // factor to convert to base unit (except temperature)
-
-    Unit(MeasurementType type, double toBaseFactor) {
-        this.type = type;
-        this.toBaseFactor = toBaseFactor;
-    }
-
-    public MeasurementType getType() {
-        return type;
-    }
-
-    public double getToBaseFactor() {
-        return toBaseFactor;
-    }
-
-    public static Set<Unit> ofType(MeasurementType type) {
-        EnumSet<Unit> set = EnumSet.noneOf(Unit.class);
-        for (Unit u : values()) {
-            if (u.type == type) set.add(u);
-        }
-        return set;
-    }
+    /** Convert a value expressed in the base unit of its type to this unit */
+    double fromBase(double baseValue);
 }
-```
 
-```java
-// File: src/com/example/unitconv/ConversionException.java
-package com.example.unitconv;
+/* -------------------------------------------------
+ * LengthUnit.java
+ * ------------------------------------------------- */
+public enum LengthUnit implements Unit {
+    METER("Meter", "m", 1.0),
+    KILOMETER("Kilometer", "km", 1000.0),
+    CENTIMETER("Centimeter", "cm", 0.01),
+    MILLIMETER("Millimeter", "mm", 0.001),
+    MICROMETER("Micrometer", "µm", 1e-6),
+    NANOMETER("Nanometer", "nm", 1e-9),
+    MILE("Mile", "mi", 1609.344),
+    YARD("Yard", "yd", 0.9144),
+    FOOT("Foot", "ft", 0.3048),
+    INCH("Inch", "in", 0.0254);
 
-public class ConversionException extends RuntimeException {
-    public ConversionException(String message) {
-        super(message);
+    private final String name;
+    private final String symbol;
+    private final double toMeterFactor; // multiply by this to get meters
+
+    LengthUnit(String name, String symbol, double toMeterFactor) {
+        this.name = name;
+        this.symbol = symbol;
+        this.toMeterFactor = toMeterFactor;
     }
+
+    @Override public String getName() { return name; }
+    @Override public String getSymbol() { return symbol; }
+    @Override public MeasurementType getMeasurementType() { return MeasurementType.LENGTH; }
+
+    @Override public double toBase(double value) { return value * toMeterFactor; }
+    @Override public double fromBase(double baseValue) { return baseValue / toMeterFactor; }
 }
-```
 
-```java
-// File: src/com/example/unitconv/UnitConverter.java
-package com.example.unitconv;
+/* -------------------------------------------------
+ * MassUnit.java
+ * ------------------------------------------------- */
+public enum MassUnit implements Unit {
+    KILOGRAM("Kilogram", "kg", 1.0),
+    GRAM("Gram", "g", 0.001),
+    MILLIGRAM("Milligram", "mg", 1e-6),
+    MICROGRAM("Microgram", "µg", 1e-9),
+    TONNE("Tonne", "t", 1000.0),
+    POUND("Pound", "lb", 0.45359237),
+    OUNCE("Ounce", "oz", 0.028349523125);
 
+    private final String name;
+    private final String symbol;
+    private final double toKilogramFactor; // multiply by this to get kilograms
+
+    MassUnit(String name, String symbol, double toKilogramFactor) {
+        this.name = name;
+        this.symbol = symbol;
+        this.toKilogramFactor = toKilogramFactor;
+    }
+
+    @Override public String getName() { return name; }
+    @Override public String getSymbol() { return symbol; }
+    @Override public MeasurementType getMeasurementType() { return MeasurementType.MASS; }
+
+    @Override public double toBase(double value) { return value * toKilogramFactor; }
+    @Override public double fromBase(double baseValue) { return baseValue / toKilogramFactor; }
+}
+
+/* -------------------------------------------------
+ * TemperatureUnit.java
+ * ------------------------------------------------- */
+public enum TemperatureUnit implements Unit {
+    KELVIN("Kelvin", "K") {
+        @Override public double toBase(double v) { return v; }
+        @Override public double fromBase(double v) { return v; }
+    },
+    CELSIUS("Celsius", "°C") {
+        @Override public double toBase(double v) { return v + 273.15; }
+        @Override public double fromBase(double v) { return v - 273.15; }
+    },
+    FAHRENHEIT("Fahrenheit", "°F") {
+        @Override public double toBase(double v) { return (v - 32) * 5.0/9.0 + 273.15; }
+        @Override public double fromBase(double v) { return (v - 273.15) * 9.0/5.0 + 32; }
+    },
+    RANKINE("Rankine", "°R") {
+        @Override public double toBase(double v) { return v * 5.0/9.0; }
+        @Override public double fromBase(double v) { return v * 9.0/5.0; }
+    };
+
+    private final String name;
+    private final String symbol;
+
+    TemperatureUnit(String name, String symbol) {
+        this.name = name;
+        this.symbol = symbol;
+    }
+
+    @Override public String getName() { return name; }
+    @Override public String getSymbol() { return symbol; }
+    @Override public MeasurementType getMeasurementType() { return MeasurementType.TEMPERATURE; }
+
+    @Override public abstract double toBase(double value);
+    @Override public abstract double fromBase(double baseValue);
+}
+
+/* -------------------------------------------------
+ * VolumeUnit.java
+ * ------------------------------------------------- */
+public enum VolumeUnit implements Unit {
+    CUBIC_METER("Cubic Meter", "m³", 1.0),
+    LITER("Liter", "L", 0.001),
+    MILLILITER("Milliliter", "mL", 1e-6),
+    GALLON_US("US Gallon", "gal", 0.003785411784),
+    QUART_US("US Quart", "qt", 0.000946352946),
+    PINT_US("US Pint", "pt", 0.000473176473),
+    CUP_US("US Cup", "cup", 0.0002365882365),
+    FLUID_OUNCE_US("US Fluid Ounce", "fl oz", 2.957352956e-5);
+
+    private final String name;
+    private final String symbol;
+    private final double toCubicMeterFactor;
+
+    VolumeUnit(String name, String symbol, double toCubicMeterFactor) {
+        this.name = name;
+        this.symbol = symbol;
+        this.toCubicMeterFactor = toCubicMeterFactor;
+    }
+
+    @Override public String getName() { return name; }
+    @Override public String getSymbol() { return symbol; }
+    @Override public MeasurementType getMeasurementType() { return MeasurementType.VOLUME; }
+
+    @Override public double toBase(double value) { return value * toCubicMeterFactor; }
+    @Override public double fromBase(double baseValue) { return baseValue / toCubicMeterFactor; }
+}
+
+/* -------------------------------------------------
+ * TimeUnit.java
+ * ------------------------------------------------- */
+public enum TimeUnit implements Unit {
+    SECOND("Second", "s", 1.0),
+    MILLISECOND("Millisecond", "ms", 0.001),
+    MICROSECOND("Microsecond", "µs", 1e-6),
+    NANOSECOND("Nanosecond", "ns", 1e-9),
+    MINUTE("Minute", "min", 60.0),
+    HOUR("Hour", "h", 3600.0),
+    DAY("Day", "d", 86400.0);
+
+    private final String name;
+    private final String symbol;
+    private final double toSecondFactor;
+
+    TimeUnit(String name, String symbol, double toSecondFactor) {
+        this.name = name;
+        this.symbol = symbol;
+        this.toSecondFactor = toSecondFactor;
+    }
+
+    @Override public String getName() { return name; }
+    @Override public String getSymbol() { return symbol; }
+    @Override public MeasurementType getMeasurementType() { return MeasurementType.TIME; }
+
+    @Override public double toBase(double value) { return value * toSecondFactor; }
+    @Override public double fromBase(double baseValue) { return baseValue / toSecondFactor; }
+}
+
+/* -------------------------------------------------
+ * UnitConverter.java
+ * ------------------------------------------------- */
 public final class UnitConverter {
 
-    private UnitConverter() { }
+    private UnitConverter() { /* utility class */ }
 
-    // Generic conversion for all types except temperature
-    public static double convert(double value, Unit from, Unit to) {
-        if (from.getType() != to.getType()) {
-            throw new ConversionException(
-                String.format("Cannot convert between different measurement types: %s -> %s",
-                    from.getType(), to.getType()));
+    /**
+     * Convert a numeric value from one unit to another.
+     *
+     * @param value the numeric value expressed in {@code fromUnit}
+     * @param fromUnit the source unit
+     * @param toUnit the target unit
+     * @return the value expressed in {@code toUnit}
+     * @throws IllegalArgumentException if the units belong to different measurement types
+     */
+    public static double convert(double value, Unit fromUnit, Unit toUnit) {
+        if (fromUnit.getMeasurementType() != toUnit.getMeasurementType()) {
+            throw new IllegalArgumentException(
+                "Cannot convert between different measurement types: " +
+                fromUnit.getMeasurementType() + " -> " + toUnit.getMeasurementType()
+            );
         }
-
-        if (from.getType() == MeasurementType.TEMPERATURE) {
-            return convertTemperature(value, from, to);
-        }
-
-        // Convert to base unit then to target
-        double inBase = value * from.getToBaseFactor();
-        return inBase / to.getToBaseFactor();
-    }
-
-    // Temperature conversion (base unit Kelvin)
-    private static double convertTemperature(double value, Unit from, Unit to) {
-        double kelvin = toKelvin(value, from);
-        return fromKelvin(kelvin, to);
-    }
-
-    private static double toKelvin(double value, Unit from) {
-        switch (from) {
-            case KELVIN:
-                return value;
-            case CELSIUS:
-                return value + 273.15;
-            case FAHRENHEIT:
-                return (value - 32) * 5.0 / 9.0 + 273.15;
-            default:
-                throw new ConversionException("Unsupported temperature unit: " + from);
-        }
-    }
-
-    private static double fromKelvin(double kelvin, Unit to) {
-        switch (to) {
-            case KELVIN:
-                return kelvin;
-            case CELSIUS:
-                return kelvin - 273.15;
-            case FAHRENHEIT:
-                return (kelvin - 273.15) * 9.0 / 5.0 + 32;
-            default:
-                throw new ConversionException("Unsupported temperature unit: " + to);
-        }
-    }
-
-    // Convenience overloads
-    public static double convert(double value, String fromSymbol, String toSymbol) {
-        Unit from = UnitSymbol.lookup(fromSymbol);
-        Unit to = UnitSymbol.lookup(toSymbol);
-        return convert(value, from, to);
+        double base = fromUnit.toBase(value);
+        return toUnit.fromBase(base);
     }
 }
+
+/* -------------------------------------------------
+ * Example usage (optional, remove if not needed)
+ * ------------------------------------------------- */
+// public class Demo {
+//     public static void main(String[] args) {
+//         double miles = 5.0;
+//         double km = UnitConverter.convert(miles, LengthUnit.MILE, LengthUnit.KILOMETER);
+//         System.out.println(miles + " mi = " + km + " km");
+//
+//         double fahrenheit = 98.6;
+//         double celsius = UnitConverter.convert(fahrenheit, TemperatureUnit.FAHRENHEIT, TemperatureUnit.CELSIUS);
+//         System.out.println(fahrenheit + " °F = " + celsius + " °C");
+//
+//         double gallons = 3.0;
+//         double liters = UnitConverter.convert(gallons, VolumeUnit.GALLON_US, VolumeUnit.LITER);
+//         System.out.println(gallons + " gal = " + liters + " L");
+//     }
+// }
 ```
-
-```java
-// File: src/com/example/unitconv/UnitSymbol.java
-package com.example.unitconv;
-
-import java.util.HashMap;
-import java.util.Map;
-
-public final class UnitSymbol {
-
-    private static final Map<String, Unit> SYMBOL_MAP = new HashMap<>();
-
-    static {
-        // Length
-        SYMBOL_MAP.put("m", Unit.METER);
-        SYMBOL_MAP.put("km", Unit.KILOMETER);
-        SYMBOL_MAP.put("cm", Unit.CENTIMETER);
-        SYMBOL_MAP.put("mm", Unit.MILLIMETER);
-        SYMBOL_MAP.put("µm", Unit.MICROMETER);
-        SYMBOL_MAP.put("nm", Unit.NANOMETER);
-        SYMBOL_MAP.put("mi", Unit.MILE);
-        SYMBOL_MAP.put("yd", Unit.YARD);
-        SYMBOL_MAP.put("ft", Unit.FOOT);
-        SYMBOL_MAP.put("in", Unit.INCH);
-
-        // Mass
-        SYMBOL_MAP.put("kg", Unit.KILOGRAM);
-        SYMBOL_MAP.put("g", Unit.GRAM);
-        SYMBOL_MAP.put("mg", Unit.MILLIGRAM);
-        SYMBOL_MAP.put("µg", Unit.MICROGRAM);
-        SYMBOL_MAP.put("t", Unit.TONNE);
-        SYMBOL_MAP.put("lb", Unit.POUND);
-        SYMBOL_MAP.put("oz", Unit.OUNCE);
-
-        // Temperature
-        SYMBOL_MAP.put("K", Unit.KELVIN);
-        SYMBOL_MAP.put("°C", Unit.CELSIUS);
-        SYMBOL_MAP.put("C", Unit.CELSIUS);
-        SYMBOL_MAP.put("°F", Unit.FAHRENHEIT);
-        SYMBOL_MAP.put("F", Unit.FAHRENHEIT);
-
-        // Volume
-        SYMBOL_MAP.put("L", Unit.LITER);
-        SYMBOL_MAP.put("l", Unit.LITER);
-        SYMBOL_MAP.put("mL", Unit.MILLILITER);
-        SYMBOL_MAP.put("ml", Unit.MILLILITER);
-        SYMBOL_MAP.put("m³", Unit.CUBIC_METER);
-        SYMBOL_MAP.put("m3", Unit.CUBIC_METER);
-        SYMBOL_MAP.put("gal", Unit.GALLON_US);
-        SYMBOL_MAP.put("qt", Unit.QUART_US);
-        SYMBOL_MAP.put("pt", Unit.PINT_US);
-
-        // Time
-        SYMBOL_MAP.put("s", Unit.SECOND);
-        SYMBOL_MAP.put("ms", Unit.MILLISECOND);
-        SYMBOL_MAP.put("µs", Unit.MICROSECOND);
-        SYMBOL

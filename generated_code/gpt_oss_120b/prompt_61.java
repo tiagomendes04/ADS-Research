@@ -1,324 +1,251 @@
 ```java
-// src/main/java/com/proctoring/ProctoringApp.java
-package com.proctoring;
+package com.exam.proctoring;
 
-import com.proctoring.monitor.CameraMonitor;
-import com.proctoring.monitor.ScreenMonitor;
-import com.proctoring.session.ExamSession;
-import com.proctoring.report.ReportGenerator;
+import java.io.*;
+import java.time.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-public class ProctoringApp {
-    public static void main(String[] args) {
-        ExamSession session = new ExamSession("exam-123", "student-456");
-        CameraMonitor cam = new CameraMonitor(session);
-        ScreenMonitor screen = new ScreenMonitor(session);
-
-        cam.start();
-        screen.start();
-
-        // Simulate exam duration (e.g., 60 minutes)
-        try {
-            Thread.sleep(60 * 60 * 1000L);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-
-        cam.stop();
-        screen.stop();
-
-        ReportGenerator.generate(session);
-    }
-}
-```
-
-```java
-// src/main/java/com/proctoring/session/ExamSession.java
-package com.proctoring.session;
-
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-public class ExamSession {
+// -------------------- Core Entities --------------------
+class ExamSession {
     private final String examId;
     private final String studentId;
     private final LocalDateTime startTime;
-    private LocalDateTime endTime;
-    private final List<ProctorEvent> events = Collections.synchronizedList(new ArrayList<>());
+    private final Duration duration;
+    private final MonitoringService monitoringService;
+    private final ReportGenerator reportGenerator;
+    private final AtomicBoolean active = new AtomicBoolean(false);
 
-    public ExamSession(String examId, String studentId) {
+    public ExamSession(String examId, String studentId, Duration duration,
+                       MonitoringService monitoringService,
+                       ReportGenerator reportGenerator) {
         this.examId = examId;
         this.studentId = studentId;
         this.startTime = LocalDateTime.now();
-    }
-
-    public String getExamId() {
-        return examId;
-    }
-
-    public String getStudentId() {
-        return studentId;
-    }
-
-    public LocalDateTime getStartTime() {
-        return startTime;
-    }
-
-    public void setEndTime(LocalDateTime end) {
-        this.endTime = end;
-    }
-
-    public LocalDateTime getEndTime() {
-        return endTime;
-    }
-
-    public void addEvent(ProctorEvent event) {
-        events.add(event);
-    }
-
-    public List<ProctorEvent> getEvents() {
-        return new ArrayList<>(events);
-    }
-}
-```
-
-```java
-// src/main/java/com/proctoring/session/ProctorEvent.java
-package com.proctoring.session;
-
-import java.time.LocalDateTime;
-
-public class ProctorEvent {
-    public enum Type {
-        FACE_NOT_DETECTED,
-        MULTIPLE_FACES,
-        SCREEN_CHANGE,
-        IDLE_TIME,
-        AUDIO_DETECTED,
-        CUSTOM
-    }
-
-    private final Type type;
-    private final LocalDateTime timestamp;
-    private final String details;
-
-    public ProctorEvent(Type type, String details) {
-        this.type = type;
-        this.timestamp = LocalDateTime.now();
-        this.details = details;
-    }
-
-    public Type getType() {
-        return type;
-    }
-
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
-
-    public String getDetails() {
-        return details;
-    }
-}
-```
-
-```java
-// src/main/java/com/proctoring/monitor/Monitor.java
-package com.proctoring.monitor;
-
-import com.proctoring.session.ExamSession;
-
-public abstract class Monitor implements Runnable {
-    protected final ExamSession session;
-    protected volatile boolean running = false;
-    protected Thread thread;
-
-    public Monitor(ExamSession session) {
-        this.session = session;
+        this.duration = duration;
+        this.monitoringService = monitoringService;
+        this.reportGenerator = reportGenerator;
     }
 
     public void start() {
-        if (running) return;
-        running = true;
-        thread = new Thread(this);
-        thread.start();
+        if (active.compareAndSet(false, true)) {
+            monitoringService.start(this);
+            ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+            scheduler.schedule(this::stop, duration.toMillis(), TimeUnit.MILLISECONDS);
+        }
     }
 
     public void stop() {
-        running = false;
-        if (thread != null) {
-            thread.interrupt();
+        if (active.compareAndSet(true, false)) {
+            monitoringService.stop(this);
+            Report report = reportGenerator.generate(this, monitoringService.getEvents(this));
+            report.save("reports/" + examId + "_" + studentId + ".json");
         }
     }
+
+    public String getExamId() { return examId; }
+    public String getStudentId() { return studentId; }
+    public LocalDateTime getStartTime() { return startTime; }
+    public Duration getDuration() { return duration; }
+    public boolean isActive() { return active.get(); }
 }
-```
 
-```java
-// src/main/java/com/proctoring/monitor/CameraMonitor.java
-package com.proctoring.monitor;
+// -------------------- Monitoring Service --------------------
+interface MonitoringService {
+    void start(ExamSession session);
+    void stop(ExamSession session);
+    List<MonitoringEvent> getEvents(ExamSession session);
+}
 
-import com.proctoring.session.ExamSession;
-import com.proctoring.session.ProctorEvent;
-import com.proctoring.session.ProctorEvent.Type;
+class DefaultMonitoringService implements MonitoringService {
+    private final Map<String, List<MonitoringEvent>> sessionEvents = new ConcurrentHashMap<>();
+    private final ExecutorService executor = Executors.newCachedThreadPool();
 
-public class CameraMonitor extends Monitor {
-
-    public CameraMonitor(ExamSession session) {
-        super(session);
+    @Override
+    public void start(ExamSession session) {
+        sessionEvents.put(session.getExamId(), Collections.synchronizedList(new ArrayList<>()));
+        executor.submit(() -> captureVideo(session));
+        executor.submit(() -> captureAudio(session));
+        executor.submit(() -> captureScreen(session));
+        executor.submit(() -> detectAnomalies(session));
     }
 
     @Override
-    public void run() {
-        // Placeholder: replace with actual webcam handling (e.g., OpenCV)
-        while (running) {
-            try {
-                // Simulate face detection logic
-                boolean faceDetected = simulateFaceDetection();
-                if (!faceDetected) {
-                    session.addEvent(new ProctorEvent(Type.FACE_NOT_DETECTED,
-                            "No face detected in frame"));
-                } else if (simulateMultipleFaces()) {
-                    session.addEvent(new ProctorEvent(Type.MULTIPLE_FACES,
-                            "Multiple faces detected"));
-                }
-
-                Thread.sleep(1000); // capture interval
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-        }
-    }
-
-    private boolean simulateFaceDetection() {
-        // Randomly return true/false for demo purposes
-        return Math.random() > 0.05;
-    }
-
-    private boolean simulateMultipleFaces() {
-        return Math.random() < 0.02;
-    }
-}
-```
-
-```java
-// src/main/java/com/proctoring/monitor/ScreenMonitor.java
-package com.proctoring.monitor;
-
-import com.proctoring.session.ExamSession;
-import com.proctoring.session.ProctorEvent;
-import com.proctoring.session.ProctorEvent.Type;
-
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.util.HashSet;
-import java.util.Set;
-
-public class ScreenMonitor extends Monitor {
-
-    private final Set<String> allowedApplications = Set.of("ExamClient", "Browser");
-
-    public ScreenMonitor(ExamSession session) {
-        super(session);
+    public void stop(ExamSession session) {
+        // In real implementation we would gracefully stop capture threads.
+        // Here we just rely on thread interruption.
+        executor.shutdownNow();
     }
 
     @Override
-    public void run() {
-        // Placeholder: replace with actual screen capture & process detection
-        while (running) {
-            try {
-                BufferedImage screenshot = captureScreen();
-                // In a real implementation, analyze screenshot for prohibited content
+    public List<MonitoringEvent> getEvents(ExamSession session) {
+        return sessionEvents.getOrDefault(session.getExamId(), Collections.emptyList());
+    }
 
-                String activeApp = simulateActiveApplication();
-                if (!allowedApplications.contains(activeApp)) {
-                    session.addEvent(new ProctorEvent(Type.SCREEN_CHANGE,
-                            "Prohibited application active: " + activeApp));
-                }
+    // -------------------- Mock Capture Implementations --------------------
+    private void captureVideo(ExamSession session) {
+        while (!Thread.currentThread().isInterrupted()) {
+            recordEvent(session, MonitoringEvent.Type.VIDEO_FRAME, "video_frame_placeholder");
+            sleep(200);
+        }
+    }
 
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
+    private void captureAudio(ExamSession session) {
+        while (!Thread.currentThread().isInterrupted()) {
+            recordEvent(session, MonitoringEvent.Type.AUDIO_SAMPLE, "audio_sample_placeholder");
+            sleep(300);
+        }
+    }
+
+    private void captureScreen(ExamSession session) {
+        while (!Thread.currentThread().isInterrupted()) {
+            recordEvent(session, MonitoringEvent.Type.SCREENSHOT, "screenshot_placeholder");
+            sleep(500);
+        }
+    }
+
+    private void detectAnomalies(ExamSession session) {
+        Random rnd = new Random();
+        while (!Thread.currentThread().isInterrupted()) {
+            if (rnd.nextDouble() < 0.02) { // 2% chance of anomaly per check
+                recordEvent(session, MonitoringEvent.Type.ANOMALY, "Potential cheating detected");
             }
+            sleep(1000);
         }
     }
 
-    private BufferedImage captureScreen() {
-        try {
-            Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
-            return new Robot().createScreenCapture(screenRect);
-        } catch (AWTException e) {
-            return null;
-        }
+    private void recordEvent(ExamSession session, MonitoringEvent.Type type, String payload) {
+        MonitoringEvent event = new MonitoringEvent(
+                session.getExamId(),
+                session.getStudentId(),
+                LocalDateTime.now(),
+                type,
+                payload
+        );
+        sessionEvents.computeIfAbsent(session.getExamId(), k -> Collections.synchronizedList(new ArrayList<>()))
+                     .add(event);
     }
 
-    private String simulateActiveApplication() {
-        // Randomly return an application name
-        double r = Math.random();
-        if (r < 0.80) return "ExamClient";
-        if (r < 0.90) return "Browser";
-        return "Notepad";
+    private void sleep(long ms) {
+        try { Thread.sleep(ms); } catch (InterruptedException ignored) {}
     }
 }
-```
 
-```java
-// src/main/java/com/proctoring/report/ReportGenerator.java
-package com.proctoring.report;
+// -------------------- Monitoring Event --------------------
+class MonitoringEvent {
+    enum Type { VIDEO_FRAME, AUDIO_SAMPLE, SCREENSHOT, ANOMALY }
 
-import com.proctoring.session.ExamSession;
-import com.proctoring.session.ProctorEvent;
+    private final String examId;
+    private final String studentId;
+    private final LocalDateTime timestamp;
+    private final Type type;
+    private final String payload; // could be a file path, base64 data, or description
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
+    public MonitoringEvent(String examId, String studentId, LocalDateTime timestamp,
+                           Type type, String payload) {
+        this.examId = examId;
+        this.studentId = studentId;
+        this.timestamp = timestamp;
+        this.type = type;
+        this.payload = payload;
+    }
 
-public class ReportGenerator {
+    // Getters
+    public String getExamId() { return examId; }
+    public String getStudentId() { return studentId; }
+    public LocalDateTime getTimestamp() { return timestamp; }
+    public Type getType() { return type; }
+    public String getPayload() { return payload; }
+}
 
-    public static void generate(ExamSession session) {
-        String fileName = "report-" + session.getExamId() + "-" + session.getStudentId() + ".csv";
-        try (FileWriter writer = new FileWriter(fileName)) {
-            writer.append("Exam ID,Student ID,Start Time,End Time\n");
-            writer.append(session.getExamId()).append(',')
-                  .append(session.getStudentId()).append(',')
-                  .append(session.getStartTime().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)).append(',')
-                  .append(session.getEndTime() != null ?
-                          session.getEndTime().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) : "")
-                  .append('\n');
+// -------------------- Reporting --------------------
+class Report {
+    private final String examId;
+    private final String studentId;
+    private final LocalDateTime generatedAt;
+    private final List<MonitoringEvent> events;
 
-            writer.append("\nEvent Type,Timestamp,Details\n");
-            List<ProctorEvent> events = session.getEvents();
-            for (ProctorEvent ev : events) {
-                writer.append(ev.getType().name()).append(',')
-                      .append(ev.getTimestamp().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)).append(',')
-                      .append(ev.getDetails().replaceAll(",", ";")).append('\n');
-            }
+    public Report(String examId, String studentId, LocalDateTime generatedAt, List<MonitoringEvent> events) {
+        this.examId = examId;
+        this.studentId = studentId;
+        this.generatedAt = generatedAt;
+        this.events = new ArrayList<>(events);
+    }
 
-            writer.flush();
+    public void save(String filePath) {
+        try (Writer writer = new BufferedWriter(new FileWriter(filePath))) {
+            writer.write(toJson());
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    private String toJson() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{\n");
+        sb.append("  \"examId\": \"").append(examId).append("\",\n");
+        sb.append("  \"studentId\": \"").append(studentId).append("\",\n");
+        sb.append("  \"generatedAt\": \"").append(generatedAt).append("\",\n");
+        sb.append("  \"events\": [\n");
+        for (int i = 0; i < events.size(); i++) {
+            MonitoringEvent ev = events.get(i);
+            sb.append("    {\n");
+            sb.append("      \"timestamp\": \"").append(ev.getTimestamp()).append("\",\n");
+            sb.append("      \"type\": \"").append(ev.getType()).append("\",\n");
+            sb.append("      \"payload\": \"").append(ev.getPayload()).append("\"\n");
+            sb.append("    }");
+            if (i < events.size() - 1) sb.append(",");
+            sb.append("\n");
+        }
+        sb.append("  ]\n");
+        sb.append("}");
+        return sb.toString();
+    }
+}
+
+class ReportGenerator {
+    public Report generate(ExamSession session, List<MonitoringEvent> events) {
+        return new Report(
+                session.getExamId(),
+                session.getStudentId(),
+                LocalDateTime.now(),
+                events
+        );
+    }
+}
+
+// -------------------- Example Usage --------------------
+public class ProctoringApp {
+    public static void main(String[] args) throws Exception {
+        MonitoringService monitoringService = new DefaultMonitoringService();
+        ReportGenerator reportGenerator = new ReportGenerator();
+
+        ExamSession session = new ExamSession(
+                "EXAM-2025-MATH101",
+                "student-12345",
+                Duration.ofMinutes(30),
+                monitoringService,
+                reportGenerator
+        );
+
+        System.out.println("Exam started for student " + session.getStudentId());
+        session.start();
+
+        // Simulate external stop (e.g., admin abort) after 10 minutes for demo
+        ScheduledExecutorService adminScheduler = Executors.newSingleThreadScheduledExecutor();
+        adminScheduler.schedule(() -> {
+            System.out.println("Admin terminating exam early.");
+            session.stop();
+        }, 10, TimeUnit.MINUTES);
+
+        // Keep main thread alive until session ends
+        while (session.isActive()) {
+            Thread.sleep(1000);
+        }
+
+        System.out.println("Exam finished. Report generated.");
+        adminScheduler.shutdownNow();
+    }
 }
 ```
-
-```xml
-<!-- pom.xml -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-
-    <groupId>com.proctoring</groupId>
-    <artifactId>online-exam-proctor</artifactId>
-    <version>1.0.0</version>
-
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-    </properties>
-
-    <dependencies>
-        <!-- Add real webcam/screen capture libs here

@@ -2,248 +2,218 @@
 import java.util.*;
 
 abstract class Question {
-    protected final String id;
-    protected final String text;
-
-    public Question(String id, String text) {
-        this.id = id;
-        this.text = text;
-    }
-
-    public String getId() { return id; }
-    public String getText() { return text; }
-
+    protected String prompt;
+    public Question(String prompt) { this.prompt = prompt; }
+    public String getPrompt() { return prompt; }
     public abstract void display();
-    public abstract void collectAnswer(Scanner scanner);
-    public abstract void showResults();
+    public abstract void collectAnswer(Scanner sc);
+    public abstract void showResult();
 }
 
 class MultipleChoiceQuestion extends Question {
-    private final List<String> options;
-    private final Map<Integer, Integer> voteCount = new HashMap<>();
+    private List<String> options;
+    private Map<Integer, Integer> votes = new HashMap<>();
     private int selectedOption = -1;
 
-    public MultipleChoiceQuestion(String id, String text, List<String> options) {
-        super(id, text);
-        this.options = new ArrayList<>(options);
-        for (int i = 0; i < options.size(); i++) voteCount.put(i, 0);
+    public MultipleChoiceQuestion(String prompt, List<String> options) {
+        super(prompt);
+        this.options = options;
+        for (int i = 0; i < options.size(); i++) votes.put(i, 0);
     }
 
     @Override
     public void display() {
-        System.out.println("\n[" + id + "] " + text);
+        System.out.println(prompt);
         for (int i = 0; i < options.size(); i++) {
-            System.out.printf("  %d) %s%n", i + 1, options.get(i));
+            System.out.printf("%d) %s%n", i + 1, options.get(i));
         }
     }
 
     @Override
-    public void collectAnswer(Scanner scanner) {
+    public void collectAnswer(Scanner sc) {
         System.out.print("Select an option (1-" + options.size() + "): ");
-        int choice = scanner.nextInt();
-        scanner.nextLine();
+        int choice = sc.nextInt();
+        sc.nextLine(); // consume newline
         if (choice < 1 || choice > options.size()) {
-            System.out.println("Invalid choice, ignored.");
+            System.out.println("Invalid choice. Skipping.");
             return;
         }
         selectedOption = choice - 1;
-        voteCount.put(selectedOption, voteCount.get(selectedOption) + 1);
+        votes.put(selectedOption, votes.get(selectedOption) + 1);
     }
 
     @Override
-    public void showResults() {
-        System.out.println("\nResults for [" + id + "] " + text);
-        int total = voteCount.values().stream().mapToInt(Integer::intValue).sum();
+    public void showResult() {
+        System.out.println("Results for: " + prompt);
+        int total = votes.values().stream().mapToInt(Integer::intValue).sum();
         for (int i = 0; i < options.size(); i++) {
-            int cnt = voteCount.get(i);
-            double perc = total == 0 ? 0 : (cnt * 100.0 / total);
-            System.out.printf("%d) %s – %d votes (%.2f%%)%n", i + 1, options.get(i), cnt, perc);
+            int count = votes.get(i);
+            double percent = total == 0 ? 0 : (count * 100.0 / total);
+            System.out.printf("%s : %d votes (%.2f%%)%n", options.get(i), count, percent);
         }
+        System.out.println();
     }
 }
 
 class RankingQuestion extends Question {
-    private final List<String> items;
-    private final List<List<Integer>> rankings = new ArrayList<>();
+    private List<String> items;
+    private List<Integer> rankings = new ArrayList<>();
 
-    public RankingQuestion(String id, String text, List<String> items) {
-        super(id, text);
-        this.items = new ArrayList<>(items);
+    public RankingQuestion(String prompt, List<String> items) {
+        super(prompt);
+        this.items = items;
     }
 
     @Override
     public void display() {
-        System.out.println("\n[" + id + "] " + text);
-        System.out.println("Rank the following items (enter numbers separated by spaces, highest rank first):");
+        System.out.println(prompt);
         for (int i = 0; i < items.size(); i++) {
-            System.out.printf("  %d) %s%n", i + 1, items.get(i));
+            System.out.printf("%d) %s%n", i + 1, items.get(i));
         }
+        System.out.println("Rank the items from 1 (best) to " + items.size() + " (worst).");
     }
 
     @Override
-    public void collectAnswer(Scanner scanner) {
-        System.out.print("Your ranking: ");
-        String line = scanner.nextLine().trim();
-        String[] parts = line.split("\\s+");
-        if (parts.length != items.size()) {
-            System.out.println("Incorrect number of items, ignored.");
-            return;
-        }
-        List<Integer> rank = new ArrayList<>();
-        Set<Integer> seen = new HashSet<>();
-        for (String p : parts) {
-            try {
-                int idx = Integer.parseInt(p) - 1;
-                if (idx < 0 || idx >= items.size() || seen.contains(idx)) {
-                    System.out.println("Invalid ranking, ignored.");
-                    return;
-                }
-                rank.add(idx);
-                seen.add(idx);
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input, ignored.");
+    public void collectAnswer(Scanner sc) {
+        rankings.clear();
+        Set<Integer> used = new HashSet<>();
+        for (int i = 0; i < items.size(); i++) {
+            System.out.printf("Rank for \"%s\": ", items.get(i));
+            int rank = sc.nextInt();
+            sc.nextLine(); // consume newline
+            if (rank < 1 || rank > items.size() || used.contains(rank)) {
+                System.out.println("Invalid or duplicate rank. Skipping this question.");
+                rankings.clear();
                 return;
             }
+            rankings.add(rank);
+            used.add(rank);
         }
-        rankings.add(rank);
     }
 
     @Override
-    public void showResults() {
-        System.out.println("\nResults for [" + id + "] " + text);
-        int n = items.size();
-        double[] scores = new double[n];
-        for (List<Integer> rank : rankings) {
-            for (int pos = 0; pos < n; pos++) {
-                int idx = rank.get(pos);
-                scores[idx] += (n - pos); // higher rank gets more points
-            }
+    public void showResult() {
+        if (rankings.isEmpty()) {
+            System.out.println("No rankings submitted for: " + prompt);
+            return;
         }
+        System.out.println("Aggregated Rankings for: " + prompt);
+        int n = items.size();
+        int[] totalRanks = new int[n];
+        for (int i = 0; i < n; i++) totalRanks[i] = rankings.get(i);
+        // Simple average ranking (since only one response per run)
         List<Integer> order = new ArrayList<>();
         for (int i = 0; i < n; i++) order.add(i);
-        order.sort((a, b) -> Double.compare(scores[b], scores[a]));
-
-        System.out.println("Average scores:");
-        for (int i = 0; i < n; i++) {
-            System.out.printf("%d) %s – %.2f%n", i + 1, items.get(i), scores[i] / Math.max(1, rankings.size()));
+        order.sort(Comparator.comparingInt(i -> totalRanks[i]));
+        for (int idx : order) {
+            System.out.printf("%s : Rank %d%n", items.get(idx), totalRanks[idx]);
         }
-
-        System.out.println("\nOverall ranking:");
-        for (int i = 0; i < n; i++) {
-            int idx = order.get(i);
-            System.out.printf("%d) %s (score: %.2f)%n", i + 1, items.get(idx), scores[idx] / Math.max(1, rankings.size()));
-        }
+        System.out.println();
     }
 }
 
 class Poll {
-    private final String title;
-    private final List<Question> questions = new ArrayList<>();
+    private String title;
+    private List<Question> questions = new ArrayList<>();
 
-    public Poll(String title) {
-        this.title = title;
-    }
+    public Poll(String title) { this.title = title; }
 
     public void addQuestion(Question q) { questions.add(q); }
 
-    public void conduct(Scanner scanner) {
-        System.out.println("\n=== " + title + " ===");
+    public void conduct(Scanner sc) {
+        System.out.println("=== Poll: " + title + " ===");
         for (Question q : questions) {
             q.display();
-            q.collectAnswer(scanner);
+            q.collectAnswer(sc);
+            System.out.println();
         }
     }
 
     public void showResults() {
-        System.out.println("\n=== Results for " + title + " ===");
+        System.out.println("=== Results for Poll: " + title + " ===");
         for (Question q : questions) {
-            q.showResults();
+            q.showResult();
         }
     }
 }
 
 public class OnlinePollingSystem {
-    private static final Scanner scanner = new Scanner(System.in);
-    private static final List<Poll> polls = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
+    private static List<Poll> polls = new ArrayList<>();
 
     public static void main(String[] args) {
         while (true) {
-            System.out.println("\n--- Online Polling System ---");
-            System.out.println("1) Create new poll");
-            System.out.println("2) Take a poll");
-            System.out.println("3) Show poll results");
+            System.out.println("1) Create Poll");
+            System.out.println("2) Take Poll");
+            System.out.println("3) View Results");
             System.out.println("4) Exit");
             System.out.print("Choose an option: ");
-            String choice = scanner.nextLine().trim();
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // consume newline
             switch (choice) {
-                case "1" -> createPoll();
-                case "2" -> takePoll();
-                case "3" -> showResults();
-                case "4" -> {
+                case 1 -> createPoll();
+                case 2 -> takePoll();
+                case 3 -> viewResults();
+                case 4 -> {
                     System.out.println("Goodbye!");
                     return;
                 }
-                default -> System.out.println("Invalid option.");
+                default -> System.out.println("Invalid choice.");
             }
         }
     }
 
     private static void createPoll() {
         System.out.print("Enter poll title: ");
-        String title = scanner.nextLine().trim();
+        String title = scanner.nextLine();
         Poll poll = new Poll(title);
         while (true) {
-            System.out.println("\nAdd question:");
-            System.out.println("a) Multiple-choice");
-            System.out.println("b) Ranking");
-            System.out.println("c) Done");
-            System.out.print("Select type: ");
-            String type = scanner.nextLine().trim().toLowerCase();
-            if (type.equals("c")) break;
-            System.out.print("Question ID: ");
-            String id = scanner.nextLine().trim();
-            System.out.print("Question text: ");
-            String text = scanner.nextLine().trim();
-            switch (type) {
-                case "a" -> {
-                    List<String> opts = readOptions();
-                    poll.addQuestion(new MultipleChoiceQuestion(id, text, opts));
+            System.out.println("Add Question:");
+            System.out.println("1) Multiple Choice");
+            System.out.println("2) Ranking");
+            System.out.println("3) Done");
+            System.out.print("Choose: ");
+            int type = scanner.nextInt();
+            scanner.nextLine();
+            if (type == 3) break;
+            System.out.print("Enter question prompt: ");
+            String prompt = scanner.nextLine();
+            if (type == 1) {
+                List<String> opts = new ArrayList<>();
+                System.out.println("Enter options (blank line to finish):");
+                while (true) {
+                    String opt = scanner.nextLine();
+                    if (opt.isBlank()) break;
+                    opts.add(opt);
                 }
-                case "b" -> {
-                    List<String> items = readOptions();
-                    poll.addQuestion(new RankingQuestion(id, text, items));
+                poll.addQuestion(new MultipleChoiceQuestion(prompt, opts));
+            } else if (type == 2) {
+                List<String> items = new ArrayList<>();
+                System.out.println("Enter items to rank (blank line to finish):");
+                while (true) {
+                    String itm = scanner.nextLine();
+                    if (itm.isBlank()) break;
+                    items.add(itm);
                 }
-                default -> System.out.println("Unknown type.");
+                poll.addQuestion(new RankingQuestion(prompt, items));
             }
         }
         polls.add(poll);
-        System.out.println("Poll created.");
-    }
-
-    private static List<String> readOptions() {
-        List<String> opts = new ArrayList<>();
-        System.out.println("Enter options/items (blank line to finish):");
-        while (true) {
-            System.out.print("> ");
-            String line = scanner.nextLine().trim();
-            if (line.isEmpty()) break;
-            opts.add(line);
-        }
-        return opts;
+        System.out.println("Poll created.\n");
     }
 
     private static void takePoll() {
         if (polls.isEmpty()) {
-            System.out.println("No polls available.");
+            System.out.println("No polls available.\n");
             return;
         }
         Poll poll = selectPoll();
         if (poll != null) poll.conduct(scanner);
     }
 
-    private static void showResults() {
+    private static void viewResults() {
         if (polls.isEmpty()) {
-            System.out.println("No polls available.");
+            System.out.println("No polls available.\n");
             return;
         }
         Poll poll = selectPoll();
@@ -251,7 +221,18 @@ public class OnlinePollingSystem {
     }
 
     private static Poll selectPoll() {
-        System.out.println("\nAvailable polls:");
+        System.out.println("Available Polls:");
         for (int i = 0; i < polls.size(); i++) {
             System.out.printf("%d) %s%n", i + 1, polls.get(i).title);
         }
+        System.out.print("Select poll number: ");
+        int idx = scanner.nextInt();
+        scanner.nextLine();
+        if (idx < 1 || idx > polls.size()) {
+            System.out.println("Invalid selection.\n");
+            return null;
+        }
+        return polls.get(idx - 1);
+    }
+}
+```

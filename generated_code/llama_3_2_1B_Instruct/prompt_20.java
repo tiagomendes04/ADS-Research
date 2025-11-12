@@ -1,81 +1,115 @@
-public class RemoteControlSystem {
-    private Device[] devices;
+```java
+public class RemoteControl {
+    private int buttonPresses;
+    private int powerState;
 
-    public RemoteControlSystem(Device[] devices) {
-        this.devices = devices;
+    public RemoteControl() {
+        buttonPresses = 0;
+        powerState = false;
     }
 
-    public void onDevice(Device device) {
-        device.on();
+    public void pressButton() {
+        buttonPresses++;
     }
 
-    public void offDevice(Device device) {
-        device.off();
+    public void powerOn() {
+        powerState = true;
+    }
+
+    public void powerOff() {
+        powerState = false;
+    }
+
+    public int getButtonPresses() {
+        return buttonPresses;
+    }
+
+    public boolean isPowerOn() {
+        return powerState;
     }
 }
+```
 
-public abstract class Device {
-    protected boolean isOn;
-
-    public void on() {
-        isOn = true;
-    }
-
-    public void off() {
-        isOn = false;
-    }
-}
-
-public class Light extends Device {
+```java
+public class Light extends RemoteControl {
     public Light() {
-        super(new LightButton());
+        super();
     }
 
-    @Override
-    public void on() {
-        super.on();
+    public void turnOn() {
+        powerOn();
         System.out.println("Light is on");
     }
 
-    @Override
-    public void off() {
-        super.off();
+    public void turnOff() {
+        powerOff();
+        System.out.println("Light is off");
+    }
+
+    public void adjustBrightness(int brightness) {
+        if (isPowerOn()) {
+            System.out.println("Adjusting brightness of light: " + brightness);
+        } else {
+            System.out.println("Cannot adjust brightness of light while it's off");
+        }
     }
 }
+```
 
-public class LightButton {
-    public void press() {
-        System.out.println("Button pressed");
-    }
-
-    public void release() {
-        System.out.println("Button released");
-    }
-}
-
-public class Fan extends Device {
+```java
+public class Fan extends RemoteControl {
     public Fan() {
-        super(new FanButton());
+        super();
     }
 
-    @Override
-    public void on() {
-        super.on();
+    public void turnOn() {
+        powerOn();
         System.out.println("Fan is on");
     }
 
-    @Override
-    public void off() {
-        super.off();
-    }
-}
-
-public class FanButton {
-    public void press() {
-        System.out.println("Button pressed");
+    public void turnOff() {
+        powerOff();
+        System.out.println("Fan is off");
     }
 
-    public void release() {
-        System.out.println("Button released");
+    public void adjustSpeed(int speed) {
+        if (isPowerOn()) {
+            System.out.println("Adjusting fan speed: " + speed);
+        } else {
+            System.out.println("Cannot adjust fan speed while it's off");
+        }
     }
 }
+```
+
+```java
+public class Device {
+    private Light light;
+    private Fan fan;
+
+    public Device(Light light, Fan fan) {
+        this.light = light;
+        this.fan = fan;
+    }
+
+    public void turnLightOn() {
+        light.turnOn();
+    }
+
+    public void turnLightOff() {
+        light.turnOff();
+    }
+
+    public void turnFanOn() {
+        fan.turnOn();
+    }
+
+    public void turnFanOff() {
+        fan.turnOff();
+    }
+
+    public void adjustFanSpeed(int speed) {
+        fan.adjustSpeed(speed);
+    }
+}
+```

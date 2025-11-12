@@ -1,241 +1,275 @@
 ```java
 import java.util.*;
 
-public class TextAdventure {
+public class AdventureGame {
     public static void main(String[] args) {
-        Game game = new Game();
-        game.start();
+        new Game().start();
     }
 }
 
+/* Core game engine */
 class Game {
     private final Scanner scanner = new Scanner(System.in);
-    private final Player player = new Player();
     private final Map<String, Room> rooms = new HashMap<>();
+    private final Player player = new Player();
 
-    public Game() {
-        createWorld();
-        player.setCurrentRoom(rooms.get("Entrance"));
-    }
-
-    public void start() {
+    void start() {
+        initWorld();
         System.out.println("Welcome to the Adventure!");
+        System.out.println("Type 'help' for a list of commands.\n");
+        player.setCurrentRoom(rooms.get("Entrance"));
+        loop();
+    }
+
+    private void loop() {
         while (true) {
-            System.out.println("\n" + player.getCurrentRoom().getLongDescription());
-            System.out.print("> ");
+            System.out.print("\n> ");
             String input = scanner.nextLine().trim().toLowerCase();
-            if (input.equals("quit") || input.equals("exit")) {
-                System.out.println("Goodbye!");
-                break;
+            if (input.isEmpty()) continue;
+
+            String[] parts = input.split("\\s+", 2);
+            String verb = parts[0];
+            String rest = parts.length > 1 ? parts[1] : "";
+
+            switch (verb) {
+                case "go":
+                    move(rest);
+                    break;
+                case "look":
+                    look();
+                    break;
+                case "take":
+                    take(rest);
+                    break;
+                case "inventory":
+                case "i":
+                    player.showInventory();
+                    break;
+                case "solve":
+                    solve(rest);
+                    break;
+                case "help":
+                    showHelp();
+                    break;
+                case "quit":
+                case "exit":
+                    System.out.println("Goodbye!");
+                    return;
+                default:
+                    System.out.println("I don't understand that command.");
             }
-            handleCommand(input);
         }
     }
 
-    private void handleCommand(String input) {
-        String[] parts = input.split("\\s+", 2);
-        String verb = parts[0];
-        String noun = parts.length > 1 ? parts[1] : "";
-
-        switch (verb) {
-            case "go":
-                if (!noun.isEmpty()) player.move(noun);
-                else System.out.println("Go where?");
-                break;
-            case "look":
-                System.out.println(player.getCurrentRoom().getLongDescription());
-                break;
-            case "take":
-                if (!noun.isEmpty()) player.take(noun);
-                else System.out.println("Take what?");
-                break;
-            case "inventory":
-                player.showInventory();
-                break;
-            case "use":
-                if (!noun.isEmpty()) player.use(noun);
-                else System.out.println("Use what?");
-                break;
-            case "solve":
-                if (!noun.isEmpty()) player.solvePuzzle(noun);
-                else System.out.println("Solve what?");
-                break;
-            default:
-                System.out.println("I don't understand that command.");
+    private void move(String direction) {
+        if (direction.isEmpty()) {
+            System.out.println("Go where?");
+            return;
+        }
+        Room next = player.getCurrentRoom().getExit(direction);
+        if (next == null) {
+            System.out.println("You can't go that way.");
+        } else if (next.isLocked()) {
+            System.out.println("The door is locked.");
+        } else {
+            player.setCurrentRoom(next);
+            look();
         }
     }
 
-    private void createWorld() {
+    private void look() {
+        Room r = player.getCurrentRoom();
+        System.out.println("\n" + r.getName());
+        System.out.println(r.getDescription());
+
+        if (!r.getItems().isEmpty()) {
+            System.out.println("You see:");
+            for (Item i : r.getItems()) {
+                System.out.println(" - " + i.getName());
+            }
+        }
+
+        if (!r.getExits().isEmpty()) {
+            System.out.print("Exits: ");
+            System.out.println(String.join(", ", r.getExits().keySet()));
+        }
+
+        if (r.getPuzzle() != null && !r.getPuzzle().isSolved()) {
+            System.out.println("A puzzle lies here: " + r.getPuzzle().getPrompt());
+        }
+    }
+
+    private void take(String itemName) {
+        if (itemName.isEmpty()) {
+            System.out.println("Take what?");
+            return;
+        }
+        Room r = player.getCurrentRoom();
+        Item item = r.removeItem(itemName);
+        if (item == null) {
+            System.out.println("There's no such item here.");
+        } else {
+            player.addItem(item);
+            System.out.println("You took the " + item.getName() + ".");
+        }
+    }
+
+    private void solve(String answer) {
+        Room r = player.getCurrentRoom();
+        Puzzle p = r.getPuzzle();
+        if (p == null) {
+            System.out.println("There's nothing to solve here.");
+            return;
+        }
+        if (p.isSolved()) {
+            System.out.println("You've already solved this puzzle.");
+            return;
+        }
+        if (p.attempt(answer)) {
+            System.out.println("Correct! " + p.getSuccessMessage());
+            if (p.getRewardItem() != null) {
+                r.addItem(p.getRewardItem());
+                System.out.println("A " + p.getRewardItem().getName() + " appears.");
+            }
+            if (p.getUnlockRoom() != null) {
+                p.getUnlockRoom().setLocked(false);
+                System.out.println("A hidden passage opens somewhere.");
+            }
+        } else {
+            System.out.println("Incorrect. Try again.");
+        }
+    }
+
+    private void showHelp() {
+        System.out.println("Commands:");
+        System.out.println("  go <direction>   - Move north, south, east, west");
+        System.out.println("  look             - Look around");
+        System.out.println("  take <item>      - Pick up an item");
+        System.out.println("  inventory (i)    - Show your items");
+        System.out.println("  solve <answer>   - Attempt to solve a puzzle");
+        System.out.println("  help             - Show this help");
+        System.out.println("  quit/exit        - End the game");
+    }
+
+    private void initWorld() {
         // Rooms
-        Room entrance = new Room("Entrance",
-                "You stand at the entrance of a dimly lit cave.");
-        Room hall = new Room("Hall",
-                "A narrow hall stretches before you, walls covered in ancient glyphs.");
-        Room chamber = new Room("Chamber",
-                "A spacious chamber with a pedestal in the center.");
-        Room treasury = new Room("Treasury",
-                "Gold and jewels glitter in the faint light.");
+        Room entrance = new Room("Entrance", "You stand at the entrance of a dimly lit cave.");
+        Room hallway = new Room("Hallway", "A narrow hallway stretches before you.");
+        Room chamber = new Room("Chamber", "A large chamber with ancient markings on the walls.");
+        Room treasure = new Room("Treasure Room", "Glittering treasure piles up in the center.");
+        treasure.setLocked(true); // locked initially
 
-        // Connections
-        entrance.setExit("north", hall);
-        hall.setExit("south", entrance);
-        hall.setExit("east", chamber);
-        chamber.setExit("west", hall);
-        chamber.setExit("north", treasury);
-        treasury.setExit("south", chamber);
+        // Exits
+        entrance.addExit("north", hallway);
+        hallway.addExit("south", entrance);
+        hallway.addExit("east", chamber);
+        chamber.addExit("west", hallway);
+        chamber.addExit("north", treasure);
+        treasure.addExit("south", chamber);
 
         // Items
         Item torch = new Item("torch", "A wooden torch. It might be useful.");
-        Item key = new Item("key", "A small iron key.");
-        Item gem = new Item("gem", "A sparkling red gem.");
-
         entrance.addItem(torch);
-        hall.addItem(key);
-        treasury.addItem(gem);
+
+        Item key = new Item("silver key", "A small silver key, perhaps it opens something.");
+        chamber.addItem(key);
 
         // Puzzles
-        Puzzle glyphPuzzle = new Puzzle(
-                "The glyphs form a riddle: 'I speak without a mouth and hear without ears. What am I?'",
-                "echo"
+        Puzzle riddle = new Puzzle(
+                "I speak without a mouth and hear without ears. I have nobody, but I come alive with wind. What am I?",
+                "echo",
+                "A hidden compartment slides open, revealing a silver key.",
+                key,
+                null
         );
-        hall.setPuzzle(glyphPuzzle);
+        hallway.setPuzzle(riddle);
 
-        Puzzle pedestalPuzzle = new Puzzle(
-                "The pedestal has a slot shaped like a key. Insert the key? (yes/no)",
-                "yes"
+        Puzzle gate = new Puzzle(
+                "What walks on four legs in the morning, two legs at noon, and three legs in the evening?",
+                "man",
+                "The stone gate grinds open.",
+                null,
+                treasure
         );
-        chamber.setPuzzle(pedestalPuzzle);
+        chamber.setPuzzle(gate);
 
         // Register rooms
         rooms.put("Entrance", entrance);
-        rooms.put("Hall", hall);
+        rooms.put("Hallway", hallway);
         rooms.put("Chamber", chamber);
-        rooms.put("Treasury", treasury);
+        rooms.put("Treasure Room", treasure);
     }
 }
 
+/* Player */
 class Player {
     private Room currentRoom;
     private final List<Item> inventory = new ArrayList<>();
 
-    public void setCurrentRoom(Room room) {
-        this.currentRoom = room;
-    }
-
-    public Room getCurrentRoom() {
+    Room getCurrentRoom() {
         return currentRoom;
     }
 
-    public void move(String direction) {
-        Room next = currentRoom.getExit(direction);
-        if (next == null) {
-            System.out.println("You can't go that way.");
-        } else if (next.getPuzzle() != null && !next.getPuzzle().isSolved()) {
-            System.out.println("A puzzle blocks your way:");
-            System.out.println(next.getPuzzle().getDescription());
-        } else {
-            currentRoom = next;
-            System.out.println("You move " + direction + ".");
-        }
+    void setCurrentRoom(Room room) {
+        this.currentRoom = room;
+        System.out.println("\nYou enter: " + room.getName());
     }
 
-    public void take(String itemName) {
-        Item item = currentRoom.removeItem(itemName);
-        if (item == null) {
-            System.out.println("There's no " + itemName + " here.");
-        } else {
-            inventory.add(item);
-            System.out.println("You take the " + item.getName() + ".");
-        }
+    void addItem(Item item) {
+        inventory.add(item);
     }
 
-    public void showInventory() {
+    void showInventory() {
         if (inventory.isEmpty()) {
-            System.out.println("Your inventory is empty.");
+            System.out.println("You are carrying nothing.");
         } else {
-            System.out.println("You are carrying:");
+            System.out.println("You have:");
             for (Item i : inventory) {
-                System.out.println("- " + i.getName() + ": " + i.getDescription());
+                System.out.println(" - " + i.getName() + ": " + i.getDescription());
             }
         }
-    }
-
-    public void use(String itemName) {
-        Item item = findInInventory(itemName);
-        if (item == null) {
-            System.out.println("You don't have a " + itemName + ".");
-            return;
-        }
-
-        // Example usage: using key on pedestal puzzle
-        Puzzle puzzle = currentRoom.getPuzzle();
-        if (puzzle != null && !puzzle.isSolved() && item.getName().equals("key")) {
-            System.out.println("You try using the key...");
-            puzzle.attempt("yes");
-            if (puzzle.isSolved()) {
-                System.out.println("The pedestal accepts the key and reveals a hidden passage!");
-                // Unlock a secret exit (for demo, open north to Treasury)
-                Room treasury = currentRoom.getExit("north");
-                if (treasury != null) {
-                    currentRoom.setExit("north", treasury);
-                }
-            }
-        } else {
-            System.out.println("You can't use that here.");
-        }
-    }
-
-    public void solvePuzzle(String answer) {
-        Puzzle puzzle = currentRoom.getPuzzle();
-        if (puzzle == null) {
-            System.out.println("There's no puzzle here.");
-            return;
-        }
-        if (puzzle.isSolved()) {
-            System.out.println("You've already solved this puzzle.");
-            return;
-        }
-        puzzle.attempt(answer);
-        if (puzzle.isSolved()) {
-            System.out.println("Puzzle solved!");
-        } else {
-            System.out.println("Incorrect answer.");
-        }
-    }
-
-    private Item findInInventory(String name) {
-        for (Item i : inventory) {
-            if (i.getName().equalsIgnoreCase(name)) return i;
-        }
-        return null;
     }
 }
 
+/* Room */
 class Room {
     private final String name;
     private final String description;
     private final Map<String, Room> exits = new HashMap<>();
     private final List<Item> items = new ArrayList<>();
     private Puzzle puzzle;
+    private boolean locked = false;
 
-    public Room(String name, String description) {
+    Room(String name, String description) {
         this.name = name;
         this.description = description;
     }
 
-    public void setExit(String direction, Room neighbor) {
-        exits.put(direction.toLowerCase(), neighbor);
+    String getName() {
+        return name;
     }
 
-    public Room getExit(String direction) {
-        return exits.get(direction.toLowerCase());
+    String getDescription() {
+        return description;
     }
 
-    public void addItem(Item item) {
+    void addExit(String direction, Room room) {
+        exits.put(direction, room);
+    }
+
+    Map<String, Room> getExits() {
+        return exits;
+    }
+
+    Room getExit(String direction) {
+        return exits.get(direction);
+    }
+
+    void addItem(Item item) {
         items.add(item);
     }
 
-    public Item removeItem(String name) {
+    Item removeItem(String name) {
         Iterator<Item> it = items.iterator();
         while (it.hasNext()) {
             Item i = it.next();
@@ -247,19 +281,90 @@ class Room {
         return null;
     }
 
-    public void setPuzzle(Puzzle puzzle) {
+    List<Item> getItems() {
+        return items;
+    }
+
+    void setPuzzle(Puzzle puzzle) {
         this.puzzle = puzzle;
     }
 
-    public Puzzle getPuzzle() {
+    Puzzle getPuzzle() {
         return puzzle;
     }
 
-    public String getLongDescription() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("== ").append(name).append(" ==\n");
-        sb.append(description).append("\n");
-        if (!items.isEmpty()) {
-            sb.append("You see:\n");
-            for (Item i : items) {
-                sb.append("- ").append(i.getName
+    boolean isLocked() {
+        return locked;
+    }
+
+    void setLocked(boolean locked) {
+        this.locked = locked;
+    }
+}
+
+/* Item */
+class Item {
+    private final String name;
+    private final String description;
+
+    Item(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
+    String getName() {
+        return name;
+    }
+
+    String getDescription() {
+        return description;
+    }
+}
+
+/* Puzzle */
+class Puzzle {
+    private final String prompt;
+    private final String answer;
+    private final String successMessage;
+    private final Item rewardItem;
+    private final Room unlockRoom;
+    private boolean solved = false;
+
+    Puzzle(String prompt, String answer, String successMessage, Item rewardItem, Room unlockRoom) {
+        this.prompt = prompt;
+        this.answer = answer.toLowerCase();
+        this.successMessage = successMessage;
+        this.rewardItem = rewardItem;
+        this.unlockRoom = unlockRoom;
+    }
+
+    String getPrompt() {
+        return prompt;
+    }
+
+    String getSuccessMessage() {
+        return successMessage;
+    }
+
+    Item getRewardItem() {
+        return rewardItem;
+    }
+
+    Room getUnlockRoom() {
+        return unlockRoom;
+    }
+
+    boolean isSolved() {
+        return solved;
+    }
+
+    boolean attempt(String attempt) {
+        if (solved) return true;
+        if (attempt.trim().toLowerCase().equals(answer)) {
+            solved = true;
+            return true;
+        }
+        return false;
+    }
+}
+```

@@ -1,152 +1,120 @@
 ```java
-// Exception thrown when an operation would result in a negative balance
-public class InsufficientFundsException extends RuntimeException {
+import java.util.*;
+import java.util.concurrent.atomic.AtomicLong;
+
+class InsufficientFundsException extends RuntimeException {
     public InsufficientFundsException(String message) {
         super(message);
     }
 }
 
-// Simple immutable identifier for an account
-public final class AccountId {
-    private final String id;
+class Account {
+    private static final AtomicLong ID_GENERATOR = new AtomicLong(1);
+    private final long id;
+    private final String owner;
+    private double balance;
 
-    public AccountId(String id) {
-        if (id == null || id.isBlank())
-            throw new IllegalArgumentException("Account id cannot be null or empty");
-        this.id = id;
+    public Account(String owner, double initialBalance) {
+        this.id = ID_GENERATOR.getAndIncrement();
+        this.owner = owner;
+        this.balance = initialBalance;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    @Override public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof AccountId)) return false;
-        AccountId that = (AccountId) o;
-        return id.equals(that.id);
+    public String getOwner() {
+        return owner;
     }
 
-    @Override public int hashCode() {
-        return id.hashCode();
+    public synchronized double getBalance() {
+        return balance;
     }
 
-    @Override public String toString() {
-        return id;
-    }
-}
-
-// Core account class supporting deposit, withdraw and transfer
-public class BankAccount {
-    private final AccountId accountId;
-    private long balanceCents; // store balance in smallest currency unit to avoid floating point errors
-
-    public BankAccount(AccountId accountId) {
-        this.accountId = accountId;
-        this.balanceCents = 0L;
+    public synchronized void deposit(double amount) {
+        if (amount <= 0) throw new IllegalArgumentException("Deposit amount must be positive");
+        balance += amount;
     }
 
-    public AccountId getAccountId() {
-        return accountId;
+    public synchronized void withdraw(double amount) {
+        if (amount <= 0) throw new IllegalArgumentException("Withdrawal amount must be positive");
+        if (balance < amount) throw new InsufficientFundsException("Insufficient funds");
+        balance -= amount;
     }
 
-    public synchronized long getBalanceCents() {
-        return balanceCents;
-    }
+    public void transferTo(Account target, double amount) {
+        if (target == null) throw new IllegalArgumentException("Target account cannot be null");
+        if (amount <= 0) throw new IllegalArgumentException("Transfer amount must be positive");
 
-    public synchronized void deposit(long amountCents) {
-        if (amountCents <= 0) {
-            throw new IllegalArgumentException("Deposit amount must be positive");
-        }
-        balanceCents += amountCents;
-    }
-
-    public synchronized void withdraw(long amountCents) {
-        if (amountCents <= 0) {
-            throw new IllegalArgumentException("Withdrawal amount must be positive");
-        }
-        if (balanceCents < amountCents) {
-            throw new InsufficientFundsException(
-                "Account " + accountId + " has insufficient funds");
-        }
-        balanceCents -= amountCents;
-    }
-
-    // Transfer is implemented as atomic operation using a lock ordering to avoid deadlock
-    public void transferTo(BankAccount target, long amountCents) {
-        if (target == null) {
-            throw new IllegalArgumentException("Target account cannot be null");
-        }
-        if (target == this) {
-            throw new IllegalArgumentException("Cannot transfer to the same account");
-        }
-        if (amountCents <= 0) {
-            throw new IllegalArgumentException("Transfer amount must be positive");
-        }
-
-        // Determine lock order based on account IDs to prevent deadlock
-        BankAccount firstLock = this.accountId.getId().compareTo(target.accountId.getId()) < 0 ? this : target;
-        BankAccount secondLock = firstLock == this ? target : this;
+        // To avoid deadlock, always lock the lower id first
+        Account firstLock = this.id < target.id ? this : target;
+        Account secondLock = this.id < target.id ? target : this;
 
         synchronized (firstLock) {
             synchronized (secondLock) {
-                this.withdraw(amountCents);
-                target.deposit(amountCents);
+                if (this.balance < amount) throw new InsufficientFundsException("Insufficient funds");
+                this.balance -= amount;
+                target.balance += amount;
             }
         }
     }
 
-    @Override public String toString() {
-        return "BankAccount{id=" + accountId + ", balance=" + (balanceCents / 100.0) + "}";
+    @Override
+    public String toString() {
+        return "Account{id=" + id + ", owner='" + owner + "', balance=" + balance + '}';
     }
 }
 
-// Simple repository to store and retrieve accounts
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.Map;
+class Bank {
+    private final Map<Long, Account> accounts = new HashMap<>();
 
-public class AccountRepository {
-    private final Map<AccountId, BankAccount> accounts = new ConcurrentHashMap<>();
-
-    public BankAccount createAccount(String id) {
-        AccountId accountId = new AccountId(id);
-        BankAccount account = new BankAccount(accountId);
-        if (accounts.putIfAbsent(accountId, account) != null) {
-            throw new IllegalArgumentException("Account with id " + id + " already exists");
-        }
-        return account;
+    public synchronized Account createAccount(String owner, double initialBalance) {
+        Account acc = new Account(owner, initialBalance);
+        accounts.put(acc.getId(), acc);
+        return acc;
     }
 
-    public BankAccount getAccount(String id) {
-        BankAccount account = accounts.get(new AccountId(id));
-        if (account == null) {
-            throw new IllegalArgumentException("Account with id " + id + " not found");
+    public synchronized Account getAccount(long accountId) {
+        Account acc = accounts.get(accountId);
+        if (acc == null) throw new NoSuchElementException("Account not found: " + accountId);
+        return acc;
+    }
+
+    public void deposit(long accountId, double amount) {
+        getAccount(accountId).deposit(amount);
+    }
+
+    public void withdraw(long accountId, double amount) {
+        getAccount(accountId).withdraw(amount);
+    }
+
+    public void transfer(long fromAccountId, long toAccountId, double amount) {
+        Account from = getAccount(fromAccountId);
+        Account to = getAccount(toAccountId);
+        from.transferTo(to, amount);
+    }
+
+    public List<Account> listAccounts() {
+        synchronized (this) {
+            return new ArrayList<>(accounts.values());
         }
-        return account;
     }
 }
 
-// Example usage
-public class BankingDemo {
+/* Example usage
+public class Main {
     public static void main(String[] args) {
-        AccountRepository repo = new AccountRepository();
+        Bank bank = new Bank();
+        Account a1 = bank.createAccount("Alice", 1000);
+        Account a2 = bank.createAccount("Bob", 500);
 
-        BankAccount accA = repo.createAccount("A001");
-        BankAccount accB = repo.createAccount("B001");
+        bank.deposit(a1.getId(), 200);
+        bank.withdraw(a2.getId(), 100);
+        bank.transfer(a1.getId(), a2.getId(), 300);
 
-        accA.deposit(500_00); // $500.00
-        accB.deposit(200_00); // $200.00
-
-        System.out.println(accA); // BankAccount{id=A001, balance=500.0}
-        System.out.println(accB); // BankAccount{id=B001, balance=200.0}
-
-        accA.withdraw(150_00); // $150.00
-        System.out.println("After withdrawal from A: " + accA);
-
-        accA.transferTo(accB, 100_00); // $100.00 transfer
-        System.out.println("After transfer A -> B:");
-        System.out.println(accA);
-        System.out.println(accB);
+        bank.listAccounts().forEach(System.out::println);
     }
 }
+*/
 ```

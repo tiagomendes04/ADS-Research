@@ -1,9 +1,22 @@
 """
-FINAL API SCRIPT: Bulletproof streaming + fallback
-- No IndexError
-- No NoneType.strip()
-- Clean logs
-- Full .java files
+LLM Code Generation Script - Robust Multi-Model Support
+
+FEATURES:
+- Bulletproof streaming with retry mechanism
+- Automatic fallback to non-streaming on failure
+- Model auto-detection (chat vs text-generation)
+- Configurable max_tokens (default: 3072)
+- Basic Java code validation
+- Comprehensive error handling
+- Progress logging with character counts
+
+IMPROVEMENTS:
+- Fixed Qwen 2.5 Coder model name (now: Qwen2.5-Coder-32B-Instruct)
+- Added CHAT_MODELS set for explicit model type specification
+- Enhanced streaming to handle different response formats
+- Added retry logic with delays for rate limiting
+- Content length validation (warns if < 50 chars)
+- Better error messages with truncated details
 """
 from openai import OpenAI
 from pathlib import Path
@@ -19,14 +32,26 @@ OUTPUT_ROOT.mkdir(exist_ok=True)
 HF_TOKEN = ""
 
 MODELS = {
+    #"gemma_2_2b_it": "google/gemma-2-2b-it",
+    "gpt_oss_120b": "openai/gpt-oss-120b",
     #"llama_3_2_1B_Instruct": "meta-llama/Llama-3.2-1B-Instruct",
     #"llama_3_1_8B_Instruct": "meta-llama/Llama-3.1-8B-Instruct",
-    #"mistral_7B_Instruct_v0_2": "mistralai/Mistral-7B-Instruct-v0.2",
-    #"qwen_3_8B": "Qwen/Qwen3-8B",
-    "qwen2_5_coder_32b": "Qwen/Qwen2-5-Coder-32B",
+    #"qwen2_5_7b_instruct": "Qwen/Qwen2.5-7B-Instruct",
+    #"qwen2_5_coder_32b_instruct": "Qwen/Qwen2.5-Coder-32B-Instruct",
 }
 
-PROMPT_INDEX_START = 1  # ← Your test
+# Specify which models are chat-based (most instruct models are)
+# If not specified, will try auto-detection
+CHAT_MODELS = {
+    "meta-llama/Llama-3.2-1B-Instruct",
+    "meta-llama/Llama-3.1-8B-Instruct", 
+    "mistralai/Mistral-7B-Instruct-v0.2",
+    "Qwen/Qwen2.5-7B-Instruct",
+    "Qwen/Qwen2.5-Coder-32B-Instruct",
+    "google/gemma-2-2b-it",
+}
+
+PROMPT_INDEX_START = 97  # ← Your test
 
 client = OpenAI(base_url="https://router.huggingface.co/v1", api_key=HF_TOKEN)
 
@@ -47,12 +72,18 @@ def safe_stream(model_id: str, messages: list) -> str:
             stream=True,
         )
         for chunk in stream:
-            delta = chunk.choices[0].delta if chunk.choices else None
-            if delta and delta.content:
-                full += delta.content
+            # Handle different response formats
+            if hasattr(chunk, 'choices') and chunk.choices:
+                delta = chunk.choices[0].delta
+                if hasattr(delta, 'content') and delta.content:
+                    full += delta.content
+            # Some models return content directly
+            elif hasattr(chunk, 'content') and chunk.content:
+                full += chunk.content
+        
         return full.strip() if full else None
     except Exception as e:
-        print(f" [stream failed: {type(e).__name__}]", end="")
+        print(f" [stream failed: {type(e).__name__}: {str(e)[:50]}]", end="")
         return None
 
 # ------------------------------------------------------------
@@ -74,21 +105,30 @@ def non_stream(model_id: str, messages: list) -> str:
         return f"API Error: {e}"
 
 # ------------------------------------------------------------
-# GENERATE (Streaming → Fallback → Safe)
+# GENERATE (Streaming → Fallback → Safe) with Retry
 # ------------------------------------------------------------
-def generate_response(model_id: str, prompt: str) -> str:
-    print(f"  → Asking {model_id}...", end="", flush=True)
+def generate_response(model_id: str, prompt: str, max_retries: int = 3) -> str:
+    print(f"  → Asking {model_id.split('/')[-1]}...", end="", flush=True)
     messages = [{"role": "user", "content": prompt}]
 
-    # Try streaming
-    result = safe_stream(model_id, messages)
-    if result is not None:
-        print(" Done (stream).")
-        return result
-
-    # Fallback
+    for attempt in range(max_retries):
+        # Try streaming
+        result = safe_stream(model_id, messages)
+        if result is not None and len(result) > 50:  # Ensure we got substantial content
+            print(f" Done (stream, {len(result)} chars).")
+            return result
+        
+        # If streaming failed or returned too little, try fallback
+        if attempt < max_retries - 1:
+            print(f" [retry {attempt+1}]...", end="", flush=True)
+            time.sleep(3)  # Wait before retry
+    
+    # Final fallback attempt
     result = non_stream(model_id, messages)
-    print(" Done (fallback).")
+    if result:
+        print(f" Done (fallback, {len(result)} chars).")
+    else:
+        print(" Failed.")
     return result
 
 # ------------------------------------------------------------
@@ -128,12 +168,16 @@ def main():
         print(f" MODEL: {name.upper()} → {model_id}")
         print("="*70)
 
-        # Auto-detect
-        try:
-            client.chat.completions.create(model=model_id, messages=[{"role": "user", "content": "Hi"}], max_tokens=1, stream=False)
+        # Check if model is chat-based
+        if model_id in CHAT_MODELS:
             is_chat = True
-        except:
-            is_chat = False
+        else:
+            # Try auto-detection as fallback
+            try:
+                client.chat.completions.create(model=model_id, messages=[{"role": "user", "content": "Hi"}], max_tokens=1, stream=False)
+                is_chat = True
+            except:
+                is_chat = False
 
         print(f"  Task: {'chat' if is_chat else 'text-generation'}")
 
@@ -148,8 +192,14 @@ def main():
             print(f"  Prompt {i}/{total}...", end="")
             code = generate_response(model_id, prompt) if is_chat else generate_text(model_id, prompt)
 
+            # Basic validation - check if it looks like Java code
+            if not code or len(code) < 50:
+                print(f" WARNING: Generated code too short ({len(code) if code else 0} chars)")
+            elif "class" not in code.lower() and "public" not in code.lower():
+                print(f" WARNING: Generated code may not be valid Java")
+
             path = dir_ / f"prompt_{i}.java"
-            path.write_text(code, encoding="utf-8")
+            path.write_text(code if code else "// Generation failed", encoding="utf-8")
             files.append(path.name)
 
             time.sleep(2.0)

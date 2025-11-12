@@ -1,272 +1,185 @@
-**Budget.java**
 ```java
-import java.math.BigDecimal;
-import java.time.YearMonth;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+import java.util.stream.Collectors;
 
-public class Budget {
-    private YearMonth month;
+class Budget {
     private String category;
-    private BigDecimal limit;
-    private BigDecimal spent = BigDecimal.ZERO;
+    private double limit;
 
-    public Budget(YearMonth month, String category, BigDecimal limit) {
-        this.month = month;
+    public Budget(String category, double limit) {
         this.category = category;
         this.limit = limit;
-    }
-
-    public YearMonth getMonth() {
-        return month;
     }
 
     public String getCategory() {
         return category;
     }
 
-    public BigDecimal getLimit() {
+    public double getLimit() {
         return limit;
     }
 
-    public BigDecimal getSpent() {
-        return spent;
-    }
-
-    public void addExpense(BigDecimal amount) {
-        spent = spent.add(amount);
-    }
-
-    public BigDecimal getRemaining() {
-        return limit.subtract(spent);
+    public void setLimit(double limit) {
+        this.limit = limit;
     }
 }
-```
 
-**Expense.java**
-```java
-import java.math.BigDecimal;
-import java.time.LocalDate;
-
-public class Expense {
-    private LocalDate date;
+class Expense {
     private String category;
+    private double amount;
+    private LocalDate date;
     private String description;
-    private BigDecimal amount;
 
-    public Expense(LocalDate date, String category, String description, BigDecimal amount) {
-        this.date = date;
+    public Expense(String category, double amount, LocalDate date, String description) {
         this.category = category;
-        this.description = description;
         this.amount = amount;
+        this.date = date;
+        this.description = description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public double getAmount() {
+        return amount;
     }
 
     public LocalDate getDate() {
         return date;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
     public String getDescription() {
         return description;
     }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
 }
-```
 
-**FinanceManager.java**
-```java
-import com.google.gson.*;
-import com.google.gson.reflect.TypeToken;
-
-import java.io.*;
-import java.lang.reflect.Type;
-import java.math.BigDecimal;
-import java.time.YearMonth;
-import java.time.format.DateTimeFormatter;
-import java.util.*;
-
-public class FinanceManager {
-    private List<Budget> budgets = new ArrayList<>();
+class FinanceTracker {
+    private Map<String, Budget> budgets = new HashMap<>();
     private List<Expense> expenses = new ArrayList<>();
-    private static final String DATA_FILE = "finance_data.json";
-
-    public FinanceManager() {
-        loadData();
-    }
-
-    public void addBudget(YearMonth month, String category, BigDecimal limit) {
-        budgets.add(new Budget(month, category, limit));
-    }
-
-    public void addExpense(LocalDate date, String category, String description, BigDecimal amount) {
-        Expense e = new Expense(date, category, description, amount);
-        expenses.add(e);
-        YearMonth ym = YearMonth.from(date);
-        budgets.stream()
-                .filter(b -> b.getMonth().equals(ym) && b.getCategory().equalsIgnoreCase(category))
-                .findFirst()
-                .ifPresent(b -> b.addExpense(amount));
-    }
-
-    public List<Budget> getBudgets() {
-        return Collections.unmodifiableList(budgets);
-    }
-
-    public List<Expense> getExpenses() {
-        return Collections.unmodifiableList(expenses);
-    }
-
-    public List<Expense> getExpensesByMonth(YearMonth month) {
-        List<Expense> list = new ArrayList<>();
-        for (Expense e : expenses) {
-            if (YearMonth.from(e.getDate()).equals(month)) {
-                list.add(e);
-            }
-        }
-        return list;
-    }
-
-    public void generateMonthlyReport(YearMonth month) {
-        System.out.println("=== Report for " + month + " ===");
-        System.out.println("Budgets:");
-        budgets.stream()
-                .filter(b -> b.getMonth().equals(month))
-                .forEach(b -> {
-                    System.out.printf("- %s: Limit=%s, Spent=%s, Remaining=%s%n",
-                            b.getCategory(),
-                            b.getLimit(),
-                            b.getSpent(),
-                            b.getRemaining());
-                });
-        System.out.println("\nExpenses:");
-        getExpensesByMonth(month).forEach(e -> {
-            System.out.printf("- %s | %s | %s | %s%n",
-                    e.getDate(),
-                    e.getCategory(),
-                    e.getDescription(),
-                    e.getAmount());
-        });
-        System.out.println("==============================\n");
-    }
-
-    private void loadData() {
-        File f = new File(DATA_FILE);
-        if (!f.exists()) return;
-        try (Reader r = new FileReader(f)) {
-            Gson gson = new GsonBuilder()
-                    .registerTypeAdapter(LocalDate.class, (JsonDeserializer<LocalDate>) (json, type, ctx) ->
-                            LocalDate.parse(json.getAsString()))
-                    .registerTypeAdapter(YearMonth.class, (JsonDeserializer<YearMonth>) (json, type, ctx) ->
-                            YearMonth.parse(json.getAsString()))
-                    .registerTypeAdapter(BigDecimal.class, (JsonDeserializer<BigDecimal>) (json, type, ctx) ->
-                            new BigDecimal(json.getAsString()))
-                    .create();
-            JsonObject obj = gson.fromJson(r, JsonObject.class);
-            Type budgetListType = new TypeToken<ArrayList<Budget>>() {}.getType();
-            Type expenseListType = new TypeToken<ArrayList<Expense>>() {}.getType();
-            budgets = gson.fromJson(obj.get("budgets"), budgetListType);
-            expenses = gson.fromJson(obj.get("expenses"), expenseListType);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void saveData() {
-        try (Writer w = new FileWriter(DATA_FILE)) {
-            Gson gson = new GsonBuilder()
-                    .setPrettyPrinting()
-                    .registerTypeAdapter(LocalDate.class, (JsonSerializer<LocalDate>) (src, type, ctx) ->
-                            new JsonPrimitive(src.toString()))
-                    .registerTypeAdapter(YearMonth.class, (JsonSerializer<YearMonth>) (src, type, ctx) ->
-                            new JsonPrimitive(src.toString()))
-                    .registerTypeAdapter(BigDecimal.class, (JsonSerializer<BigDecimal>) (src, type, ctx) ->
-                            new JsonPrimitive(src.toPlainString()))
-                    .create();
-            JsonObject obj = new JsonObject();
-            obj.add("budgets", gson.toJsonTree(budgets));
-            obj.add("expenses", gson.toJsonTree(expenses));
-            gson.toJson(obj, w);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-**Main.java**
-```java
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.YearMonth;
-import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
-
-public class Main {
-    private static final FinanceManager manager = new FinanceManager();
-    private static final Scanner scanner = new Scanner(System.in);
-    private static final DateTimeFormatter DATE_FMT = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    private static final DateTimeFormatter YM_FMT = DateTimeFormatter.ofPattern("yyyy-MM");
+    private Scanner scanner = new Scanner(System.in);
+    private DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     public static void main(String[] args) {
-        Runtime.getRuntime().addShutdownHook(new Thread(manager::saveData));
+        new FinanceTracker().run();
+    }
+
+    private void run() {
         while (true) {
             printMenu();
             String choice = scanner.nextLine().trim();
             switch (choice) {
-                case "1" -> addBudget();
-                case "2" -> addExpense();
-                case "3" -> viewBudgets();
-                case "4" -> viewExpenses();
-                case "5" -> generateReport();
-                case "0" -> {
-                    manager.saveData();
-                    System.out.println("Goodbye!");
-                    return;
-                }
-                default -> System.out.println("Invalid option.");
+                case "1": addBudget(); break;
+                case "2": addExpense(); break;
+                case "3": viewBudgets(); break;
+                case "4": viewExpenses(); break;
+                case "5": generateReport(); break;
+                case "0": System.out.println("Exiting..."); return;
+                default: System.out.println("Invalid option."); break;
             }
         }
     }
 
-    private static void printMenu() {
-        System.out.println("\n=== Personal Finance Tracker ===");
-        System.out.println("1. Add Budget");
+    private void printMenu() {
+        System.out.println("\n--- Personal Finance Tracker ---");
+        System.out.println("1. Add/Update Budget");
         System.out.println("2. Add Expense");
         System.out.println("3. View Budgets");
         System.out.println("4. View Expenses");
-        System.out.println("5. Generate Monthly Report");
+        System.out.println("5. Generate Report");
         System.out.println("0. Exit");
-        System.out.print("Select: ");
+        System.out.print("Select an option: ");
     }
 
-    private static void addBudget() {
-        try {
-            System.out.print("Month (yyyy-MM): ");
-            YearMonth month = YearMonth.parse(scanner.nextLine().trim(), YM_FMT);
-            System.out.print("Category: ");
-            String category = scanner.nextLine().trim();
-            System.out.print("Limit amount: ");
-            BigDecimal limit = new BigDecimal(scanner.nextLine().trim());
-            manager.addBudget(month, category, limit);
-            System.out.println("Budget added.");
-        } catch (Exception e) {
-            System.out.println("Error adding budget: " + e.getMessage());
+    private void addBudget() {
+        System.out.print("Enter category: ");
+        String cat = scanner.nextLine().trim();
+        System.out.print("Enter budget limit: ");
+        double limit = Double.parseDouble(scanner.nextLine().trim());
+        budgets.put(cat, new Budget(cat, limit));
+        System.out.println("Budget saved.");
+    }
+
+    private void addExpense() {
+        System.out.print("Enter category: ");
+        String cat = scanner.nextLine().trim();
+        System.out.print("Enter amount: ");
+        double amt = Double.parseDouble(scanner.nextLine().trim());
+        System.out.print("Enter date (yyyy-MM-dd) or leave empty for today: ");
+        String dateStr = scanner.nextLine().trim();
+        LocalDate date = dateStr.isEmpty() ? LocalDate.now() : LocalDate.parse(dateStr, dateFormatter);
+        System.out.print("Enter description: ");
+        String desc = scanner.nextLine().trim();
+        expenses.add(new Expense(cat, amt, date, desc));
+        System.out.println("Expense recorded.");
+    }
+
+    private void viewBudgets() {
+        if (budgets.isEmpty()) {
+            System.out.println("No budgets defined.");
+            return;
         }
+        System.out.println("\nBudgets:");
+        budgets.values().forEach(b ->
+                System.out.printf("- %s: $%.2f%n", b.getCategory(), b.getLimit()));
     }
 
-    private static void addExpense() {
-        try {
-            System.out.print("Date (yyyy-MM-dd): ");
-            LocalDate date = LocalDate.parse(scanner.nextLine().trim(), DATE_FMT);
-            System.out.print("Category: ");
-            String category = scanner.nextLine().trim();
-            System.out.print("Description: ");
-            String description = scanner.nextLine().trim();
-            System.out.print("Amount: ");
-            BigDecimal amount = new BigDecimal(scanner.nextLine().trim());
-            manager.addExpense(date, category, description, amount);
-            System.out.println("Expense
+    private void viewExpenses() {
+        if (expenses.isEmpty()) {
+            System.out.println("No expenses recorded.");
+            return;
+        }
+        System.out.println("\nExpenses:");
+        expenses.forEach(e ->
+                System.out.printf("- %s | $%.2f | %s | %s%n",
+                        e.getCategory(),
+                        e.getAmount(),
+                        e.getDate().format(dateFormatter),
+                        e.getDescription()));
+    }
+
+    private void generateReport() {
+        if (expenses.isEmpty()) {
+            System.out.println("No expenses to report.");
+            return;
+        }
+        System.out.print("Enter start date (yyyy-MM-dd) or leave empty: ");
+        String startStr = scanner.nextLine().trim();
+        System.out.print("Enter end date (yyyy-MM-dd) or leave empty: ");
+        String endStr = scanner.nextLine().trim();
+        LocalDate start = startStr.isEmpty() ? null : LocalDate.parse(startStr, dateFormatter);
+        LocalDate end = endStr.isEmpty() ? null : LocalDate.parse(endStr, dateFormatter);
+
+        List<Expense> filtered = expenses.stream()
+                .filter(e -> (start == null || !e.getDate().isBefore(start)) &&
+                             (end == null || !e.getDate().isAfter(end)))
+                .collect(Collectors.toList());
+
+        Map<String, Double> totalByCategory = filtered.stream()
+                .collect(Collectors.groupingBy(Expense::getCategory,
+                        Collectors.summingDouble(Expense::getAmount)));
+
+        double overallTotal = filtered.stream()
+                .mapToDouble(Expense::getAmount).sum();
+
+        System.out.println("\n--- Report ---");
+        totalByCategory.forEach((cat, amt) -> {
+            double budgetLimit = budgets.containsKey(cat) ? budgets.get(cat).getLimit() : 0;
+            double remaining = budgetLimit - amt;
+            String status = budgetLimit > 0
+                    ? (remaining >= 0 ? "Within budget" : "Over budget")
+                    : "No budget set";
+            System.out.printf("Category: %s%n", cat);
+            System.out.printf("  Spent: $%.2f%n", amt);
+            if (budgetLimit > 0) {
+                System.out.printf("  Budget: $%.2f%n", budgetLimit);
+                System.out.printf("  Remaining: $%.2f%n", remaining);
+            }
+            System.out.printf("  Status: %s%n", status);
+        });
+        System.out.printf("Overall spent: $%.2f%n", overallTotal);
+    }
+}
+```

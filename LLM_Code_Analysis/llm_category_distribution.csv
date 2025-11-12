@@ -1,4 +1,4 @@
-Category,gemma_2_2b_it,gpt_oss_120b,llama_3_1_8B_Instruct,llama_3_2_1B_Instruct,qwen2_5_7b_instruct,qwen2_5_coder_32b,Total
-Creational,4,21,6,5,11,8,55
-Structural,1,3,2,2,2,2,12
-Behavioral,7,25,6,4,8,6,56
+Category,gemma_2_2b_it,gpt_oss_120b,llama_3_1_8B_Instruct,llama_3_2_1B_Instruct,qwen2_5_7b_instruct,qwen2_5_coder_32b_instruct,Total
+Creational,4,20,6,5,11,10,56
+Structural,1,2,2,2,2,2,11
+Behavioral,7,29,6,5,8,9,64

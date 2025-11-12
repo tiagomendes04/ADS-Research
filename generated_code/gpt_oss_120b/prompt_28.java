@@ -1,229 +1,278 @@
 ```java
+package puzzle;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
 /* ---------- Core Model ---------- */
 
-enum Direction {
-    UP(-1, 0), DOWN(1, 0), LEFT(0, -1), RIGHT(0, 1);
-    final int dRow, dCol;
-    Direction(int dRow, int dCol) { this.dRow = dRow; this.dCol = dCol; }
-}
-
 final class Position {
     final int row, col;
     Position(int row, int col) { this.row = row; this.col = col; }
-
-    Position moved(Direction dir) { return new Position(row + dir.dRow, col + dir.dCol); }
-
     @Override public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Position)) return false;
         Position p = (Position) o;
         return row == p.row && col == p.col;
     }
-
     @Override public int hashCode() { return Objects.hash(row, col); }
 }
 
-/* A piece occupies a single cell. */
-final class Piece {
-    final int id;
-    final Position position;
-    final Position goal; // null if no specific goal
-
-    Piece(int id, Position position, Position goal) {
-        this.id = id;
-        this.position = position;
-        this.goal = goal;
-    }
-
-    Piece move(Direction dir) { return new Piece(id, position.moved(dir), goal); }
-
-    boolean isAtGoal() { return goal != null && position.equals(goal); }
-
-    @Override public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Piece)) return false;
-        Piece p = (Piece) o;
-        return id == p.id && Objects.equals(position, p.position) && Objects.equals(goal, p.goal);
-    }
-
-    @Override public int hashCode() { return Objects.hash(id, position, goal); }
+/** Immutable tile (piece). Zero represents the empty slot. */
+final class Tile {
+    final int value;               // 0 = empty, >0 = numbered tile
+    Tile(int value) { this.value = value; }
+    boolean isEmpty() { return value == 0; }
 }
 
-/* ---------- Board ---------- */
-
+/** Immutable board state. */
 final class Board {
-    final int rows, cols;
-    final Map<Integer, Piece> pieces; // key = piece id
+    private final int rows, cols;
+    private final int[][] grid;               // rows x cols
+    private final Position emptyPos;           // location of zero
 
-    Board(int rows, int cols, Collection<Piece> pieces) {
-        this.rows = rows;
-        this.cols = cols;
-        this.pieces = pieces.stream().collect(Collectors.toMap(p -> p.id, p -> p));
+    Board(int[][] grid) {
+        this.rows = grid.length;
+        this.cols = grid[0].length;
+        this.grid = new int[rows][cols];
+        Position empty = null;
+        for (int r = 0; r < rows; ++r) {
+            for (int c = 0; c < cols; ++c) {
+                this.grid[r][c] = grid[r][c];
+                if (grid[r][c] == 0) empty = new Position(r, c);
+            }
+        }
+        if (empty == null) throw new IllegalArgumentException("Board must contain a zero tile");
+        this.emptyPos = empty;
     }
 
-    private Board(int rows, int cols, Map<Integer, Piece> pieces) {
-        this.rows = rows;
-        this.cols = cols;
-        this.pieces = Collections.unmodifiableMap(pieces);
+    int rows() { return rows; }
+    int cols() { return cols; }
+    Position emptyPos() { return emptyPos; }
+
+    int get(int r, int c) { return grid[r][c]; }
+
+    /** Returns a new Board after sliding tile at (srcRow,srcCol) into the empty slot. */
+    Board move(int srcRow, int srcCol) {
+        if (!isAdjacent(srcRow, srcCol, emptyPos.row, emptyPos.col))
+            throw new IllegalArgumentException("Tiles not adjacent to empty slot");
+        int[][] next = copyGrid();
+        next[emptyPos.row][emptyPos.col] = next[srcRow][srcCol];
+        next[srcRow][srcCol] = 0;
+        return new Board(next);
     }
 
-    boolean isInside(Position p) {
-        return p.row >= 0 && p.row < rows && p.col >= 0 && p.col < cols;
+    /** All possible moves from this state. */
+    List<Board> neighbours() {
+        List<Board> list = new ArrayList<>();
+        int r = emptyPos.row, c = emptyPos.col;
+        int[][] dirs = {{1,0},{-1,0},{0,1},{0,-1}};
+        for (int[] d : dirs) {
+            int nr = r + d[0], nc = c + d[1];
+            if (inBounds(nr, nc)) list.add(move(nr, nc));
+        }
+        return list;
     }
 
-    boolean isOccupied(Position p) {
-        return pieces.values().stream().anyMatch(piece -> piece.position.equals(p));
+    /** Goal test – tiles in row‑major order ending with zero. */
+    boolean isGoal() {
+        int expected = 1;
+        for (int r = 0; r < rows; ++r) {
+            for (int c = 0; c < cols; ++c) {
+                if (r == rows-1 && c == cols-1) {
+                    if (grid[r][c] != 0) return false;
+                } else {
+                    if (grid[r][c] != expected++) return false;
+                }
+            }
+        }
+        return true;
     }
 
-    Optional<Piece> pieceAt(Position p) {
-        return pieces.values().stream().filter(piece -> piece.position.equals(p)).findFirst();
+    /** Heuristic: Manhattan distance sum (for A* if needed). */
+    int manhattan() {
+        int sum = 0;
+        for (int r = 0; r < rows; ++r) {
+            for (int c = 0; c < cols; ++c) {
+                int val = grid[r][c];
+                if (val == 0) continue;
+                int targetRow = (val - 1) / cols;
+                int targetCol = (val - 1) % cols;
+                sum += Math.abs(r - targetRow) + Math.abs(c - targetCol);
+            }
+        }
+        return sum;
     }
 
-    /** Returns a new Board with the piece moved if the move is legal, otherwise empty. */
-    Optional<Board> move(int pieceId, Direction dir) {
-        Piece piece = pieces.get(pieceId);
-        if (piece == null) return Optional.empty();
-        Position target = piece.position.moved(dir);
-        if (!isInside(target) || isOccupied(target)) return Optional.empty();
-
-        Map<Integer, Piece> newMap = new HashMap<>(pieces);
-        newMap.put(pieceId, piece.move(dir));
-        return Optional.of(new Board(rows, cols, newMap));
+    private boolean inBounds(int r, int c) { return r >= 0 && r < rows && c >= 0 && c < cols; }
+    private boolean isAdjacent(int r1, int c1, int r2, int c2) {
+        return Math.abs(r1 - r2) + Math.abs(c1 - c2) == 1;
     }
-
-    boolean isSolved() {
-        return pieces.values().stream().allMatch(p -> p.goal == null || p.isAtGoal());
-    }
-
-    /** Simple string representation for debugging / hashing */
-    @Override public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(rows).append('x').append(cols).append('|');
-        pieces.values().stream()
-                .sorted(Comparator.comparingInt(p -> p.id))
-                .forEach(p -> sb.append(p.id).append('@')
-                        .append(p.position.row).append(',').append(p.position.col).append('|'));
-        return sb.toString();
+    private int[][] copyGrid() {
+        int[][] copy = new int[rows][cols];
+        for (int i = 0; i < rows; ++i) copy[i] = grid[i].clone();
+        return copy;
     }
 
     @Override public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Board)) return false;
         Board b = (Board) o;
-        return rows == b.rows && cols == b.cols && pieces.equals(b.pieces);
+        return rows == b.rows && cols == b.cols && Arrays.deepEquals(grid, b.grid);
     }
-
-    @Override public int hashCode() { return Objects.hash(rows, cols, pieces); }
-}
-
-/* ---------- Move ---------- */
-
-final class Move {
-    final int pieceId;
-    final Direction direction;
-
-    Move(int pieceId, Direction direction) {
-        this.pieceId = pieceId;
-        this.direction = direction;
-    }
+    @Override public int hashCode() { return Arrays.deepHashCode(grid); }
 
     @Override public String toString() {
-        return "Move(piece=" + pieceId + ", dir=" + direction + ")";
+        StringBuilder sb = new StringBuilder();
+        for (int[] row : grid) {
+            for (int v : row) sb.append(String.format("%2d ", v));
+            sb.append('\n');
+        }
+        return sb.toString();
     }
 }
 
-/* ---------- Solver Interface ---------- */
+/* ---------- Solver Infrastructure ---------- */
 
-interface Solver {
-    /** Returns the list of moves that solves the puzzle, or empty list if unsolvable. */
-    List<Move> solve(Board start);
+interface PuzzleSolver {
+    /** Returns a list of board states from start to goal, inclusive. Empty list if unsolvable. */
+    List<Board> solve(Board start);
 }
 
-/* ---------- BFS Solver ---------- */
-
-final class BFSSolver implements Solver {
+/* Breadth‑First Search – guarantees shortest solution (in moves). */
+class BFSSolver implements PuzzleSolver {
     @Override
-    public List<Move> solve(Board start) {
-        if (start.isSolved()) return Collections.emptyList();
+    public List<Board> solve(Board start) {
+        if (start.isGoal()) return List.of(start);
+        Queue<Board> q = new ArrayDeque<>();
+        Map<Board, Board> parent = new HashMap<>();
+        q.add(start);
+        parent.put(start, null);
+        while (!q.isEmpty()) {
+            Board cur = q.poll();
+            for (Board nb : cur.neighbours()) {
+                if (parent.containsKey(nb)) continue;
+                parent.put(nb, cur);
+                if (nb.isGoal()) return reconstructPath(parent, nb);
+                q.add(nb);
+            }
+        }
+        return List.of(); // unsolvable
+    }
 
-        Queue<Board> frontier = new ArrayDeque<>();
-        Map<Board, MoveInfo> cameFrom = new HashMap<>();
+    private List<Board> reconstructPath(Map<Board, Board> parent, Board goal) {
+        Deque<Board> stack = new ArrayDeque<>();
+        for (Board b = goal; b != null; b = parent.get(b)) stack.push(b);
+        return new ArrayList<>(stack);
+    }
+}
 
-        frontier.add(start);
-        cameFrom.put(start, null);
+/* Depth‑First Search – may find a solution quickly but not optimal. */
+class DFSSolver implements PuzzleSolver {
+    private final int maxDepth;
+    DFSSolver(int maxDepth) { this.maxDepth = maxDepth; }
 
-        while (!frontier.isEmpty()) {
-            Board current = frontier.poll();
-            for (Piece piece : current.pieces.values()) {
-                for (Direction dir : Direction.values()) {
-                    Optional<Board> nextOpt = current.move(piece.id, dir);
-                    if (nextOpt.isEmpty()) continue;
-                    Board next = nextOpt.get();
-                    if (cameFrom.containsKey(next)) continue;
+    @Override
+    public List<Board> solve(Board start) {
+        Set<Board> visited = new HashSet<>();
+        List<Board> path = new ArrayList<>();
+        if (dfs(start, visited, path, 0)) return new ArrayList<>(path);
+        return List.of();
+    }
 
-                    cameFrom.put(next, new MoveInfo(piece.id, dir, current));
-                    if (next.isSolved()) return reconstructPath(next, cameFrom);
-                    frontier.add(next);
+    private boolean dfs(Board cur, Set<Board> visited, List<Board> path, int depth) {
+        visited.add(cur);
+        path.add(cur);
+        if (cur.isGoal()) return true;
+        if (depth >= maxDepth) { path.remove(path.size() - 1); return false; }
+        for (Board nb : cur.neighbours()) {
+            if (visited.contains(nb)) continue;
+            if (dfs(nb, visited, path, depth + 1)) return true;
+        }
+        path.remove(path.size() - 1);
+        return false;
+    }
+}
+
+/* A* Solver – uses Manhattan distance heuristic. */
+class AStarSolver implements PuzzleSolver {
+    @Override
+    public List<Board> solve(Board start) {
+        if (start.isGoal()) return List.of(start);
+        PriorityQueue<Node> open = new PriorityQueue<>(Comparator.comparingInt(n -> n.f));
+        Map<Board, Node> all = new HashMap<>();
+
+        Node startNode = new Node(start, null, 0, start.manhattan());
+        open.add(startNode);
+        all.put(start, startNode);
+
+        while (!open.isEmpty()) {
+            Node cur = open.poll();
+            if (cur.board.isGoal()) return reconstruct(cur);
+            for (Board nb : cur.board.neighbours()) {
+                int tentativeG = cur.g + 1;
+                Node existing = all.get(nb);
+                if (existing == null || tentativeG < existing.g) {
+                    Node next = new Node(nb, cur, tentativeG, nb.manhattan());
+                    open.remove(existing);
+                    open.add(next);
+                    all.put(nb, next);
                 }
             }
         }
-        return Collections.emptyList(); // unsolvable
+        return List.of(); // unsolvable
     }
 
-    private List<Move> reconstructPath(Board goal, Map<Board, MoveInfo> cameFrom) {
-        LinkedList<Move> path = new LinkedList<>();
-        Board cur = goal;
-        while (true) {
-            MoveInfo info = cameFrom.get(cur);
-            if (info == null) break;
-            path.addFirst(new Move(info.pieceId, info.direction));
-            cur = info.parent;
-        }
-        return path;
+    private List<Board> reconstruct(Node goal) {
+        Deque<Board> stack = new ArrayDeque<>();
+        for (Node n = goal; n != null; n = n.parent) stack.push(n.board);
+        return new ArrayList<>(stack);
     }
 
-    private static final class MoveInfo {
-        final int pieceId;
-        final Direction direction;
-        final Board parent;
-        MoveInfo(int pieceId, Direction direction, Board parent) {
-            this.pieceId = pieceId;
-            this.direction = direction;
+    private static final class Node {
+        final Board board;
+        final Node parent;
+        final int g;          // cost from start
+        final int h;          // heuristic
+        final int f;          // g + h
+        Node(Board board, Node parent, int g, int h) {
+            this.board = board;
             this.parent = parent;
+            this.g = g;
+            this.h = h;
+            this.f = g + h;
         }
     }
 }
 
-/* ---------- A* Solver ---------- */
+/* ---------- Game Driver (example usage) ---------- */
 
-final class AStarSolver implements Solver {
-    @Override
-    public List<Move> solve(Board start) {
-        if (start.isSolved()) return Collections.emptyList();
+public class PuzzleGame {
+    public static void main(String[] args) {
+        int[][] start = {
+                {2, 8, 3},
+                {1, 6, 4},
+                {7, 0, 5}
+        };
+        Board board = new Board(start);
+        System.out.println("Start board:");
+        System.out.println(board);
 
-        PriorityQueue<Node> open = new PriorityQueue<>(Comparator.comparingInt(n -> n.fScore));
-        Map<Board, Node> allNodes = new HashMap<>();
+        PuzzleSolver solver = new BFSSolver();   // swap for DFSSolver or AStarSolver
+        long t0 = System.nanoTime();
+        List<Board> solution = solver.solve(board);
+        long t1 = System.nanoTime();
 
-        Node startNode = new Node(start, null, null, 0, heuristic(start));
-        open.add(startNode);
-        allNodes.put(start, startNode);
-
-        while (!open.isEmpty()) {
-            Node current = open.poll();
-            if (current.board.isSolved()) return reconstructPath(current);
-
-            for (Piece piece : current.board.pieces.values()) {
-                for (Direction dir : Direction.values()) {
-                    Optional<Board> nextOpt = current.board.move(piece.id, dir);
-                    if (nextOpt.isEmpty()) continue;
-                    Board nextBoard = nextOpt.get();
-
-                    int tentativeG = current.gScore + 1;
-                    Node existing = allNodes.get(nextBoard);
-                    if (existing == null || tentativeG < existing.gScore) {
-                        Node neighbor = new Node(nextBoard, current, new Move(piece.id, dir), tentativeG, heuristic(nextBoard));
-                        allNodes.put(nextBoard, neighbor);
-                        open.remove(neighbor); // remove if present with higher fScore
+        if (solution.isEmpty()) {
+            System.out.println("No solution found.");
+        } else {
+            System.out.println("Solution found in " + (solution.size() - 1) + " moves.");
+            for (int i = 0; i < solution.size(); ++i) {
+                System.out.println("Step " + i + ":");
+                System.out.println(solution.get(i));
+            }
+        }
+        System.out.printf("Elapsed: %.3f ms%n", (t1 - t0) / 1_000_000.0);
+    }
+}
+```

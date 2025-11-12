@@ -1,42 +1,36 @@
 ```java
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
-public class MusicPlayerApp {
+public class MusicPlayer {
+
     public static void main(String[] args) {
-        Song s1 = new Song("Song A", "Artist 1", 210);
-        Song s2 = new Song("Song B", "Artist 2", 185);
-        Song s3 = new Song("Song C", "Artist 3", 240);
-        Song s4 = new Song("Song D", "Artist 4", 200);
-        Song s5 = new Song("Song E", "Artist 5", 230);
+        // Sample usage
+        Playlist playlist = new Playlist("My Favorites");
+        playlist.addSong(new Song("Imagine", "John Lennon", 183));
+        playlist.addSong(new Song("Bohemian Rhapsody", "Queen", 354));
+        playlist.addSong(new Song("Stairway to Heaven", "Led Zeppelin", 482));
+        playlist.addSong(new Song("Hotel California", "Eagles", 391));
 
-        Playlist playlist = new Playlist("My Playlist");
-        playlist.addSong(s1);
-        playlist.addSong(s2);
-        playlist.addSong(s3);
-        playlist.addSong(s4);
-        playlist.addSong(s5);
-
-        MusicPlayer player = new MusicPlayer();
-        player.setPlaylist(playlist);
-        player.setRepeatMode(RepeatMode.ALL);
-        player.play();
-
-        player.next();
-        player.next();
-        player.toggleShuffle();
-        player.next();
-        player.toggleShuffle();
-        player.next();
-        player.setRepeatMode(RepeatMode.ONE);
-        player.next();
-        player.stop();
+        Player player = new Player(playlist);
+        player.play();          // Play first song
+        player.next();          // Next song
+        player.toggleShuffle(); // Enable shuffle
+        player.next();          // Next shuffled song
+        player.toggleRepeatMode(); // Cycle repeat mode (NONE -> ONE -> ALL)
+        player.next();          // Next song respecting repeat mode
+        player.stop();          // Stop playback
     }
 }
+
+/* ---------- Core Models ---------- */
 
 class Song {
     private final String title;
     private final String artist;
-    private final int durationSeconds;
+    private final int durationSeconds; // length of the song
 
     public Song(String title, String artist, int durationSeconds) {
         this.title = title;
@@ -44,14 +38,14 @@ class Song {
         this.durationSeconds = durationSeconds;
     }
 
-    public String getTitle() { return title; }
-    public String getArtist() { return artist; }
-    public int getDurationSeconds() { return durationSeconds; }
+    public String getTitle()   { return title; }
+    public String getArtist()  { return artist; }
+    public int getDuration()   { return durationSeconds; }
 
     @Override
     public String toString() {
-        return String.format("%s - %s (%d:%02d)", artist, title,
-                durationSeconds / 60, durationSeconds % 60);
+        return String.format("%s - %s (%d:%02d)",
+                artist, title, durationSeconds / 60, durationSeconds % 60);
     }
 }
 
@@ -62,6 +56,8 @@ class Playlist {
     public Playlist(String name) {
         this.name = name;
     }
+
+    public String getName() { return name; }
 
     public void addSong(Song song) {
         songs.add(song);
@@ -75,45 +71,134 @@ class Playlist {
         return Collections.unmodifiableList(songs);
     }
 
-    public String getName() {
-        return name;
+    public int size() {
+        return songs.size();
+    }
+
+    public Song get(int index) {
+        return songs.get(index);
     }
 }
 
-enum RepeatMode {
-    NONE,
-    ONE,
-    ALL
-}
+/* ---------- Player Logic ---------- */
 
-class MusicPlayer {
-    private Playlist playlist;
-    private List<Song> playQueue = new ArrayList<>();
+class Player {
+    private final Playlist playlist;
+    private final List<Integer> playOrder = new ArrayList<>();
     private int currentIndex = -1;
+    private boolean isPlaying = false;
     private boolean shuffle = false;
     private RepeatMode repeatMode = RepeatMode.NONE;
-    private boolean playing = false;
+    private final Random rng = new Random();
 
-    public void setPlaylist(Playlist playlist) {
+    public Player(Playlist playlist) {
         this.playlist = playlist;
-        resetQueue();
+        rebuildPlayOrder();
     }
 
-    public void setRepeatMode(RepeatMode mode) {
-        this.repeatMode = mode;
-        System.out.println("Repeat mode set to: " + mode);
+    public void play() {
+        if (playlist.size() == 0) {
+            System.out.println("Playlist is empty.");
+            return;
+        }
+        if (currentIndex == -1) currentIndex = 0;
+        isPlaying = true;
+        printNowPlaying();
+    }
+
+    public void stop() {
+        isPlaying = false;
+        System.out.println("Playback stopped.");
+    }
+
+    public void next() {
+        if (playlist.size() == 0) return;
+        if (repeatMode == RepeatMode.ONE) {
+            // stay on same track
+        } else {
+            currentIndex++;
+            if (currentIndex >= playOrder.size()) {
+                if (repeatMode == RepeatMode.ALL) {
+                    rebuildPlayOrder();
+                    currentIndex = 0;
+                } else {
+                    currentIndex = playOrder.size() - 1;
+                    System.out.println("Reached end of playlist.");
+                    stop();
+                    return;
+                }
+            }
+        }
+        if (isPlaying) printNowPlaying();
+    }
+
+    public void previous() {
+        if (playlist.size() == 0) return;
+        if (repeatMode == RepeatMode.ONE) {
+            // stay on same track
+        } else {
+            currentIndex--;
+            if (currentIndex < 0) {
+                if (repeatMode == RepeatMode.ALL) {
+                    rebuildPlayOrder();
+                    currentIndex = playOrder.size() - 1;
+                } else {
+                    currentIndex = 0;
+                    System.out.println("At start of playlist.");
+                }
+            }
+        }
+        if (isPlaying) printNowPlaying();
     }
 
     public void toggleShuffle() {
-        this.shuffle = !this.shuffle;
+        shuffle = !shuffle;
         System.out.println("Shuffle " + (shuffle ? "enabled" : "disabled"));
-        resetQueue();
+        rebuildPlayOrder();
+        // reset index to current track in new order
+        if (isPlaying && currentIndex >= 0) {
+            int currentSongId = getCurrentSongId();
+            currentIndex = playOrder.indexOf(currentSongId);
+        }
     }
 
-    private void resetQueue() {
-        if (playlist == null) {
-            playQueue.clear();
-            currentIndex = -1;
-            return;
+    public void toggleRepeatMode() {
+        repeatMode = repeatMode.next();
+        System.out.println("Repeat mode set to " + repeatMode);
+    }
+
+    private void rebuildPlayOrder() {
+        playOrder.clear();
+        for (int i = 0; i < playlist.size(); i++) playOrder.add(i);
+        if (shuffle) Collections.shuffle(playOrder, rng);
+    }
+
+    private int getCurrentSongId() {
+        return (currentIndex >= 0 && currentIndex < playOrder.size())
+                ? playOrder.get(currentIndex)
+                : -1;
+    }
+
+    private Song getCurrentSong() {
+        int id = getCurrentSongId();
+        return id >= 0 ? playlist.get(id) : null;
+    }
+
+    private void printNowPlaying() {
+        Song song = getCurrentSong();
+        if (song != null) {
+            System.out.println("Now playing: " + song);
+        } else {
+            System.out.println("No song to play.");
         }
-        playQueue = new ArrayList<>(playlist
+    }
+
+    enum RepeatMode {
+        NONE, ONE, ALL;
+
+        public RepeatMode next() {
+            return values()[(ordinal() + 1) % values().length];
+        }
+    }
+}
+```

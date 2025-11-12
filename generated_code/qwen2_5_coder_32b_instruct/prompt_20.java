@@ -1,10 +1,10 @@
 ```java
-public interface Device {
+interface Device {
     void on();
     void off();
 }
 
-public class Light implements Device {
+class Light implements Device {
     private String location;
 
     public Light(String location) {
@@ -22,10 +22,9 @@ public class Light implements Device {
     }
 }
 
-public class Fan implements Device {
+class Fan implements Device {
     private String location;
     private int speed;
-
     public static final int HIGH = 3;
     public static final int MEDIUM = 2;
     public static final int LOW = 1;
@@ -62,12 +61,12 @@ public class Fan implements Device {
     }
 }
 
-public interface Command {
+interface Command {
     void execute();
     void undo();
 }
 
-public class LightOnCommand implements Command {
+class LightOnCommand implements Command {
     private Light light;
 
     public LightOnCommand(Light light) {
@@ -85,7 +84,7 @@ public class LightOnCommand implements Command {
     }
 }
 
-public class LightOffCommand implements Command {
+class LightOffCommand implements Command {
     private Light light;
 
     public LightOffCommand(Light light) {
@@ -103,7 +102,7 @@ public class LightOffCommand implements Command {
     }
 }
 
-public class FanHighCommand implements Command {
+class FanHighCommand implements Command {
     private Fan fan;
     private int prevSpeed;
 
@@ -131,7 +130,7 @@ public class FanHighCommand implements Command {
     }
 }
 
-public class FanMediumCommand implements Command {
+class FanMediumCommand implements Command {
     private Fan fan;
     private int prevSpeed;
 
@@ -159,7 +158,7 @@ public class FanMediumCommand implements Command {
     }
 }
 
-public class FanLowCommand implements Command {
+class FanLowCommand implements Command {
     private Fan fan;
     private int prevSpeed;
 
@@ -187,7 +186,7 @@ public class FanLowCommand implements Command {
     }
 }
 
-public class FanOffCommand implements Command {
+class FanOffCommand implements Command {
     private Fan fan;
     private int prevSpeed;
 
@@ -215,7 +214,59 @@ public class FanOffCommand implements Command {
     }
 }
 
-public class RemoteControl {
+class NoCommand implements Command {
+    @Override
+    public void execute() {}
+
+    @Override
+    public void undo() {}
+}
+
+class RemoteControl {
     private Command[] onCommands;
     private Command[] offCommands;
     private Command undoCommand;
+
+    public RemoteControl() {
+        onCommands = new Command[7];
+        offCommands = new Command[7];
+        Command noCommand = new NoCommand();
+        for (int i = 0; i < 7; i++) {
+            onCommands[i] = noCommand;
+            offCommands[i] = noCommand;
+        }
+        undoCommand = noCommand;
+    }
+
+    public void setCommand(int slot, Command onCommand, Command offCommand) {
+        onCommands[slot] = onCommand;
+        offCommands[slot] = offCommand;
+    }
+
+    public void onButtonWasPushed(int slot) {
+        onCommands[slot].execute();
+        undoCommand = onCommands[slot];
+    }
+
+    public void offButtonWasPushed(int slot) {
+        offCommands[slot].execute();
+        undoCommand = offCommands[slot];
+    }
+
+    public void undoButtonWasPushed() {
+        undoCommand.undo();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuff = new StringBuilder();
+        stringBuff.append("\n------ Remote Control -------\n");
+        for (int i = 0; i < onCommands.length; i++) {
+            stringBuff.append("[slot " + i + "] " + onCommands[i].getClass().getName()
+                    + "    " + offCommands[i].getClass().getName() + "\n");
+        }
+        stringBuff.append("[undo] " + undoCommand.getClass().getName() + "\n");
+        return stringBuff.toString();
+    }
+}
+```
